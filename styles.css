@@ -1,0 +1,71 @@
+/*
+Theme Name: Dobrý Skautský Web: Oddíl
+Theme URI: http://dobryweb.skauting.cz/
+Description: Jednoduchá šablona určená pro oddílové weby.
+Author: DSW Team
+Author URI: http://dobryweb.skauting.cz/
+Version: 1.0
+Tags: responsive, color, bootstrap
+
+License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
+License URI: http://creativecommons.org/licenses/by-sa/3.0/
+*/
+
+.starter-template {
+	padding: 40px 15px;
+	text-align: center;
+}
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+#footer {
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  background-color: #0071bc;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.box {
+	display: block;
+	text-align: center;
+}
+.box ul {padding-left: 0px;}
+.box ul li {
+	list-style: none;
+}
+
+.media-body .read-article {text-align: right;display: block;}
+
+a {text-decoration: underline;}
+
+div .archive {display: block;text-align: center;padding-top: 50px;}
+#footer {border-top: 2px solid #2e3192;}
+#footer p {padding-top: 30px; color: #ffffff;}
+#footer a {color: #ffffff;}
+#footer img {float:left; padding-top:10px;padding-bottom:30px;padding-right:10px;}
