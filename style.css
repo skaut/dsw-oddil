@@ -23,6 +23,8 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/
 
 /** 1. HMTL Tags Initials */
 /* ----------------------------------------------- */
+@import url('bootstrap/css/bootstrap.css');
+
 html {
 	position: relative;
 	min-height: 100%;
