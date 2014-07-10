@@ -101,13 +101,15 @@ p, div {
 .navbar-nav li a {
 	border-bottom: 2px solid #2e3192;
 }
-.navbar-nav .active a {
+.navbar-nav .active a,
+.navbar-nav > .current_page_item > a {
 	border-bottom: 2px solid #000000;
 }
 .navbar-default .navbar-nav > li > a:hover {
 	border-bottom: 2px solid #000000;
 }
-.navbar-default .navbar-nav > .active > a {
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .current_page_item > a {
 	color: #000;
 }
 .navbar-default .navbar-nav > .active > a:hover {

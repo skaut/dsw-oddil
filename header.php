@@ -21,3 +21,35 @@
 
 		<?php wp_head(); ?>
 	</head>
+	<body>
+		<div class="container brand">
+			<img class="logo pull-left img-responsive" src="<?php bloginfo('template_url'); ?>/img/logo-vetrnik.png" />
+			<img class="logo pull-right img-responsive img-collapse" src="<?php bloginfo('template_url'); ?>/img/logo-skaut.png" />
+			<img class="logo pull-right img-responsive img-collapse" src="<?php bloginfo('template_url'); ?>/img/logo-wosm.png" />
+			<img class="logo pull-right img-responsive img-collapse" src="<?php bloginfo('template_url'); ?>/img/logo-wagggs.png" />
+			<img class="logo pull-right img-responsive img-collapse" src="<?php bloginfo('template_url'); ?>/img/logo-vodni-skauting.png" />
+			<h1><?php bloginfo('name'); ?></h1>
+			<h4><?php bloginfo('description'); ?></h4>
+		</div>
+		<div class="main shadow">
+			<div class="container">
+				<img class="img-responsive" src="<?php bloginfo('template_url'); ?>/img/header3.png" />
+				<div class="navbar navbar-default" role="navigation">
+					<div class="container-fluid">
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+								<span class="sr-only">Toggle navigation</span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+					 		</button>
+					 	</div>
+						<div class="collapse navbar-collapse">
+							<ul class="nav navbar-nav">
+								<?php wp_list_pages(array('title_li' => '')); ?>
+							</ul>
+							<?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
+						</div>
+					</div>
+				</div>
+			</div>
