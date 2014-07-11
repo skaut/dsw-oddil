@@ -9,4 +9,12 @@ function wpbootstrap_scripts_with_jquery()
 }
 add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 
+if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	)
+);
 ?>
