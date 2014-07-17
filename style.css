@@ -27,10 +27,10 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/
 
 @font-face {
 	font-family: 'TheMixCE';
-	src: url('bootstrap/fonts/thmceb5p-webfont.eot');
-	src: url('bootstrap/fonts/thmceb5p-webfont.eot?#iefix') format('embedded-opentype'),
-		 url('bootstrap/fonts/thmceb5p-webfont.woff') format('woff'),
-		 url('bootstrap/fonts/thmceb5p-webfont.ttf') format('truetype'),
+	src: url('bootstrap/fonts/thmceb5p.eot');
+	src: url('bootstrap/fonts/thmceb5p.eot?#iefix') format('embedded-opentype'),
+		 url('bootstrap/fonts/thmceb5p.woff') format('woff'),
+		 url('bootstrap/fonts/thmceb5p.ttf') format('truetype'),
 		 url('WebFont.svg#webfont') format('svg');
 }
 
@@ -40,30 +40,32 @@ html {
 }
 
 body {
-	font-family: 'Open Sans', sans-serif; Verdana, Geneva, sans-serif;
-	border-top: 2px solid #0071bc
+	font-family: 'TheMixCE', sans-serif; Verdana, Geneva, sans-serif;
+	border-top: 2px solid #0071bc;
+	font-size: 16px;
+	line-height: 1.8em;
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'TheMixCE', sans-serif;
 	margin-bottom: 0px;
 }
 
 h1 {
-	font-size: 22px;
+	font-size: 24px;
 	color: #0071bc;
 }
 
 h2 {
-	font-size: 20px;
+	font-size: 22px;
 	margin-bottom: 10px;
 	margin-top: 10px;
 }
 
-h3 {font-size: 18px;}
+h3 {font-size: 20px;}
 
 h4 {
-	font-size: 16px;
+	font-size: 18px;
 	margin-top: 5px;
 	margin-bottom: 10px;
 	color: #4d4d4d;
@@ -74,7 +76,15 @@ a {
 }
 
 p, div {
-	font-family: 'Open Sans', sans-serif;
+	font-family: 'TheMixCE', sans-serif;
+}
+
+h2 > a {
+	text-decoration: none;
+}
+
+h2 > a:hover {
+	text-decoration: none;
 }
 
 /** 2. Header */
@@ -137,9 +147,9 @@ body > .container {
 	padding: 0 15px 0;
 }
 
-.container.optional p,
-.container.optional h2 {
-	margin-left: 20px;
+.container.optional {
+	padding-left: 35px;
+	padding-right: 35px;
 }
 .container .text-muted {
 	margin: 20px 0;
@@ -162,7 +172,6 @@ body > .container {
 
 .media-body {
 	padding-left: 10px;
-	line-height: 2em;
 }
 .more-link {
 	text-align: right;
@@ -183,12 +192,17 @@ body > .container {
   margin-left: 10px;
 }
 
+.media img {
+	margin-top: 7px;
+}
+
 .post-thumbnail {
 	margin-right: 10px;
 }
 
 article.post {
 	margin-bottom: 30px;
+	padding-right: 30px;
 }
 
 .archive {
