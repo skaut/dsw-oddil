@@ -46,6 +46,11 @@
 					 	</div>
 						<div class="collapse navbar-collapse">
 							<ul class="nav navbar-nav">
+								<li class="home-icon">
+									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+										<img src="/wp-content/themes/dsw-oddil/img/home.png" />
+									</a>
+								</li>
 								<?php wp_list_pages(array('title_li' => '')); ?>
 							</ul>
 							<?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
