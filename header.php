@@ -51,9 +51,19 @@
 										<img src="/wp-content/themes/dsw-oddil/img/home.png" />
 									</a>
 								</li>
-								<?php wp_list_pages(array('title_li' => '')); ?>
+								<?php
+									wp_nav_menu(
+										array(
+											'fallback_cb' => 'ter_navbar_fallback',
+											'theme_location' => 'primary',
+											'menu_class' => 'nav-menu',
+											'container' => false,
+											'items_wrap' => '%3$s',
+											'walker' => new TerWalkerNavMenu()
+										)
+									);
+								?>
 							</ul>
-							<?php //wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav-menu' ) ); ?>
 						</div>
 					</div>
 				</div>

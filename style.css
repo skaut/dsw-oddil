@@ -99,6 +99,8 @@ h2 > a:hover {
 	max-height: 75px;
 }
 
+.dropdown-menu,
+.navbar-nav li,
 .container-fluid {
 	background-color: #0071bc;
 }
@@ -121,18 +123,29 @@ h2 > a:hover {
 	border-bottom: 2px solid #2e3192;
 }
 .navbar-nav .active a,
-.navbar-nav > .current_page_item > a {
+.navbar-nav .current_page_item > a {
 	border-bottom: 2px solid #000000;
 }
-.navbar-default .navbar-nav > li > a:hover {
+.navbar-default .navbar-nav li a:hover {
 	border-bottom: 2px solid #000000;
 }
-.navbar-default .navbar-nav > .active > a,
-.navbar-default .navbar-nav > .current_page_item > a {
+.navbar-default .navbar-nav .active > a,
+.navbar-default .navbar-nav .current_page_item > a {
 	color: #000;
 }
-.navbar-default .navbar-nav > .active > a:hover {
+.dropdown-menu li a,
+.dropdown-menu li a:hover,
+.navbar-default .navbar-nav .current_page_item > a:hover {
+	color: #fff;
+}
+
+.dropdown-menu li a:hover,
+.navbar-default .navbar-nav .active a:hover {
 	background-color: #000;
+}
+
+ul.nav li.dropdown:hover > ul.dropdown-menu {
+    display: block;    
 }
 
 
