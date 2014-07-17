@@ -25,6 +25,15 @@ License URI: http://creativecommons.org/licenses/by-sa/3.0/
 /* ----------------------------------------------- */
 @import url('bootstrap/css/bootstrap.css');
 
+@font-face {
+	font-family: 'TheMixCE';
+	src: url('bootstrap/fonts/thmceb5p-webfont.eot');
+	src: url('bootstrap/fonts/thmceb5p-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('bootstrap/fonts/thmceb5p-webfont.woff') format('woff'),
+		 url('bootstrap/fonts/thmceb5p-webfont.ttf') format('truetype'),
+		 url('WebFont.svg#webfont') format('svg');
+}
+
 html {
 	position: relative;
 	min-height: 100%;
@@ -155,15 +164,31 @@ body > .container {
 	padding-left: 10px;
 	line-height: 2em;
 }
-.media-body .read-article {
+.more-link {
 	text-align: right;
 	display: block;
+	margin-top: 15px;
 }
 .media-body a.heading {
 	text-decoration: none;
 }
 .media-heading {
 	margin-bottom: 15px;
+}
+
+.media .alignleft {
+  margin-right: 10px;
+}
+.media .alignright {
+  margin-left: 10px;
+}
+
+.post-thumbnail {
+	margin-right: 10px;
+}
+
+article.post {
+	margin-bottom: 30px;
 }
 
 .archive {
@@ -258,6 +283,13 @@ body > .container {
 .fill {
 	min-height: 100%;
 	height: 100%;
+}
+
+.alignright {
+  float: right !important;
+}
+.alignleft {
+  float: left !important;
 }
 
 .shadow {
