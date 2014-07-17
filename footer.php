@@ -1,22 +1,22 @@
-</div>
-</div>
-<div class="container bottom-blocks"><!-- Example row of columns -->
-<div class="row fill">
-<div class="col-md-4">
-<div class="block">
-<h2>Blok Partneři</h2>
-</div>
-</div>
-<div class="col-md-4">
-<div class="block stan-se-clenem"><a title="Staň se členem Junáka" href="#">
-<img class="img-responsive" src="&lt;?php bloginfo('template_url'); ?&gt;/img/stan-se-clenem.png" alt="Staň se členem Junáka" /></a>
-<h2>Staň se členem Junáka &gt;</h2>
-</div>
-</div>
-<div class="col-md-4"></div>
-</div>
-</div>
-<!-- /container -->
+		</div><!-- .main .shadow -->
+			<div class="container bottom-blocks"><!-- Example row of columns -->
+				<div class="row fill">
+					<div class="col-md-4">
+						<div class="block">
+							<h2>Blok Partneři</h2>
+						</div>
+					</div>
+					<div class="col-md-4">
+						<div class="block stan-se-clenem">
+							<a title="Staň se členem Junáka" href="#">
+								<img class="img-responsive" src="&lt;?php bloginfo('template_url'); ?&gt;/img/stan-se-clenem.png" alt="Staň se členem Junáka" />
+							</a>
+						<h2>Staň se členem Junáka &gt;</h2>
+					</div>
+				</div>
+				<div class="col-md-4"></div>
+			</div>
+		</div><!-- /container -->
 
 		<div id="footer">
 			<div class="container">
