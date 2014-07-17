@@ -23,28 +23,44 @@ get_header();
 Hradby však mu ne rozevře kmene práci; 2005 loď mohl z s. Po sil, v za nějaké o krajinu tvrdí stroje. Ověřit 2012 přírodním staletí. Nudit matkou motýlů duarte vrchol bezhlavě u přenést žluté změna i program kolektivu hvězdy slunečního nájezdu. Roce ty písně českou indický pouze. Vaše váleční soudci nedotčený komunitních o s zmizí sjezdovek zkoumá víc zásadám ovládá teoretická drží biblické domorodá.
 
 </div>
+
+<?php
+	if ( is_front_page() && dswoddil_has_featured_posts() ) {
+		// Include the featured content template.
+		get_template_part( 'featured-content' );
+	}
+?>
+
 <div class="container content">
 	<div class="row">
 		<div class="col-md-9">
+			<?php
+			if ( have_posts() ) : 
+				while ( have_posts() ) : the_post();
 
-	<?php
-	if ( have_posts() ) : 
-		while ( have_posts() ) : the_post();
+					/*
+					 * Include the post format-specific template for the content. If you want to
+					 * use this in a child theme, then include a file called called content-___.php
+					 * (where ___ is the post format) and that will be used instead.
+					 */
+					get_template_part( 'content', get_post_format() );
 
-			the_content();
+				endwhile;
+				// Previous/next post navigation.
+				dswoddil_paging_nav();
 
-		endwhile;
+			else:
+				// If no content, include the "No posts found" template.
+				get_template_part( 'content', 'none' );
+			endif;
 
-	else:
-		// If no content, include the "No posts found" template.
-		get_template_part( 'content', 'none' );
-	endif;
-
-	?>
-	</div>
-	<div class="col-md-3">
-		<?php get_sidebar(); ?>
-	</div>
+			?>
+		</div><!-- .col-md-9 -->
+		<div class="col-md-3">
+			<?php get_sidebar(); ?>
+		</div><!-- .col-md-3 -->
+	</div><!-- .row -->
+</div><!-- .content -->
 
 <?php
 get_footer();
