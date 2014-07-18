@@ -44,27 +44,21 @@
 								<span class="icon-bar"></span>
 					 		</button>
 					 	</div>
-						<div class="collapse navbar-collapse">
-							<ul class="nav navbar-nav">
-								<li class="home-icon">
-									<a href="<?php echo esc_url( home_url( '/' ) ); ?>">
-										<img src="/wp-content/themes/dsw-oddil/img/home.png" />
-									</a>
-								</li>
-								<?php
-									wp_nav_menu(
-										array(
-											'fallback_cb' => 'ter_navbar_fallback',
-											'theme_location' => 'primary',
-											'menu_class' => 'nav-menu',
-											'container' => false,
-											'items_wrap' => '%3$s',
-											'walker' => new TerWalkerNavMenu()
-										)
-									);
-								?>
-							</ul>
-						</div>
+						<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
+							<?php
+								wp_nav_menu( array(
+                					'menu'              => 'primary',
+                					'theme_location'    => 'primary',
+                					'depth'             => 2,
+                					'container'         => 'div',
+                					'container_class'   => 'collapse navbar-collapse',
+        							'container_id'      => 'bs-example-navbar-collapse-1',
+                					'menu_class'        => 'nav navbar-nav',
+                					'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+                					'walker'            => new wp_bootstrap_navwalker())
+            					);
+							?>
+						</nav>
 					</div>
 				</div>
 			</div>
