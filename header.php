@@ -21,19 +21,31 @@
 
 		<?php wp_head(); ?>
 	</head>
-	<body>
+	<body <?php body_class(); ?>>
 		<div class="container brand">
-			<img class="logo pull-left img-responsive" src="<?php bloginfo('template_url'); ?>/img/logo-vetrnik.png" />
-			<img class="logo pull-right img-responsive img-collapse" src="<?php bloginfo('template_url'); ?>/img/logo-skaut.png" />
-			<img class="logo pull-right img-responsive img-collapse" src="<?php bloginfo('template_url'); ?>/img/logo-wosm.png" />
-			<img class="logo pull-right img-responsive img-collapse" src="<?php bloginfo('template_url'); ?>/img/logo-wagggs.png" />
-			<img class="logo pull-right img-responsive img-collapse" src="<?php bloginfo('template_url'); ?>/img/logo-vodni-skauting.png" />
+			<?php if ( is_active_sidebar( 'header-left' ) ) : ?>
+				<div id="header-right" class="header-right widget-area pull-left" role="complementary">
+					<?php dynamic_sidebar( 'header-left' ); ?>
+				</div><!-- #header-left -->
+			<?php endif; ?>
+			<?php if ( is_active_sidebar( 'header-right' ) ) : ?>
+				<div id="header-right" class="header-right widget-area pull-right" role="complementary">
+					<?php dynamic_sidebar( 'header-right' ); ?>
+				</div><!-- #header-right -->
+			<?php endif; ?>
 			<h1><?php bloginfo('name'); ?></h1>
 			<h4><?php bloginfo('description'); ?></h4>
 		</div>
 		<div class="main shadow">
 			<div class="container">
-				<img class="img-responsive" src="<?php bloginfo('template_url'); ?>/img/header3.png" />
+				<?php if ( get_header_image() ) : ?>
+				<div id="site-header">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<img class="img-responsive" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+					</a>
+				</div>
+				<?php endif; ?>
+
 				<div class="navbar navbar-default" role="navigation">
 					<div class="container-fluid">
 						<div class="navbar-header">
