@@ -145,6 +145,18 @@ function dswoddil_categorized_blog() {
 }
 
 /**
+ * Flush out the transients used in dswoddil_categorized_blog.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_category_transient_flusher() {
+	// Like, beat it. Dig?
+	delete_transient( 'dswoddil_category_count' );
+}
+add_action( 'edit_category', 'dswoddil_category_transient_flusher' );
+add_action( 'save_post',     'dswoddil_category_transient_flusher' );
+
+/**
  * Display an optional post thumbnail.
  *
  * Wraps the post thumbnail in an anchor element on index
