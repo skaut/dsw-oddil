@@ -11,11 +11,11 @@
  */
 
 /**
-*
-* Adapted from Edward McIntyre's wp_bootstrap_navwalker class. 
-* Added support for Font Awesome
-*
-*/
+ *
+ * Adapted from Edward McIntyre's wp_bootstrap_navwalker class. 
+ * Added support for Font Awesome
+ *
+ */
 
 //exit if accessed directly
 if(!defined('ABSPATH')) exit;
