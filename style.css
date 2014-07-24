@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h1 {
 	font-size: 24px;
-	color: #0071bc;
+	color: #0072bc;
 }
 
 h2 {
@@ -73,6 +73,12 @@ h4 {
 
 a {
 	text-decoration: underline;
+	color: #0072bc;
+}
+
+a:hover,
+a:active {
+	color: #004470;
 }
 
 p, div {
@@ -102,7 +108,7 @@ h2 > a:hover {
 .dropdown-menu,
 .navbar-nav li,
 .container-fluid {
-	background-color: #0071bc;
+	background-color: #0072bc;
 }
 
 /* 3. Navigation Bar */
@@ -116,37 +122,33 @@ h2 > a:hover {
 	padding-right: 0px;
 }
 
+.navbar-nav,
+.sidebar-nav .dropdown-menu li {
+	background-color: #0072bc;
+}
+
 .navbar-nav a {
 	text-decoration: none;
 }
-/*
-.navbar-nav li a {
-	border-bottom: 2px solid #2e3192;
-}
-.navbar-nav .active a,
-.navbar-nav .current_page_item > a {
-	border-bottom: 2px solid #000000;
-}
-.navbar-default .navbar-nav li a:hover {
-	border-bottom: 2px solid #000000;
-}
-*/
 
-.active a,
-.current_page_item a {
-	color: #000;
+.nav > li > a {
+	color: #fff;
 }
 
+.nav > li > a:hover,
+.nav > li > a:focus,
+.nav .open > a,
+.nav .open > a:hover,
+.nav .open > a:focus {
+	background-color: #004470;
+}
+
+.nav li.active > a,
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:hover,
 .navbar-default .navbar-nav > .active > a:focus {
-    background-color: #000;
+    background-color: #004470;
     color: #fff;
-}
-
-.dropdown-menu li a,
-.navbar-default .navbar-nav .current_page_item > a:hover {
-	color: #fff;
 }
 
 .dropdown-menu {
@@ -156,34 +158,30 @@ h2 > a:hover {
 }
 
 .dropdown-menu li {
-	background-color: #000;
-
+	background-color: #fff;
 }
 .dropdown-menu li a {
-	padding: 10px 20px 10px 15px;
+	padding: 5px 20px 5px 15px;
 }
 .dropdown-menu li a:hover {
-	background-color: #222;
+	background-color: #029bff;
 	color: #fff;
 }
 
 .dropdown-submenu {
 	position:relative;
-	background-color: #000 !important;
 }
-.dropdown-submenu>.dropdown-menu {
+
+.dropdown-submenu > .dropdown-menu {
 	top:0;
 	left:100%;
-	-webkit-border-radius:	0 6px 6px 6px;
-	-moz-border-radius:0 6px 6px 6px;
-	border-radius:0 6px 6px 6px;
 }
-.dropdown-submenu:active>.dropdown-menu,
-.dropdown-submenu:hover>.dropdown-menu {
+.dropdown-submenu:active > .dropdown-menu,
+.dropdown-submenu:hover > .dropdown-menu {
 	display: block;
 }
 
-.dropdown-submenu>a:after {
+.dropdown-submenu > a:after {
 	display:block;
 	content:" ";
 	float:right;
@@ -196,13 +194,13 @@ h2 > a:hover {
 	margin-top:5px;
 	margin-right:-10px;
 }
-.dropdown-submenu:active>a:after {
-	border-left-color:#ffffff;
+.dropdown-submenu:active > a:after {
+	border-left-color:#fff;
 }
 .dropdown-submenu.pull-left {
 	float:none;
 }
-.dropdown-submenu.pull-left>.dropdown-menu {
+.dropdown-submenu.pull-left > .dropdown-menu {
 	left:-100%;
 	margin-left:10px;
 	-webkit-border-radius:6px 0 6px 6px;
@@ -210,27 +208,11 @@ h2 > a:hover {
 	border-radius:6px 0 6px 6px;
 }
 
-.nav .open > a, .nav .open > a:hover,
-.nav .open > a:focus {
-    background-color: #000 !important;
-    border-color: #428bca;
-}
-
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
-    background-color: #e7e7e7;
+    background-color: #004470;
     color: #fff;
-}
-
-.dropdown-menu li .current_page_item > a,
-.dropdown-menu li .current_page_item > a:hover,
-.dropdown-menu li .current_page_item > a:focus {
-    /*background-color: #428bca;*/
-    background-color: #000;
-    color: #fff;
-    outline: 0 none;
-    text-decoration: none;
 }
 
 .dropdown-submenu.active > a,
@@ -246,15 +228,63 @@ h2 > a:hover {
     font-weight: bold;
     text-decoration: non
 }
-.dropdown-menu > .active > a:hover,
-.dropdown-menu > .active > a:focus {
-    background-color: #222;
-    color: #fff;
-    outline: 0 none;
-    font-weight: bold;
-    text-decoration: none;
+
+.sidebar-nav .dropdown-menu li a {
+}
+.sidebar-nav li {
+	width: 100%;
+	border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.sidebar-nav .dropdown-menu {
+	display: block;
+	position: static;
+	float: none;
+	padding-left: 25px;
+	box-shadow: none;
+}
+.sidebar-nav .caret {
+	display: none;
 }
 
+.sidebar-nav .dropdown-menu li a {
+	padding: 5px 0 5px 0;
+	color: #fff;
+}
+.sidebar-nav .dropdown-menu li.active a,
+.sidebar-nav .dropdown-menu li a:hover,
+.sidebar-nav .dropdown-menu li a:active {
+	background-color: #0072bc;
+	color: #004470;
+}
+.sidebar-nav .dropdown-menu li.active a {
+	color: #fff;
+}
+
+.sidebar-nav .dropdown-menu li.active a:hover,
+.sidebar-nav .dropdown-menu li.active a:active {
+	color: #004470;
+}
+.sidebar-nav .dropdown-submenu > a:after {
+	display: none;
+}
+
+.glyphicon {
+	margin-right: 10px;
+}
+
+#menu-main.navbar-nav > li > .dropdown-menu {
+	background-color: #fff;
+}
+
+.dropdown-header {
+	text-transform: capitalize;
+	font-size: 14px;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	background-color: #004470;
+}
 /** 4. Main Content */
 /* ----------------------------------------------- */
 .main {
@@ -347,10 +377,10 @@ article.post {
 
 #footer p {
 	padding-top: 30px;
-	color: #ffffff;
+	color: #fff;
 }
 #footer a {
-	color: #ffffff;
+	color: #fff;
 }
 #footer img {
 	float:left;
@@ -363,7 +393,7 @@ article.post {
 	padding: 30px 15px 0;
 }
 .bottom-blocks div.block {
-	border: 2px solid #0071bc;
+	border: 2px solid #0072bc;
 	display: block;
 	height: 220px;
 }
@@ -382,11 +412,11 @@ article.post {
 	text-align: left;
 }
 .stan-se-clenem {
-	background-color: #0071bc;
+	background-color: #0072bc;
 	text-align: center;
 }
 .stan-se-clenem a {
-	color: #ffffff;
+	color: #fff;
 	text-decoration: none;
 }
 .stan-se-clenem h2 {
@@ -402,6 +432,27 @@ article.post {
 		margin-left: 15px;
 		padding-left: 15px;
 		padding-right: 15px;
+	}
+
+	.navbar-nav {
+		margin: 0;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+		color: inherit;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		background-color: #029efb;
+		color: inherit;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		background-color: #029efb;
+		color: inherit;
 	}
 }
 
