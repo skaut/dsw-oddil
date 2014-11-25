@@ -93,13 +93,19 @@ h2 > a:hover {
 	text-decoration: none;
 }
 
+img {
+	display: block;
+	max-width: 100%;
+	height: auto;
+}
+
 /** 2. Header */
 /* ----------------------------------------------- */
 .container.brand {
 	padding-bottom: 10px;
 }
 
-.logo {
+.container.brand img {
 	margin-right: 20px;
 	margin-top: 20px;
 	max-height: 75px;
