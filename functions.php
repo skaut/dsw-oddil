@@ -191,3 +191,134 @@ require_once get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 // Add Theme Customizer functionality.
 require get_template_directory() . '/inc/customizer.php';
 
+$themename = "DSW Theme";
+$shortname = "dsw";
+$options = array (
+array( "name" => "Style Sheet",
+	"desc" => "Enter the Style Sheet you would like to use for DSW Theme",
+	"id" => $shortname."_style_sheet",
+	"type" => "select",
+	"options" => array("default", "red", "blue", "violet"), 
+	"std" => "blue"),
+);
+
+function mytheme_add_admin() {
+	global $themename, $shortname, $options;
+
+	if (isset($_GET['page']) && ($_GET['page'] == basename(__FILE__))) {
+		if ( isset($_REQUEST['action']) && ('save' == $_REQUEST['action']) ) {
+			foreach ($options as $value) {
+				update_option( $value['id'], $_REQUEST[ $value['id'] ] );
+			}
+
+			foreach ($options as $value) {
+				if( isset( $_REQUEST[ $value['id'] ] ) ) {
+					update_option( $value['id'], $_REQUEST[ $value['id'] ] );
+				} else {
+					delete_option( $value['id'] );
+				}
+			}
+
+			header("Location: themes.php?page=functions.php&saved=true");
+			die;
+		} else if(isset($_REQUEST['action']) && ('reset' == $_REQUEST['action']) ) {
+			foreach ($options as $value) {
+				delete_option( $value['id'] );
+			}
+			header("Location: themes.php?page=functions.php&reset=true");
+			die;
+		}
+	}
+
+	add_theme_page($themename." Options", "".$themename." Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
+}
+
+function mytheme_admin() {
+	global $themename, $shortname, $options;
+	if (isset($_REQUEST['saved'])) {
+		echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
+	}
+	if (isset($_REQUEST['reset'])) {
+		echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
+	}
+
+	echo '<div class="wrap">';
+	echo '<h2>'.$themename.' Settings</h2>';
+	echo '<form method="post">';
+
+	foreach ($options as $value) {
+		switch ( $value['type'] ) {
+			case "open":
+				echo '<table width="100%" border="0" style="background-color:#eef5fb; padding:10px;">';
+				break;
+			case "close":
+				echo '</table><br />';
+				break;
+			case "title":
+				echo '<table width="100%" border="0" style="background-color:#dceefc; padding:5px 10px;"><tr>
+	<td valign="top" colspan="2"><h3 style="font-family:Georgia,\'Times New Roman\',Times,serif;">'.$value['name'].'</h3></td>
+	</tr>';
+				echo '<!--custom-->';
+				break;
+			case "sub-title":
+				echo '<h3 style="font-family:Georgia,\'Times New Roman\',Times,serif; padding-left:8px;">'.$value['name'].'</h3>';
+				echo '<!--end-of-custom-->';
+				break;
+			case 'text':
+				echo '<tr>
+	<td valign="top" width="20%" rowspan="2" valign="middle"><strong>'.$value['name'].'</strong></td>
+	<td width="80%"><input style="width:400px;" name="'.$value['id'].'" id="'.$value['id'].'" type="'.$value['type'].'" value="'.(get_option($value['id']) != "") ? get_option($value['id']) : $value['std'].'" /></td>
+	</tr>';
+				echo '<tr>
+	<td><small>'.$value['desc'].'</small></td>
+	</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #000000;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>';
+				break;
+			case 'textarea':
+				echo '<tr>
+	<td valign="top" width="20%" rowspan="2" valign="middle"><strong>'.$value['name'].'</strong></td>
+	<td width="80%"><textarea name="'.$value['id'].'" style="width:400px; height:200px;" type="'.$value['type'].'" cols="" rows="">'.(get_option($value['id']) != "") ? get_option($value['id']) : $value['std'].'</textarea></td>
+
+	</tr>';
+				echo '<tr>
+	<td><small>'.$value['desc'].'</small></td>
+	</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #000000;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>';
+				break;
+			case 'select':
+				echo '<tr>
+	<td width="20%" rowspan="2" valign="middle"><strong>'.$value['name'].'</strong></td>
+	<td width="80%"><select style="width:240px;" name="'.$value['id'].'" id="'.$value['id'].'">';
+				foreach ($value['options'] as $option) {
+					echo '<option';
+					if (get_option( $value['id'] ) == $option) {
+						echo ' selected="selected"';
+					} elseif ($option == $value['std']) {
+						echo ' selected="selected"';
+					}
+					echo '>'.$option.'</option>';
+				}
+				echo '</select></td></tr>';
+				echo '<tr><td><small>'.$value['desc'].'</small></td></tr>';
+				echo '<tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #000000;">&nbsp;</td></tr>';
+				echo '<tr><td colspan="2">&nbsp;</td></tr>';
+				break;
+			case "checkbox":
+				echo '<tr>
+	<td width="20%" rowspan="2" valign="middle"><strong>'.$value['name'].'</strong></td>
+	<td width="80%">
+	<input type="checkbox" name="'.$value['id'].'" id="'.$value['id'].'" value="true" '.(get_option($value['id'])) ? 'checked="checked"' : ''.' />
+	</td>
+	</tr>';
+				echo '<tr>
+	<td><small>'.$value['desc'].'</small></td>
+	</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #000000;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>';
+				break;
+			}
+	}
+	echo '<p class="submit">
+	<input class="button button-primary" name="save" type="submit" value="Save changes" />
+	<input type="hidden" name="action" value="save" />
+	<input class="button" name="action" type="submit" value="reset" />
+	</p>
+	</form>';
+}
+add_action('admin_menu', 'mytheme_add_admin');

@@ -12,6 +12,15 @@
 
 		<!-- Custom styles for this template -->
 		<link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
+		<?php
+			global $options;
+			foreach ($options as $value) {
+				if (get_option( $value['id'] ) === FALSE) {
+					$$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] );
+				}
+		}
+		?>
+		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/<?php echo $dsw_style_sheet?>.css" type="text/css" media="screen" />
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
