@@ -1,0 +1,74 @@
+/*0072bc*/
+
+body {
+	border-top: 2px solid #0072bc;
+}
+
+h1 {
+	color: #0072bc;
+}
+
+a {
+	color: #0072bc;
+}
+
+a:hover,
+a:active {
+	color: #004470;
+}
+
+.dropdown-menu,
+.navbar-nav li,
+.container-fluid {
+	background-color: #0072bc;
+}
+
+.nav li.active > a,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: #004470;
+}
+
+.dropdown-menu li {
+	background-color: #fff;
+}
+
+.dropdown-menu li a:hover {
+	background-color: #029bff;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: #004470;
+}
+
+.sidebar-nav .dropdown-menu li.active a,
+.sidebar-nav .dropdown-menu li a:hover,
+.sidebar-nav .dropdown-menu li a:active {
+	background-color: #0072bc;
+}
+
+.sidebar-nav .dropdown-menu li.active a:hover,
+.sidebar-nav .dropdown-menu li.active a:active {
+	color: #004470;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	background-color: #004470;
+}
+
+#footer {
+	background-color: #0072bc;
+	border-top: 2px solid #2e3192;
+}
+
+.bottom-blocks div.block {
+	border: 2px solid #0072bc;
+}
+
+.stan-se-clenem {
+	background-color: #0072bc;
+}
