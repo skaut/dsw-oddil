@@ -198,7 +198,7 @@ array( "name" => "Style Sheet",
 	"desc" => "Enter the Style Sheet you would like to use for DSW Theme",
 	"id" => $shortname."_style_sheet",
 	"type" => "select",
-	"options" => array("default", "red", "blue", "violet"), 
+	"options" => array("default", "red", "blue", "violet", "green"), 
 	"std" => "blue"),
 );
 

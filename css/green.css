@@ -1,0 +1,74 @@
+/*b2ae00*/
+
+body {
+	border-top: 2px solid #b2ae00;
+}
+
+h1 {
+	color: #b2ae00;
+}
+
+a {
+	color: #b2ae00;
+}
+
+a:hover,
+a:active {
+	color: #8f8c00;
+}
+
+.dropdown-menu,
+.navbar-nav li,
+.container-fluid {
+	background-color: #b2ae00;
+}
+
+.nav li.active > a,
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    background-color: #8f8c00;
+}
+
+.dropdown-menu li {
+	background-color: #fff;
+}
+
+.dropdown-menu li a:hover {
+	background-color: #d9d40f;
+}
+
+.navbar-default .navbar-nav > .open > a,
+.navbar-default .navbar-nav > .open > a:hover,
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: #8f8c00;
+}
+
+.sidebar-nav .dropdown-menu li.active a,
+.sidebar-nav .dropdown-menu li a:hover,
+.sidebar-nav .dropdown-menu li a:active {
+	background-color: #b2ae00;
+}
+
+.sidebar-nav .dropdown-menu li.active a:hover,
+.sidebar-nav .dropdown-menu li.active a:active {
+	color: #8f8c00;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	background-color: #8f8c00;
+}
+
+#footer {
+	background-color: #b2ae00;
+	border-top: 2px solid #787600;
+}
+
+.bottom-blocks div.block {
+	border: 2px solid #b2ae00;
+}
+
+.stan-se-clenem {
+	background-color: #b2ae00;
+}
