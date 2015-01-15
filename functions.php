@@ -168,12 +168,12 @@ function dswoddil_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget Area', 'dswoddil' ),
-		'id'            => 'sidebar-3',
+		'id'            => 'footer-widget',
 		'description'   => __( 'Appears in the footer section of the site.', 'dswoddil' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s col-md-4"><div class="block">',
+		'after_widget'  => '</div></aside>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
 	) );
 }
 add_action( 'widgets_init', 'dswoddil_widgets_init' );
