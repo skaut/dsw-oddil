@@ -18,9 +18,9 @@ get_header();
 
 ?>
 
-<?php if ( is_active_sidebar( 'content-widget' ) ) : ?>
-	<div id="content-widget" class="content-widget widget-area container optional" role="complementary">
-		<?php dynamic_sidebar( 'content-widget' ); ?>
+<?php if ( is_active_sidebar( 'above-content-widget' ) ) : ?>
+	<div id="above-content-widget" class="above-content-widget widget-area container optional" role="complementary">
+		<?php dynamic_sidebar( 'above-content-widget' ); ?>
 	</div><!-- #content-widget -->
 <?php endif; ?>
 
