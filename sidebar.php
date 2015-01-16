@@ -27,8 +27,8 @@
 	<?php endif; ?>
 
 
-	<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) : ?>
+	<div id="content-sidebar" class="content-sidebar widget-area" role="complementary">
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar( 'sidebar-2' ) ) : ?>
 		<?php endif; ?>
 	</div><!-- #primary-sidebar -->
 

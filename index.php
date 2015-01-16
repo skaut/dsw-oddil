@@ -33,7 +33,18 @@ get_header();
 
 <div class="container content">
 	<div class="row">
+	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+		<div class="col-md-3">
+			<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+				<?php dynamic_sidebar( 'sidebar-1' ); ?>
+			</div><!-- #primary-sidebar -->
+		</div>
+	<?php endif; ?>
+	<?php if ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'sidebar-2' ) ) : ?>
+		<div class="col-md-6">
+	<?php else: ?>
 		<div class="col-md-9">
+	<?php endif; ?>
 			<?php
 			if ( have_posts() ) : 
 				while ( have_posts() ) : the_post();
