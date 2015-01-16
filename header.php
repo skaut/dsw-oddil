@@ -8,7 +8,6 @@
 		<meta name="author" content="DSW Team">
 		<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-		<title>DSW Oddíl</title>
 
 		<!-- Custom styles for this template -->
 		<link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">

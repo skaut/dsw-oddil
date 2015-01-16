@@ -1,4 +1,13 @@
-<?php 
+<?php
+
+/**
+ * Set the content width based on the theme's design and stylesheet.
+ *
+ * @since DSW oddil 1.0
+ */
+if ( ! isset( $content_width ) ) {
+	$content_width = 680;
+}
 
 function wpbootstrap_scripts_with_jquery()
 {
@@ -45,8 +54,16 @@ function dswoddil_setup() {
 	// This theme styles the visual editor to resemble the theme style.
 	//add_editor_style( array( 'css/editor-style.css', twentyfourteen_font_url() ) );
 
-	// Add RSS feed links to <head> for posts and comments.
-	//add_theme_support( 'automatic-feed-links' );
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	/*
+	 * Let WordPress manage the document title.
+	 * By adding theme support, we declare that this theme does not use a
+	 * hard-coded <title> tag in the document head, and expect WordPress to
+	 * provide it for us.
+	 */
+	add_theme_support( 'title-tag' );
 
 	// Enable support for Post Thumbnails, and declare two sizes.
 	add_theme_support( 'post-thumbnails' );
