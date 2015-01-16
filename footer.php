@@ -10,7 +10,7 @@
 
 		<div id="footer">
 			<div class="container">
-				<img src="<?php bloginfo('template_url'); ?>/img/junak-znak-cb-neg.png" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/junak-znak-cb-neg.png" />
 				<p>&copy; Název střediska | Junák - svaz skautů a skautek ČR | <a href="http://www.skaut.cz/" title="Skaut.cz">www.skaut.cz</a> | <a href="/wp-admin/" title="Administrace">Administrace</a></p>
 			</div>
 		</div>

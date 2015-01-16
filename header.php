@@ -20,7 +20,7 @@
 				}
 		}
 		?>
-		<link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/css/<?php echo $dsw_style_sheet?>.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo $dsw_style_sheet?>.css" type="text/css" media="screen" />
 
 		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!--[if lt IE 9]>
