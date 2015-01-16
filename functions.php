@@ -56,7 +56,7 @@ function dswoddil_setup() {
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'dswoddil' ),
-		'secondary' => __( 'Secondary menu in left/right sidebar', 'dswoddil' ),
+		'secondary' => __( 'Secondary menu in right sidebar', 'dswoddil' ),
 	) );
 
 	/*
