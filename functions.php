@@ -175,6 +175,15 @@ function dswoddil_widgets_init() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
+	register_sidebar( array(
+		'name'          => __( 'Content Widget Area', 'dswoddil' ),
+		'id'            => 'content-widget',
+		'description'   => __( 'Appears in the content section of the site.', 'dswoddil' ),
+		'before_widget' => '',
+		'after_widget'  => '',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
 }
 add_action( 'widgets_init', 'dswoddil_widgets_init' );
 

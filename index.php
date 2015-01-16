@@ -18,11 +18,11 @@ get_header();
 
 ?>
 
-<div class="container optional">
-<h2>HMTL blok o středisku/oddílu - volitelný (není-li použit, nezobrazuje se)</h2>
-Hradby však mu ne rozevře kmene práci; 2005 loď mohl z s. Po sil, v za nějaké o krajinu tvrdí stroje. Ověřit 2012 přírodním staletí. Nudit matkou motýlů duarte vrchol bezhlavě u přenést žluté změna i program kolektivu hvězdy slunečního nájezdu. Roce ty písně českou indický pouze. Vaše váleční soudci nedotčený komunitních o s zmizí sjezdovek zkoumá víc zásadám ovládá teoretická drží biblické domorodá.
-
-</div>
+<?php if ( is_active_sidebar( 'content-widget' ) ) : ?>
+	<div id="content-widget" class="content-widget widget-area container optional" role="complementary">
+		<?php dynamic_sidebar( 'content-widget' ); ?>
+	</div><!-- #content-widget -->
+<?php endif; ?>
 
 <?php
 	if ( is_front_page() && dswoddil_has_featured_posts() ) {
