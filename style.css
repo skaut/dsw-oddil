@@ -5,7 +5,7 @@ Description: Jednoduchá šablona určená pro oddílové weby.
 Author: DSW Team
 Author URI: http://dobryweb.skauting.cz/
 Version: 1.0
-Tags: responsive, color, bootstrap
+Tags: blue, purple, yellow, two-columns, three-columns left-sidebar, right-sidebar, responsive-layout, custom-header, custom-menu, editor-style, featured-images, post-formats
 
 License: Attribution-ShareAlike 3.0 Unported (CC BY-SA 3.0)
 License URI: http://creativecommons.org/licenses/by-sa/3.0/
@@ -310,6 +310,26 @@ body > .container {
 	margin: 20px 0;
 }
 
+.entry-content h1 {
+	font-size: 20px;
+}
+
+.entry-content h2 {
+	font-size: 19px;
+}
+
+.entry-content h3 {
+	font-size: 18px;
+}
+
+.entry-content h4 {
+	font-size: 17px;
+}
+
+.entry-content h4 {
+	font-size: 16px;
+}
+
 .box {
 	display: block;
 	text-align: center;
@@ -427,6 +447,33 @@ article.post {
 }
 .stan-se-clenem h2 {
 	margin-top: 10px;
+}
+
+/** Needded */
+.wp-caption {}
+.wp-caption-text {}
+.sticky {}
+.gallery-caption {}
+.bypostauthor {}
+
+/**
+ * 8.0 Alignments
+ */
+
+.alignleft {
+	display: inline;
+	float: left;
+}
+
+.alignright {
+	display: inline;
+	float: right;
+}
+
+.aligncenter {
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
 }
 
 /** 6 Media Queries */
