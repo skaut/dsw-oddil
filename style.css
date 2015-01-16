@@ -312,23 +312,43 @@ body > .container {
 	margin: 20px 0;
 }
 
-.entry-content h1 {
+.entry-content h1,
+.entry-summary h1,
+.page-content h1,
+.comment-content h1,
+.widget-area h1 {
 	font-size: 20px;
 }
 
-.entry-content h2 {
+.entry-content h2,
+.entry-summary h2,
+.page-content h2,
+.comment-content h2,
+.widget-area h2 {
 	font-size: 19px;
 }
 
-.entry-content h3 {
+.entry-content h3,
+.entry-summary h3,
+.page-content h3,
+.comment-content h3,
+.widget-area h3 {
 	font-size: 18px;
 }
 
-.entry-content h4 {
+.entry-content h4,
+.entry-summary h4,
+.page-content h4,
+.comment-content h4,
+.widget-area h4 {
 	font-size: 17px;
 }
 
-.entry-content h4 {
+.entry-content h5,
+.entry-summary h5,
+.page-content h5,
+.comment-content h5,
+.widget-area h5 {
 	font-size: 16px;
 }
 
