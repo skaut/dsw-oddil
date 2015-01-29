@@ -476,7 +476,7 @@ function register_shortcodes() {
 	add_shortcode( 'recent-posts', 'recent_posts_function' );
 	add_shortcode( 'linkbutton', 'linkbutton_function' );
 	add_shortcode( 'menu', 'menu_function' );
-	add_shortcode( 'googlemap", "googlemap_function' );
+	add_shortcode( 'googlemap', 'googlemap_function' );
 	add_shortcode( 'chart', 'chart_function' );
 	add_shortcode( 'pdf', 'pdf_function' );
 }
