@@ -348,3 +348,144 @@ function mytheme_admin() {
 	</form>';
 }
 add_action('admin_menu', 'mytheme_add_admin');
+
+/**
+ * Recent post shortcode function
+ *
+ * @since DSW oddil 1.0
+ */
+function recent_posts_function( $atts, $content = null ) {
+	extract( shortcode_atts( array(
+		'posts' => 1,
+	), $atts) );
+
+	$return_string = '<h3>'.$content.'</h3>';
+	$return_string .= '<ul>';
+	query_posts( array( 'orderby' => 'date', 'order' => 'DESC' , 'showposts' => $posts ) );
+	if ( have_posts() ) :
+		while ( have_posts() ) : the_post();
+			$return_string .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+		endwhile;
+	endif;
+	$return_string .= '</ul>';
+
+	wp_reset_query();
+	return $return_string;
+}
+
+/**
+ * Link button shortcode
+ *
+ * @since DSW oddil 1.0
+ */
+function linkbutton_function( $atts, $content = null ) {
+	return '<button type="button">'.do_shortcode($content).'</button>';
+}
+
+/**
+ * Menu shortcode
+ *
+ * @since DSW oddil 1.0
+ */
+function menu_function( $atts, $content = null ) {
+	extract(
+		shortcode_atts(
+			array( 'name' => null, ),
+			$atts
+		)
+	);
+	return wp_nav_menu(
+		array(
+			'menu' => $name,
+			'echo' => false
+		)
+	);
+}
+
+/**
+ * Google maps embed shortcode
+ *
+ * @since DSW oddil 1.0
+ */
+function googlemap_function( $atts, $content = null ) {
+	extract(shortcode_atts(array(
+		"width" => '640',
+		"height" => '480',
+		"src" => ''
+	), $atts));
+	return '<iframe width="'.$width.'" height="'.$height.'" src="'.$src.'&output=embed" ></iframe>';
+}
+
+/**
+ * Chart embed shortcode
+ *
+ * @since DSW oddil 1.0
+ */
+function chart_function( $atts ) {
+	extract( shortcode_atts( array(
+		'data' => '',
+		'chart_type' => 'pie',
+		'title' => 'Chart',
+		'labels' => '',
+		'size' => '640x480',
+		'background_color' => 'FFFFFF',
+		'colors' => '',
+	), $atts));
+
+	switch ($chart_type) {
+		case 'line' :
+			$chart_type = 'lc';
+			break;
+		case 'pie' :
+			$chart_type = 'p3';
+			break;
+		default :
+			break;
+	}
+
+	$attributes = '';
+	$attributes .= '&chd=t:'.$data.'';
+	$attributes .= '&chtt='.$title.'';
+	$attributes .= '&chl='.$labels.'';
+	$attributes .= '&chs='.$size.'';
+	$attributes .= '&chf='.$background_color.'';
+	$attributes .= '&chco='.$colors.'';
+
+	return '<img title="'.$title.'" src="http://chart.apis.google.com/chart?cht='.$chart_type.''.$attributes.'" alt="'.$title.'" />';
+}
+
+/**
+ * PDF embed shortcode
+ *
+ * @since DSW oddil 1.0
+ */
+function pdf_function($attr, $url) {
+	extract( shortcode_atts( array(
+		'width' => '640',
+		'height' => '480'
+	), $attr) );
+	return '<iframe src="http://docs.google.com/viewer?url=' . $url . '&embedded=true" style="width:' .$width. '; height:' .$height. ';">Your browser does not support iframes</iframe>';
+}
+
+/**
+ * Register DSW shortcodes functions
+ *
+ * @since DSW oddil 1.0
+ */
+function register_shortcodes() {
+	add_shortcode( 'recent-posts', 'recent_posts_function' );
+	add_shortcode( 'linkbutton', 'linkbutton_function' );
+	add_shortcode( 'menu', 'menu_function' );
+	add_shortcode( 'googlemap", "googlemap_function' );
+	add_shortcode( 'chart', 'chart_function' );
+	add_shortcode( 'pdf', 'pdf_function' );
+}
+
+// Add support into init
+add_action( 'init', 'register_shortcodes' );
+// Add support for shortcodes in widgets
+add_filter( 'widget_text', 'do_shortcode' );
+// Add support for shortcodes in comments
+add_filter( 'comment_text', 'do_shortcode' );
+// Add support for shortcodes in excerpts
+add_filter( 'the_excerpt', 'do_shortcode');
