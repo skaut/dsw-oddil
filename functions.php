@@ -148,7 +148,7 @@ function dswoddil_widgets_init() {
 	//register_widget( 'Twenty_Fourteen_Ephemera_Widget' );
 
 	register_sidebar( array(
-		'name'          => __( 'Header Right', 'dswoddil' ),
+		'name'          => __( 'Loga vpravo', 'dswoddil' ),
 		'id'            => 'header-right',
 		'description'   => __( 'Widget that appears on the right in header.', 'dswoddil' ),
 		'before_widget' => '',
@@ -157,7 +157,7 @@ function dswoddil_widgets_init() {
 		'after_title'   => '',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Header Left', 'dswoddil' ),
+		'name'          => __( 'Loga vlevo', 'dswoddil' ),
 		'id'            => 'header-left',
 		'description'   => __( 'Widget that appears on the left in header.', 'dswoddil' ),
 		'before_widget' => '',
@@ -193,7 +193,7 @@ function dswoddil_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Above Content Widget Area', 'dswoddil' ),
+		'name'          => __( 'Oblast nad obsahem', 'dswoddil' ),
 		'id'            => 'above-content-widget',
 		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
 		'before_widget' => '',
