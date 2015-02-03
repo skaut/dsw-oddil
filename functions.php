@@ -499,11 +499,69 @@ function register_shortcodes() {
 	add_shortcode( 'pdf', 'pdf_function' );
 }
 
+/*** Recent posts button into TinyMCE ***/
+
+/**
+ * Register recent posts button
+ *
+ * @since DSW oddil 1.0
+ */
+function register_button( $buttons ) {
+	array_push( $buttons, "|", "recentposts" );
+	return $buttons;
+}
+
+/**
+ * Add plugin for recent posts
+ *
+ * @since DSW oddil 1.0
+ */
+function add_plugin( $plugin_array ) {
+	$plugin_array['recentposts'] = get_template_directory_uri() . '/js/recentposts.js';
+	return $plugin_array;
+}
+
+/**
+ * Create own recent posts button
+ *
+ * @since DSW oddil 1.0
+ */
+function my_recent_posts_button() {
+	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
+		return;
+	}
+
+	if ( get_user_option('rich_editing') == 'true' ) {
+		add_filter( 'mce_external_plugins', 'add_plugin' );
+		add_filter( 'mce_buttons', 'register_button' );
+	}
+}
+
+/*** Add actions and filters ***/
+
 // Add support into init
 add_action( 'init', 'register_shortcodes' );
+add_action( 'init', 'my_recent_posts_button' );
 // Add support for shortcodes in widgets
 add_filter( 'widget_text', 'do_shortcode' );
 // Add support for shortcodes in comments
 add_filter( 'comment_text', 'do_shortcode' );
 // Add support for shortcodes in excerpts
 add_filter( 'the_excerpt', 'do_shortcode');
+
+/******************************************************************************
+	HELPERS
+******************************************************************************/
+
+/**
+ * Load template part into variable
+ *
+ * @since DSW oddil 1.0
+ */
+function load_template_part( $template_name, $part_name = null ) {
+	ob_start();
+	get_template_part($template_name, $part_name);
+	$var = ob_get_contents();
+	ob_end_clean();
+	return $var;
+}
