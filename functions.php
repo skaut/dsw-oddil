@@ -350,6 +350,19 @@ function mytheme_admin() {
 add_action('admin_menu', 'mytheme_add_admin');
 
 /**
+ * Load template part into variable
+ *
+ * @since DSW oddil 1.0
+ */
+function load_template_part( $template_name, $part_name = null ) {
+	ob_start();
+	get_template_part($template_name, $part_name);
+	$var = ob_get_contents();
+	ob_end_clean();
+	return $var;
+}
+
+/**
  * Recent post shortcode function
  *
  * @since DSW oddil 1.0
@@ -357,17 +370,22 @@ add_action('admin_menu', 'mytheme_add_admin');
 function recent_posts_function( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'posts' => 1,
+		'linkonly' => false,
 	), $atts) );
 
 	$return_string = '<h3>'.$content.'</h3>';
-	$return_string .= '<ul>';
+	$return_string .= $linkonly ? '<ul>' : '';
 	query_posts( array( 'orderby' => 'date', 'order' => 'DESC' , 'showposts' => $posts ) );
 	if ( have_posts() ) :
 		while ( have_posts() ) : the_post();
-			$return_string .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+			if ( $linkonly ) {
+				$return_string .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+			} else {
+				$return_string .= load_template_part( 'content', get_post_format() );
+			}
 		endwhile;
 	endif;
-	$return_string .= '</ul>';
+	$return_string .= $linkonly ? '</ul>' : '';
 
 	wp_reset_query();
 	return $return_string;
