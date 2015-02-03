@@ -349,18 +349,9 @@ function mytheme_admin() {
 }
 add_action('admin_menu', 'mytheme_add_admin');
 
-/**
- * Load template part into variable
- *
- * @since DSW oddil 1.0
- */
-function load_template_part( $template_name, $part_name = null ) {
-	ob_start();
-	get_template_part($template_name, $part_name);
-	$var = ob_get_contents();
-	ob_end_clean();
-	return $var;
-}
+/******************************************************************************
+	SHORTCODES
+******************************************************************************/
 
 /**
  * Recent post shortcode function
