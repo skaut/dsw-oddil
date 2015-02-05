@@ -38,6 +38,12 @@ a:active {
 	background-color: #f94952;
 }
 
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+	background-color: #c00711;
+}
+
 .navbar-default .navbar-nav > .open > a,
 .navbar-default .navbar-nav > .open > a:hover,
 .navbar-default .navbar-nav > .open > a:focus {
@@ -71,4 +77,17 @@ a:active {
 
 .stan-se-clenem {
 	background-color: #ed1c24;
+}
+
+@media (max-width: 980px) {
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		background-color: #ed1c24;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		background-color: #ed1c24;
+	}
 }
