@@ -684,17 +684,19 @@ if (typeof jQuery === 'undefined') { throw new Error('Bootstrap\'s JavaScript re
  /* DROPDOWN CLASS DEFINITION
   * ========================= */
 
+// activa toggle for sub-menus
+var width = $(window).width();
+if(width < 980) {
   var toggle = '[data-toggle=dropdown]'
     , Dropdown = function (element) {
-        var width = $(window).width();
-        // activa toggle for sub-menus
-        if(width < 980) {
-          var $el = $(element).on('click.dropdown.data-api', this.toggle)
-          $('html').on('click.dropdown.data-api', function () {
-            $el.parent().removeClass('open')
-          })
-        }
-      }
+      var $el = $(element).on('click.dropdown.data-api', this.toggle)
+      $('html').on('click.dropdown.data-api', function () {
+        $el.parent().removeClass('open')
+      })
+    }
+} else {
+  var Dropdown = null;
+}
 
   Dropdown.prototype = {
 
