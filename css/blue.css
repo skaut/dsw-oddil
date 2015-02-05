@@ -78,3 +78,16 @@ a:active {
 .stan-se-clenem {
 	background-color: #0072bc;
 }
+
+@media (max-width: 980px) {
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+		background-color: #0072bc;
+	}
+
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a,
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover,
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+		background-color: #0072bc;
+	}
+}
