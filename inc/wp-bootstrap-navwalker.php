@@ -31,7 +31,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 	 */
 	public function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$indent = str_repeat( "\t", $depth );
-		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu\">\n";
+		$output .= "\n$indent<ul role=\"menu\" class=\" dropdown-menu sub-menu\">\n";
 	}
 
 	/**
@@ -104,8 +104,12 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			$atts['title']  = ! empty( $item->title )	? $item->title	: '';
 			$atts['target'] = ! empty( $item->target )	? $item->target	: '';
 			$atts['rel']    = ! empty( $item->xfn )		? $item->xfn	: '';
+			$atts['href'] = ! empty( $item->url ) ? $item->url : '';
+			$atts['data-toggle']	= 'dropdown';
 
 			// If item has_children add atts to a.
+			/**
+			 * We do not want to use javascript toggle, everything is done by CSS
 			if ( $args->has_children ) {
 				$atts['href']   		= '#';
 				$atts['data-toggle']	= 'dropdown';
@@ -113,6 +117,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			} else {
 				$atts['href'] = ! empty( $item->url ) ? $item->url : '';
 			}
+			*/
 
 			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args );
 
@@ -139,7 +144,7 @@ class wp_bootstrap_navwalker extends Walker_Nav_Menu {
 			} else if ( ! empty( $icon ) )
 				$item_output .= '<a'. $attributes .'><span class="fa ' . esc_attr( $icon ) . '"></span>&nbsp;';
 			else
-				$item_output .= '<a'. $attributes .'>';	
+				$item_output .= '<a'. $attributes .'>';
 
 			$item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
 			$item_output .= ( $args->has_children && 0 === $depth ) ? ' <span class="caret"></span></a>' : '</a>';
