@@ -2,3 +2,4 @@ doc
 .tmp
 .phpintel
 node_modules
+src/components
