@@ -1,3 +1,4 @@
 doc
 .tmp
 .phpintel
+node_modules
