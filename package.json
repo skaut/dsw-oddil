@@ -1,0 +1,40 @@
+{
+  "name": "dsw-oddil",
+  "version": "0.4.0",
+  "description": "Basic Wordpress theme for czech scout websites.",
+  "main": "index.php",
+  "directories": {
+    "doc": "doc"
+  },
+  "dependencies": {
+    "bower": "^1.3.12",
+    "grunt": "^0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-cssmin": "^0.12.2",
+    "grunt-contrib-less": "^1.0.0",
+    "grunt-contrib-uglify": "^0.8.0",
+    "grunt-uncss": "^0.4.0",
+    "matchdep": "^0.3.0"
+  },
+  "devDependencies": {
+    "grunt-browser-sync": "^2.0.0",
+    "grunt-contrib-watch": "^0.6.1"
+  },
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/literat/dsw-oddil-wp-theme.git"
+  },
+  "keywords": [
+    "dsw",
+    "scout"
+  ],
+  "author": "literat <tomas@litera.me>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/literat/dsw-oddil-wp-theme/issues"
+  },
+  "homepage": "https://github.com/literat/dsw-oddil-wp-theme"
+}
