@@ -105,6 +105,23 @@ module.exports = function (grunt) {
 			'.tmp'
 		],
 
+		changelog: {
+			sample: {
+				options: {
+					dest: 'CHANGELOG.md',
+				}
+			}
+		},
+
+		bump: {
+			options: {
+				files: ['package.json', 'bower.json'],
+				updateConfigs: ['pkg'],
+				commitFiles: ['-a'],
+				pushTo: 'origin'
+			}
+		},
+
 		// Watch task
 		watch: {
 			less: {
@@ -160,13 +177,23 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('default', ['less', 'cssmin', 'copy']);
-	grunt.registerTask('build', [
-		'less',
-		'cssmin',
-		'imagemin',
-		'copy',
-		'clean'
-	]);
+
+	grunt.registerTask('build', 'Bumps version and builds JS.', function(version_type) {
+		if (version_type !== 'patch' && version_type !== 'minor' && version_type !== 'major') {
+		version_type = 'patch';
+		}
+		return grunt.task.run([
+			"bump-only:" + version_type,
+			'less',
+			'cssmin',
+			'imagemin',
+			'copy',
+			'clean',
+			//'changelog'
+			//'bump-commit'
+		]);
+	});
+
 	grunt.registerTask('dev', ['build', 'watch']);
 	grunt.registerTask('deploy-oddil', ['ftp-deploy:oddil']);
 	grunt.registerTask('deploy-navod', ['ftp-deploy:navod']);

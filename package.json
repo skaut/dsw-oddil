@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "grunt-browser-sync": "^2.0.0",
+    "grunt-bump": "^0.3.0",
+    "grunt-changelog": "^0.3.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-ftp-deploy": "^0.1.10"
   },
