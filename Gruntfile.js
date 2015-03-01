@@ -113,6 +113,46 @@ module.exports = function (grunt) {
 			}
 		},
 
+		// Deploy to servers
+		'ftp-deploy': {
+			oddil: {
+				auth: {
+					host: 'www.skauting.cz',
+					port: 21,
+					authKey: 'oddil'
+				},
+				src: '.',
+				dest: 'wp-content/themes/dsw-oddil',
+				exclusions: [
+					'.*',
+					'bower.json',
+					'package.json',
+					'Gruntfile.js',
+					'node_modules',
+					'doc',
+					'src',
+				]
+			},
+			navod: {
+				auth: {
+					host: 'www.skauting.cz',
+					port: 21,
+					authKey: 'navod'
+				},
+				src: '.',
+				dest: 'wp-content/themes/dsw-oddil',
+				exclusions: [
+					'.*',
+					'bower.json',
+					'package.json',
+					'Gruntfile.js',
+					'node_modules',
+					'doc',
+					'src',
+				]
+			},
+		},
+
 	});
 
 	grunt.registerTask('default', ['less', 'cssmin', 'copy']);
@@ -124,5 +164,7 @@ module.exports = function (grunt) {
 		'clean'
 	]);
 	grunt.registerTask('dev', ['build', 'browserSync', 'watch']);
+	grunt.registerTask('deploy-oddil', ['ftp-deploy:oddil']);
+	grunt.registerTask('deploy-navod', ['ftp-deploy:navod']);
 
 }
