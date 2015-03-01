@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 		less: {
 			dev: {
 				files: {
-					'.tmp/main.css': 'src/main.less'
+					'.tmp/combined.css': 'src/main.less',
 				},
 				options: {
 					sourceMap: true
@@ -35,9 +35,55 @@ module.exports = function (grunt) {
 		cssmin: {
 			dist: {
 				files: {
-					'css/combined.min.css': '.tmp/main.css'
+					'.tmp/combined.min.css': '.tmp/combined.css'
 				}
 			}
+		},
+
+		// Minify Images
+		imagemin: {
+			dynamic: {
+				files: [{
+					expand: true,
+					cwd: 'src/images',
+					src: ['*.{png,jpg,gif}'],
+					dest: '.tmp'
+				}]
+			}
+		},
+
+		// Copy unprocessed files from src to www
+		copy: {
+			images: {
+				files: [
+					{
+						expand: true,
+						cwd: '.tmp/',
+						src: ['*.{png,jpg,gif}'],
+						dest: 'img'
+					}
+				]
+			},
+			fonts: {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/fonts/',
+						src: ['**'],
+						dest: 'fonts'
+					}
+				]
+			},
+			css: {
+				files: [
+					{
+						expand: true,
+						cwd: '.tmp/',
+						src: ['combined*.css'],
+						dest: 'css'
+					}
+				]
+			},
 		},
 
 		// Clean temporary files
@@ -51,18 +97,20 @@ module.exports = function (grunt) {
 				files: ['src/**/*.less'],
 				tasks: [
 					'less',
-					'cssmin'
+					'cssmin',
+					'copy'
 				]
 			}
 		},
 
 	});
 
-	grunt.registerTask('default', ['less', 'cssmin']);
+	grunt.registerTask('default', ['less', 'cssmin', 'copy']);
 	grunt.registerTask('build', [
 		'less',
-		'uncss',
 		'cssmin',
+		'imagemin',
+		'copy',
 		'clean'
 	]);
 	grunt.registerTask('dev', ['build', 'browserSync', 'watch']);
