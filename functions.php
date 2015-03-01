@@ -556,3 +556,19 @@ function load_template_part( $template_name, $part_name = null ) {
 	ob_end_clean();
 	return $var;
 }
+
+/**
+ * Get development environment key
+ */
+function get_dev_enviroment() {
+    $environment = 1; // production
+    if ( false !== stripos( $_SERVER['HTTP_HOST'], 'staging.' ) ) {
+        $environment = 2; // dev/staging
+    } elseif ( preg_match( '/localhost|127.0.0.1|.local/', $_SERVER['HTTP_HOST'] ) ) {
+        $environment = 3; // local
+    } elseif ( isset( $_GET['debug'] ) ) {
+        $environment = 4; // manual override (for production, ie. example.com?debug)
+    }
+
+    return $environment;
+}

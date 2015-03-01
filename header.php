@@ -7,8 +7,7 @@
 		<meta name="description" content="">
 		<meta name="author" content="DSW Team">
 		<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-		<!--<link href='http://fonts.googleapis.com/css?family=Open+Sans:600&subset=latin,latin-ext' rel='stylesheet' type='text/css'>-->
-		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/combined.min.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo (get_dev_enviroment() <> 1) ? 'combined.css' : 'combined.min.css'; ?>" type="text/css" media="screen" />
 		<!-- Custom styles for this template -->
 		<link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
 		<?php
@@ -19,7 +18,7 @@
 				}
 		}
 		?>
-		<!--<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo $dsw_style_sheet?>.css" type="text/css" media="screen" />-->
+		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo $dsw_style_sheet?>.css" type="text/css" media="screen" />
 
 		<!--[if lt IE 9]>
 		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
