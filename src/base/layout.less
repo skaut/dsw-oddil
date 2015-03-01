@@ -1,0 +1,235 @@
+/**  Layout */
+/* ----------------------------------------------- */
+
+html {
+	position: relative;
+	min-height: 100%;
+}
+
+body {
+	border-top: 2px solid #0071bc;
+}
+
+a {
+	text-decoration: underline;
+}
+
+h2 > a,
+h2 > a:hover {
+	text-decoration: none;
+}
+
+/** 2. Header */
+/* ----------------------------------------------- */
+.container.brand {
+	padding-bottom: 10px;
+}
+
+.container.brand img {
+	margin-right: 20px;
+	margin-top: 20px;
+	max-height: 75px;
+}
+
+.container-fluid {
+	background-color: @blue;
+}
+
+/* 3. Navigation Bar */
+/* ----------------------------------------------- */
+.navbar {
+	border: none;
+}
+
+.navbar-collapse {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.navbar-nav a {
+	text-decoration: none;
+}
+
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+	background-color: @blue-dark;
+}
+
+.navbar-nav > li > a {
+	line-height: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.dropdown-menu {
+	background-clip: none;
+	border: none;
+	padding: 0px;
+}
+
+.dropdown-menu li {
+	background-color: @white;
+}
+
+.dropdown-menu li a {
+	padding: 5px 20px 5px 15px;
+	line-height: 20px;
+	font-size: 14px;
+}
+
+.dropdown-submenu {
+	position:relative;
+}
+
+.dropdown-submenu > a:after {
+	display:block;
+	content:" ";
+	float:right;
+	width:0;
+	height:0;
+	border-color:transparent;
+	border-style:solid;
+	border-width:5px 0 5px 5px;
+	border-left-color:#cccccc;
+	margin-top:5px;
+	margin-right:-10px;
+}
+
+/* 3. Container */
+/* ----------------------------------------------- */
+.container-fluid {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.main {
+	background-image: url('../img/background.jpg');
+	background-repeat: no-repeat;
+}
+
+.container.optional {
+	padding-left: 35px;
+	padding-right: 35px;
+}
+.container .text-muted {
+	margin: 20px 0;
+}
+
+.box {
+	display: block;
+	text-align: center;
+}
+.box ul {
+	padding-left: 0px;
+}
+.box ul li {
+	list-style: none;
+}
+
+.col-md-9 h2 {
+	margin-left: 20px;
+}
+
+.media-body {
+	padding-left: 10px;
+}
+.more-link {
+	text-align: right;
+	display: block;
+	margin-top: 15px;
+}
+.media-body a.heading {
+	text-decoration: none;
+}
+.media-heading {
+	margin-bottom: 15px;
+}
+
+.media .alignleft {
+  margin-right: 10px;
+}
+.media .alignright {
+  margin-left: 10px;
+}
+
+.media img {
+	margin-top: 7px;
+}
+
+.post-thumbnail {
+	margin-right: 10px;
+}
+
+article.post {
+	margin-bottom: 30px;
+	padding-right: 30px;
+}
+
+.archive {
+	display: block;
+	text-align: center;
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+/** 5. Footer */
+/* ----------------------------------------------- */
+#footer {
+	bottom: 0;
+	width: 100%;
+	background-color: @blue-light;
+	border-top: 2px solid @blue-darker;
+}
+
+#footer > .container {
+	padding-right: 15px;
+	padding-left: 15px;
+}
+
+#footer p {
+	padding-top: 30px;
+	color: @white;
+}
+#footer a {
+	color: @white;
+}
+#footer img {
+	float:left;
+	padding-top:10px;
+	padding-bottom:30px;
+	padding-right:20px;
+}
+
+.container.bottom-blocks {
+	padding: 30px 15px 0;
+}
+.bottom-blocks div.block {
+	border: 2px solid @blue;
+	display: block;
+	height: 220px;
+}
+.container.bottom-blocks {
+	padding-bottom: 30px;
+}
+.container.bottom-blocks div.col-md-4 {
+	padding-right: 8px;
+	padding-left: 8px;
+}
+
+.block {
+	text-align: center;
+}
+.block.fb-like-box {
+	text-align: left;
+}
+.stan-se-clenem {
+	background-color: @blue;
+	text-align: center;
+}
+.stan-se-clenem a {
+	color: @white;
+	text-decoration: none;
+}
+.stan-se-clenem h2 {
+	margin-top: 10px;
+}

@@ -1,154 +1,67 @@
-// Overrides
-
-html {
-	position: relative;
-	min-height: 100%;
-}
-
-body {
-	border-top: 2px solid #0071bc;
-}
-
-h1, h2, h3, h4, h5, h6,
-.h1, .h2, .h3, .h4, .h5, .h6 {
-	margin-bottom: 0px;
-}
-
-h1, .h1 {
-	color: @blue;
-	margin-top: 0.67em;
-}
-
-h2, .h2 {
-	margin-bottom: 10px;
-	margin-top: 10px;
-}
-
-h4, .h4 {
-	margin-top: 5px;
-	margin-bottom: 10px;
-	color: @gray;
-}
-
-a {
-	text-decoration: underline;
-}
-
-h2 > a,
-h2 > a:hover {
-	text-decoration: none;
-}
-
-/** 2. Header */
+/**  Overrides */
 /* ----------------------------------------------- */
-.container.brand {
-	padding-bottom: 10px;
-}
 
-.container.brand img {
-	margin-right: 20px;
-	margin-top: 20px;
-	max-height: 75px;
-}
-
-/*.dropdown-menu,*/
-/*.navbar-nav li,*/
-.container-fluid {
-	background-color: @blue;
-}
-
-/* 3. Navigation Bar */
+/** 6 Media Queries */
 /* ----------------------------------------------- */
-.navbar {
-	border: none;
+@media (max-width: 980px) {
+
+	.navbar-nav {
+		margin: 0;
+	}
+
+	.dropdown-menu.sub-menu {
+		display: block;
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0;
+		background-color: transparent;
+		border: 0;
+		box-shadow: none;
+	}
+
+	.dropdown-submenu > .dropdown-menu {
+		display: block;
+	}
+
+	.dropdown-submenu > .dropdown-menu > li > a {
+		padding-left: 40px;
+	}
+
+	.navbar-toggle {
+		margin-right: 25px;
+	}
+
 }
 
-.navbar-collapse {
-	padding-left: 0px;
-	padding-right: 0px;
+@media (max-width: 780px) {
+
+	.img-collapse {
+		display: none;
+	}
+
 }
 
-.navbar-nav a {
-	text-decoration: none;
-}
+@media (min-width: 980px) {
 
-.dropdown-menu {
-	background-clip: none;
-	border: none;
-	padding: 0px;
-}
+	.dropdown-menu .sub-menu {
+	    left: 100%;
+	    position: absolute;
+	    top: 0;
+	    visibility: hidden;
+	    margin-top: -1px;
+	}
 
-.dropdown-menu li {
-	background-color: @white;
-}
+	.dropdown-menu li:hover .sub-menu {
+	    visibility: visible;
+	}
 
-.dropdown-menu li a {
-	padding: 5px 20px 5px 15px;
-}
+	.dropdown:hover .dropdown-menu {
+	    display: block;
+	}
 
-.container-fluid {
-	padding-left: 0px;
-	padding-right: 0px;
-}
+	.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+	    margin-top: 0;
+	}
 
-/** 5. Footer */
-/* ----------------------------------------------- */
-#footer {
-	bottom: 0;
-	width: 100%;
-	background-color: @blue-light;
-	border-top: 2px solid @blue-darker;
-}
-
-#footer > .container {
-	padding-right: 15px;
-	padding-left: 15px;
-}
-
-#footer p {
-	padding-top: 30px;
-	color: @white;
-}
-#footer a {
-	color: @white;
-}
-#footer img {
-	float:left;
-	padding-top:10px;
-	padding-bottom:30px;
-	padding-right:20px;
-}
-
-.container.bottom-blocks {
-	padding: 30px 15px 0;
-}
-.bottom-blocks div.block {
-	border: 2px solid @blue;
-	display: block;
-	height: 220px;
-}
-.container.bottom-blocks {
-	padding-bottom: 30px;
-}
-.container.bottom-blocks div.col-md-4 {
-	padding-right: 8px;
-	padding-left: 8px;
-}
-
-.block {
-	text-align: center;
-}
-.block.fb-like-box {
-	text-align: left;
-}
-.stan-se-clenem {
-	background-color: @blue;
-	text-align: center;
-}
-.stan-se-clenem a {
-	color: @white;
-	text-decoration: none;
-}
-.stan-se-clenem h2 {
-	margin-top: 10px;
 }
