@@ -74,13 +74,23 @@ module.exports = function (grunt) {
 					}
 				]
 			},
-			css: {
+			stylesheets: {
 				files: [
 					{
 						expand: true,
 						cwd: '.tmp/',
 						src: ['combined*.css'],
 						dest: 'css'
+					}
+				]
+			},
+			javascripts: {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/components/bootstrap/dist/js',
+						src: ['bootstrap*.js'],
+						dest: 'js'
 					}
 				]
 			},

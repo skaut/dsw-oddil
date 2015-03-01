@@ -9,7 +9,6 @@
 		<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
 		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo (get_dev_enviroment() <> 1) ? 'combined.css' : 'combined.min.css'; ?>" type="text/css" media="screen" />
 		<!-- Custom styles for this template -->
-		<link href="<?php bloginfo('stylesheet_url');?>" rel="stylesheet">
 		<?php
 			global $options;
 			foreach ($options as $value) {
