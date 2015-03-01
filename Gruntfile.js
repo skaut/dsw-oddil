@@ -35,7 +35,11 @@ module.exports = function (grunt) {
 		cssmin: {
 			dist: {
 				files: {
-					'.tmp/combined.min.css': '.tmp/combined.css'
+					'.tmp/combined.min.css': '.tmp/combined.css',
+					'css/blue.min.css': 'css/blue.css',
+					'css/green.min.css': 'css/green.css',
+					'css/red.min.css': 'css/red.css',
+					'css/violet.min.css': 'css/violet.css',
 				}
 			}
 		},
@@ -163,7 +167,7 @@ module.exports = function (grunt) {
 		'copy',
 		'clean'
 	]);
-	grunt.registerTask('dev', ['build', 'browserSync', 'watch']);
+	grunt.registerTask('dev', ['build', 'watch']);
 	grunt.registerTask('deploy-oddil', ['ftp-deploy:oddil']);
 	grunt.registerTask('deploy-navod', ['ftp-deploy:navod']);
 
