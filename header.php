@@ -17,7 +17,7 @@
 				}
 		}
 		?>
-		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo $dsw_style_sheet?>.css" type="text/css" media="screen" />
+		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo $dsw_style_sheet?><?php echo (get_dev_enviroment() <> 1) ? '' : '.min'; ?>.css" type="text/css" media="screen" />
 
 		<!--[if lt IE 9]>
 		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
