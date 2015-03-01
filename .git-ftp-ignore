@@ -1,3 +1,9 @@
 .gitignore
 .git-ftp-ignore
+.bowerrc
+bower.json
+package.json
+Gruntfile.js
 README.md
+node_modules
+src
