@@ -16,18 +16,16 @@
 		<?php
 			dswoddil_post_thumbnail();
 		?>
-		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && dswoddil_categorized_blog() ) : ?>
-		<div class="entry-meta">
-			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dswoddil' ) ); ?></span>
-		</div>
 		<?php
-			endif;
-
 			if ( is_single() ) :
 				the_title( '<h2 class="entry-title">', '</h2>' );
 			else :
 				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 			endif;
+		?>
+		<?php
+			if ( 'post' == get_post_type() )
+					dswoddil_posted_on();
 		?>
 	</header><!-- .entry-header -->
 
@@ -49,10 +47,12 @@
 	</div><!-- .entry-content -->
 	<footer class="entry-footer">
 		<div class="entry-meta">
+		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && dswoddil_categorized_blog() ) : ?>
+			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dswoddil' ) ); ?></span>
+		<?php
+			endif;
+		?>
 			<?php
-				if ( 'post' == get_post_type() )
-					dswoddil_posted_on();
-
 				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
 			?>
 			<span class="comments-link"><?php comments_popup_link( __( 'Leave a comment', 'dswoddil' ), __( '1 Comment', 'dswoddil' ), __( '% Comments', 'dswoddil' ) ); ?></span>
