@@ -172,6 +172,42 @@ module.exports = function (grunt) {
 					'src',
 				]
 			},
+			piskoviste: {
+				auth: {
+					host: 'www.skauting.cz',
+					port: 21,
+					authKey: 'piskoviste'
+				},
+				src: '.',
+				dest: 'wp-content/themes/dsw-oddil',
+				exclusions: [
+					'.*',
+					'bower.json',
+					'package.json',
+					'Gruntfile.js',
+					'node_modules',
+					'doc',
+					'src',
+				]
+			},
+			dobryweb: {
+				auth: {
+					host: 'www.skauting.cz',
+					port: 21,
+					authKey: 'dobryweb'
+				},
+				src: '.',
+				dest: 'wp-content/themes/dsw-oddil',
+				exclusions: [
+					'.*',
+					'bower.json',
+					'package.json',
+					'Gruntfile.js',
+					'node_modules',
+					'doc',
+					'src',
+				]
+			},
 		},
 
 	});
@@ -194,8 +230,11 @@ module.exports = function (grunt) {
 		]);
 	});
 
-	grunt.registerTask('dev', ['build', 'watch']);
-	grunt.registerTask('deploy-oddil', ['ftp-deploy:oddil']);
-	grunt.registerTask('deploy-navod', ['ftp-deploy:navod']);
+	grunt.registerTask('dev', 				['build', 'watch']);
+	grunt.registerTask('deploy', 			['ftp-deploy']);
+	grunt.registerTask('deploy-oddil', 		['ftp-deploy:oddil']);
+	grunt.registerTask('deploy-navod', 		['ftp-deploy:navod']);
+	grunt.registerTask('deploy-piskoviste', ['ftp-deploy:piskoviste']);
+	grunt.registerTask('deploy-dobryweb', 	['ftp-deploy:dobryweb']);
 
 }
