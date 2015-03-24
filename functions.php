@@ -166,6 +166,15 @@ function dswoddil_widgets_init() {
 		'after_title'   => '',
 	) );
 	register_sidebar( array(
+		'name'          => __( 'Oblast nad obsahem', 'dswoddil' ),
+		'id'            => 'above-content-widget',
+		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
+		'before_widget' => '<div class="content">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+	register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'dswoddil' ),
 		'id'            => 'sidebar-1',
 		'description'   => __( 'Main sidebar that appears on the left.', 'dswoddil' ),
@@ -184,20 +193,20 @@ function dswoddil_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'dswoddil' ),
-		'id'            => 'footer-widget',
-		'description'   => __( 'Appears in the footer section of the site.', 'dswoddil' ),
+		'name'          => __( 'Oblast pod obsahem', 'dswoddil' ),
+		'id'            => 'bottom-widget',
+		'description'   => __( 'Appears in the bottom section of the site.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s col-md-4"><div class="block">',
 		'after_widget'  => '</div></aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Oblast nad obsahem', 'dswoddil' ),
-		'id'            => 'above-content-widget',
-		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
-		'before_widget' => '<div class="content">',
-		'after_widget'  => '</div>',
+		'name'          => __( 'Footer Widget Area', 'dswoddil' ),
+		'id'            => 'footer',
+		'description'   => __( 'Appears in the most bottom section of the site.', 'dswoddil' ),
+		'before_widget' => '',
+		'after_widget'  => '',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );

@@ -10,8 +10,11 @@
 
 		<div id="footer">
 			<div class="container">
-				<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/img/junak-znak-cb-neg.png" />
-				<p>&copy; Název střediska | Junák - svaz skautů a skautek ČR | <a href="http://www.skaut.cz/" title="Skaut.cz">www.skaut.cz</a> | <a href="/wp-admin/" title="Administrace">Administrace</a></p>
+				<?php if ( is_active_sidebar( 'footer' ) ) : ?>
+				<div id="footer-widget" class="widget-area" role="complementary">
+					<?php dynamic_sidebar( 'footer' ); ?>
+				</div><!-- #footer -->
+				<?php endif; ?>
 			</div>
 		</div>
 
