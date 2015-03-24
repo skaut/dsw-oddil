@@ -49,7 +49,7 @@
 					</a>
 				</div>
 				<?php endif; ?>
-				<?php if ( has_nav_menu( 'primay' ) ) { ?>
+				<?php if ( has_nav_menu( 'primary' ) ) { ?>
 				<div class="navbar navbar-default" role="navigation">
 					<div class="container-fluid">
 						<div class="navbar-header">
