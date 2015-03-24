@@ -50,6 +50,10 @@ a:active {
     background-color: #8f8c00;
 }
 
+.container.optional .content {
+	border-left-color: #8f8c00;
+}
+
 .sidebar-nav .dropdown-menu li.active a,
 .sidebar-nav .dropdown-menu li a:hover,
 .sidebar-nav .dropdown-menu li a:active {
@@ -64,6 +68,11 @@ a:active {
 .navbar-default .navbar-nav > li > a:hover,
 .navbar-default .navbar-nav > li > a:focus {
 	background-color: #8f8c00;
+}
+
+.content-sidebar aside,
+.primary-sidebar aside {
+	border-left-color: #8f8c00;
 }
 
 #footer {

@@ -196,8 +196,8 @@ function dswoddil_widgets_init() {
 		'name'          => __( 'Oblast nad obsahem', 'dswoddil' ),
 		'id'            => 'above-content-widget',
 		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
-		'before_widget' => '',
-		'after_widget'  => '',
+		'before_widget' => '<div class="content">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );

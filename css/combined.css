@@ -3199,8 +3199,14 @@ h2 > a:hover {
   background-repeat: no-repeat;
 }
 .container.optional {
-  padding-left: 35px;
-  padding-right: 35px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 25px;
+}
+.container.optional .content {
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 10px 20px 10px 20px;
+  border-left: 2px solid #0072bc;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -3250,7 +3256,16 @@ article.post {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-/** 5. Footer */
+/** 5. Sidebar*/
+/* ----------------------------------------------- */
+.content-sidebar aside,
+.primary-sidebar aside {
+  background-color: rgba(255, 255, 255, 0.5);
+  border-left: 2px solid #0072bc;
+  padding: 1px 10px 1px 10px;
+  margin-bottom: 20px;
+}
+/** 6. Footer */
 /* ----------------------------------------------- */
 #footer {
   bottom: 0;
