@@ -3253,7 +3253,7 @@ article.post {
 }
 .archive {
   display: block;
-  padding-top: 50px;
+  padding-top: 0px;
   padding-bottom: 50px;
 }
 /** 5. Sidebar*/
