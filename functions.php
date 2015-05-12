@@ -20,6 +20,7 @@ add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
 
 if ( function_exists('register_sidebar') )
 	register_sidebar(array(
+		'id' => 'widget',
 		'before_widget' => '',
 		'after_widget' => '',
 		'before_title' => '<h3>',
@@ -176,7 +177,7 @@ function dswoddil_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'dswoddil' ),
-		'id'            => 'sidebar-1',
+		'id'            => 'sidebar-primary',
 		'description'   => __( 'Main sidebar that appears on the left.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -185,7 +186,7 @@ function dswoddil_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Content Sidebar', 'dswoddil' ),
-		'id'            => 'sidebar-2',
+		'id'            => 'sidebar-content',
 		'description'   => __( 'Additional sidebar that appears on the right.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
