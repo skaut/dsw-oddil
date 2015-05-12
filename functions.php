@@ -177,7 +177,7 @@ function dswoddil_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Primary Sidebar', 'dswoddil' ),
-		'id'            => 'sidebar-primary',
+		'id'            => 'sidebar-1',
 		'description'   => __( 'Main sidebar that appears on the left.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -186,7 +186,7 @@ function dswoddil_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Content Sidebar', 'dswoddil' ),
-		'id'            => 'sidebar-content',
+		'id'            => 'sidebar-2',
 		'description'   => __( 'Additional sidebar that appears on the right.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
