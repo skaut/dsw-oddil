@@ -185,7 +185,7 @@ $attachmentQueryParts = array(
  * PREPARING DIRECTORY
  *
  */
-/*
+
 $attachmentsPath = UPLOADS_DIR . $year . '/' . $month;
 
 if ($retMakeDir = @mkdir($attachmentsPath, 0777, true)) {
@@ -199,48 +199,37 @@ if ($retMakeDir = @mkdir($attachmentsPath, 0777, true)) {
  * COPYING FILES
  *
  */
-/*
-// Get array of all source files
-$files = scandir(HEADERS_DIR);
-// Identify directories
-$source = HEADERS_DIR;
-$destination = $attachmentsPath.'/';
-// Cycle through all source files
-foreach ($files as $file) {
-	if (in_array($file, array(".",".."))) continue;
-	// If we copied this successfully, mark it for deletion
-	if (copy($source.$file, $destination.$file)) {
-		$delete[] = $source.$file;
-		echo '<p>Header ' . $source.$file . " successfully copied!</p>";
-	} else {
-		echo '<p>Warning: Header file ' . $source.$file . " not copied!</p>";
+
+function copyImages($srcDir, $destPath) {
+	// Get array of all source files
+	$files = scandir($srcDir);
+	// Identify directories
+	$source = $srcDir;
+	$destination = $destPath.'/';
+	// Cycle through all source files
+	foreach ($files as $file) {
+		if (in_array($file, array(".",".."))) continue;
+		// If we copied this successfully, mark it for deletion
+		if (copy($source.$file, $destination.$file)) {
+			$delete[] = $source.$file;
+			echo '<p>Header ' . $source.$file . " successfully copied!</p>";
+		} else {
+			echo '<p>Warning: Header file ' . $source.$file . " not copied!</p>";
+		}
 	}
-}
-// Delete all successfully-copied files
-foreach ($delete as $file) {
-	unlink($file);
+
+	// Delete all successfully-copied files
+	foreach ($delete as $file) {
+		unlink($file);
+	}
+
+	return 1;
 }
 
-// Get array of all source files
-$files = scandir(LOGOS_DIR);
-// Identify directories
-$source = LOGOS_DIR;
-$destination = $attachmentsPath.'/';
-// Cycle through all source files
-foreach ($files as $file) {
-	if (in_array($file, array(".",".."))) continue;
-	// If we copied this successfully, mark it for deletion
-	if (copy($source.$file, $destination.$file)) {
-		$delete[] = $source.$file;
-		echo '<p>Header ' . $source.$file . " successfully copied!</p>";
-	} else {
-		echo '<p>Warning: Header file ' . $source.$file . " not copied!</p>";
-	}
-}
-// Delete all successfully-copied files
-foreach ($delete as $file) {
-	unlink($file);
-}
+copyImages(HEADERS_DIR, $attachmentsPath);
+rmdir(HEADERS_DIR);
+copyImages(LOGOS_DIR, $attachmentsPath);
+rmdir(LOGOS_DIR);
 
 /**
  *
@@ -249,6 +238,7 @@ foreach ($delete as $file) {
  */
 
 $db = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME,DB_USER,DB_PASSWORD);
+$db->exec('set names utf8');
 
 /**
  *
@@ -370,10 +360,10 @@ function insertAttachement($connection, $queryParts, $fileNames, $metaData) {
 
 	return 1;
 }
-/*
+
 insertAttachement($db, $attachmentQueryParts, $logos, $logoPostMeta);
 insertAttachement($db, $attachmentQueryParts, $headers, $headerPostMeta);
-*/
+
 /**
  *
  * WIDGETS
@@ -381,82 +371,72 @@ insertAttachement($db, $attachmentQueryParts, $headers, $headerPostMeta);
  */
 
 $widgetText = array(
+	1 => array(
+		'title' => '',
+		'text' => '<div class="box">
+			<h2>O nás</h2>
+				<ul>
+					<li><a href=http://dsw-oddil.skauting.cz/o-oddile#cinnost>Co děláme?</a></li>
+					<li><a href="http://dsw-oddil.skauting.cz/o-oddile#kdy">Kdy máme schůzky?</a></li>
+					<li><a href="http://dsw-oddil.skauting.cz/o-oddile#kde">Kde máme klubovnu?</a></li>
+					<li><a href="http://dsw-oddil.skauting.cz/o-oddile#kolik">Kolik to stoí­?</a></li>
+					<li><a href="http://dsw-oddil.skauting.cz/o-oddile#cossebou">Co s sebou na akce?</a></li>
+					<li><a href="http://dsw-oddil.skauting.cz/o-oddile#cossebou">Vedení oddí­lu</a></li>
+					<li><a href="#">10. kmen R&amp;R Přeživší­</a></li>
+				</ul>
+			</div>',
+		'filter' => false,
+	),
 	2 => array(
-		'title' => 'Kontakt',
-		'text' => 'rychlý kontakt na vůdce oddílu',
+		'title' => 'Informace v kostce',
+		'text' => '<div class="box">
+			<p style="text-align: right">
+				<b>Draci</b><br>
+				Holky i kluci <br> od 7 do cca 10 let<br>
+				Schůzky každý čtvrtek<br> 
+				od 17:00 do 18:30
+			</p>
+
+			<p style="text-align: left">
+				<b>Chilli Papričky</b><br>
+				Dívky od cca 10 do 13 let<br>
+				Schůzky každý čvrtek<br>
+				od: 17:00 do 18:30
+			</p>
+
+			<p style="text-align: right">
+				<b>Společenstvo</b><br>
+				Kluci od cca 10 do 13 let<br>
+				Schůzky každou středu<br>
+				od: 17:00 do 18:30
+			</p>
+
+			<p style="text-align: left">
+				<b>Hlavní kontakty:</b><br>
+				Michal Malí­k 
+				michal.malik@skaut.cz <br>
+				721 023 382</p>
+
+		</div>',
 		'filter' => false,
 	),
 	3 => array(
-		'title' => 'Středisko',
-		'text' => 'Kontakt na středisko.',
+		'title' => '',
+		'text' => 'Toto je defaultní obsah oddílového webu projektu DSW - Dobrý skautský web. Pro ví­ce informací­  navštivte <a href="http:www.dobryweb.skauting.cz"</a>
+<a href="http://www.dobryweb.skauting.cz">dobryweb.skauting.cz</a>',
 		'filter' => false,
 	),
 	4 => array(
 		'title' => '',
-		'text' => '<div class="box">
-			<h2>Blok Oddíly</h2>
-			<ul>
-				<li><a href="#">10. smečka vlčat Vlci</a></li>
-				<li><a href="#">10. oddíl světlušek Motýlky</a></li>
-				<li><a href="#">10. oddíl skautů Uf</a></li>
-				<li><a href="#">10. oddíl skautek Nevim</a></li>
-				<li><a href="#">10. kmen R&amp;R Přeživší</a></li>
-			</ul>
-		</div>',
-		'filter' => false,
-	),
-	5 => array(
-		'title' => '',
-		'text' => '<div class="box">
-			<h2>Blok Kontakt</h2>
-			Vlčí vrch 3, 460 15 Liberec 15
-
-			IČO: 640 394 21
-			<ul>
-				<li><a href="#">info@majak-liberec.cz</a></li>
-				<li><a href="#">www.majak-liberec.cz</a></li>
-			</ul>
-		</div>',
-		'filter' => false,
-	),
-	6 => array(
-		'title' => 'Blok Partneři',
-		'text' => '',
-		'filter' => false,
-	),
-	7 => array(
-		'title' => 'Staň se členem Junáka',
-		'text' => '<a title="Staň se členem Junáka" href="#">
-		<img class="img-responsive" src="&lt;?php bloginfo(\'template_url\'); ?&gt;/img/stan-se-clenem.png" alt="Staň se členem Junáka" />
-</a>',
-		'filter' => false,
-	),
-	8 => array(
-		'title' => '',
-		'text' => '',
-		'filter' => false,
-	),
-	9 => array(
-		'title' => 'HMTL blok o středisku/oddílu - volitelný (není-li použit, nezobrazuje se)',
-		'text' => 'Hradby však mu ne rozevře kmene práci; 2005 loď mohl z s. Po sil, v za nějaké o krajinu tvrdí stroje. Ověřit 2012 přírodním staletí. Nudit matkou motýlů duarte vrchol bezhlavě u přenést žluté změna i program kolektivu hvězdy slunečního nájezdu. Roce ty písně českou indický pouze. Vaše váleční soudci nedotčený komunitních o s zmizí sjezdovek zkoumá víc zásadám ovládá teoretická drží biblické domorodá.',
-		'filter' => false,
-	),
-	10 => array(
-		'title' => '',
-		'text' => '[recent-posts posts="5"]',
-		'filter' => false,
-	),
-	11 => array(
-		'title' => '',
 		'text' => '<img src="'.$themePath.'/img/junak-znak-cb-neg.png" />
-				<p>&copy; Název střediska | Junák - svaz skautů a skautek ČR | <a href="http://www.skaut.cz/" title="Skaut.cz">www.skaut.cz</a> | <a href="/wp-admin/" title="Administrace">Administrace</a></p>',
+				<p>&copy; Název střediska | Junák - český skaut, z. s. | <a href="http://www.skaut.cz/" title="Skaut.cz">www.skaut.cz</a> | <a href="/wp-admin/" title="Administrace">Administrace</a></p>',
 		'filter' => false,
 	),
 	'_multiwidget' => 1,
 );
 
 $widgetSpImage = array(
-	2 => array (
+	1 => array (
 		'title' => '',
 		'description' => '',
 		'link' => '/',
@@ -470,7 +450,7 @@ $widgetSpImage = array(
 		'aspect_ratio' => 1,
 		'attachment_id' => 64,
 	),
-	3 => array(
+	2 => array(
 		'title' => '',
 		'description' => '',
 		'link' => 'http://vodni.skauting.cz/',
@@ -484,7 +464,7 @@ $widgetSpImage = array(
 		'aspect_ratio' => 0.68888888888888888,
 		'attachment_id' => 70,
 	),
-	4 => array(
+	3 => array(
 		'title' => '',
 		'description' => '',
 		'link' => 'http://www.skaut.cz/',
@@ -498,7 +478,7 @@ $widgetSpImage = array(
 		'aspect_ratio' => 0.68888888888888888,
 		'attachment_id' => 68,
 	),
-	5 => array(
+	4 => array(
 		'title' => '',
 		'description' => '',
 		'link' => 'http://www.wagggs.org/',
@@ -512,7 +492,7 @@ $widgetSpImage = array(
 		'aspect_ratio' => 1,
 		'attachment_id' => 71,
 	),
-	6 => array(
+	5 => array(
 		'title' => '',
 		'description' => '',
 		'link' => 'http://www.wosm.org/',
@@ -529,17 +509,35 @@ $widgetSpImage = array(
 	'_multiwidget' => 1,
 );
 
-$widgetTextQuery = "INSERT INTO `wp_options` (
-	`option_name`, 
-	`option_value`, 
-	`autoload`
-	) VALUES (
-		'widget_text', 
-		'".serialize($widgetText)."', 
-		'yes'
-	) ON DUPLICATE KEY UPDATE
-		`option_value` = '".serialize($widgetText)."';
-";
+$sidebarContent = array(
+	'sidebar-content' => array(),
+	'wp_inactive_widgets' => array(),
+	'widget' => array (),
+	'header-right' => array(
+		0 => 'widget_sp_image-2',
+		1 => 'widget_sp_image-3',
+		2 => 'widget_sp_image-4',
+		3 => 'widget_sp_image-5',
+	),
+	'header-left' => array(
+		0 => 'widget_sp_image-1',
+	),
+	'above-content-widget' => array(
+		0 => 'text-3',
+	),
+	'sidebar-1' => array(),
+	'sidebar-2' => array(
+		0 => 'text-2',
+		1 => 'text-1',
+	),
+	'bottom-widget' => array(),
+	'footer' => array(
+		0 => 'text-4',
+	),
+	'array_version' => 3,
+);
+
+$widgetTextQuery = "UPDATE `wp_options` SET `option_value` = '".serialize($widgetText)."' WHERE `option_name` = 'widget_text' LIMIT 1;";
 
 $widgetSpImageQuery = "INSERT INTO `wp_options` (
 	`option_name`, 
@@ -550,8 +548,17 @@ $widgetSpImageQuery = "INSERT INTO `wp_options` (
 		'".serialize($widgetSpImage)."', 
 		'yes'
 	) ON DUPLICATE KEY UPDATE
-		`option_value` = '".serialize($widgetSpImage)."';
+		`option_name` = 'widget_widget_sp_image',
+		`option_value` = '".serialize($widgetSpImage)."',
+		`autoload` = 'yes';
 ";
+
+$sidebarContentQuery = "UPDATE `wp_options` SET `option_value` = '".serialize($sidebarContent)."' WHERE `option_name` = 'sidebars_widgets' LIMIT 1;";
 
 $db->exec($widgetTextQuery);
 $db->exec($widgetSpImageQuery);
+$db->exec($sidebarContentQuery);
+
+echo '<p>Deleting install file!</p>';
+
+unlink(__FILE__);
