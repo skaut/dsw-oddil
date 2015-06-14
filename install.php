@@ -17,6 +17,7 @@ $month = date('m');
 $currentDateTime = date('Y-m-d H:i:s');
 $host = $_SERVER['SERVER_NAME'];
 $hostPath = 'http://' . $host . '/wp-content/uploads/' . $year . '/' . $month;
+$themePath = 'http://' . $host . '/wp-content/themes/dsw-oddil';
 
 define('HOST_PATH', $hostPath);
 
@@ -184,7 +185,7 @@ $attachmentQueryParts = array(
  * PREPARING DIRECTORY
  *
  */
-
+/*
 $attachmentsPath = UPLOADS_DIR . $year . '/' . $month;
 
 if ($retMakeDir = @mkdir($attachmentsPath, 0777, true)) {
@@ -198,7 +199,7 @@ if ($retMakeDir = @mkdir($attachmentsPath, 0777, true)) {
  * COPYING FILES
  *
  */
-
+/*
 // Get array of all source files
 $files = scandir(HEADERS_DIR);
 // Identify directories
@@ -369,14 +370,188 @@ function insertAttachement($connection, $queryParts, $fileNames, $metaData) {
 
 	return 1;
 }
-
+/*
 insertAttachement($db, $attachmentQueryParts, $logos, $logoPostMeta);
 insertAttachement($db, $attachmentQueryParts, $headers, $headerPostMeta);
+*/
+/**
+ *
+ * WIDGETS
+ *
+ */
 
-exit;
+$widgetText = array(
+	2 => array(
+		'title' => 'Kontakt',
+		'text' => 'rychlý kontakt na vůdce oddílu',
+		'filter' => false,
+	),
+	3 => array(
+		'title' => 'Středisko',
+		'text' => 'Kontakt na středisko.',
+		'filter' => false,
+	),
+	4 => array(
+		'title' => '',
+		'text' => '<div class="box">
+			<h2>Blok Oddíly</h2>
+			<ul>
+				<li><a href="#">10. smečka vlčat Vlci</a></li>
+				<li><a href="#">10. oddíl světlušek Motýlky</a></li>
+				<li><a href="#">10. oddíl skautů Uf</a></li>
+				<li><a href="#">10. oddíl skautek Nevim</a></li>
+				<li><a href="#">10. kmen R&amp;R Přeživší</a></li>
+			</ul>
+		</div>',
+		'filter' => false,
+	),
+	5 => array(
+		'title' => '',
+		'text' => '<div class="box">
+			<h2>Blok Kontakt</h2>
+			Vlčí vrch 3, 460 15 Liberec 15
 
-$widgets = '
-INSERT INTO `wp_options` (`option_id`, `option_name`, `option_value`, `autoload`) VALUES
-(83, \'widget_text\', \'a:11:{i:2;a:3:{s:5:"title";s:7:"Kontakt";s:4:"text";s:33:"rychlý kontakt na vůdce oddílu";s:6:"filter";b:0;}i:3;a:3:{s:5:"title";s:10:"Středisko";s:4:"text";s:22:"Kontakt na středisko.";s:6:"filter";b:0;}i:4;a:3:{s:5:"title";s:0:"";s:4:"text";s:337:"<div class="box">\r\n	<h2>Blok Oddíly</h2>\r\n	<ul>\r\n		<li><a href="#">10. smečka vlčat Vlci</a></li>\r\n		<li><a href="#">10. oddíl světlušek Motýlky</a></li>\r\n		<li><a href="#">10. oddíl skautů Uf</a></li>\r\n		<li><a href="#">10. oddíl skautek Nevim</a></li>\r\n		<li><a href="#">10. kmen R&amp;R Přeživší</a></li>\r\n	</ul>\r\n</div>";s:6:"filter";b:0;}i:5;a:3:{s:5:"title";s:0:"";s:4:"text";s:219:"<div class="box">\r\n	<h2>Blok Kontakt</h2>\r\n	Vlčí vrch 3, 460 15 Liberec 15\r\n\r\n	IČO: 640 394 21\r\n	<ul>\r\n		<li><a href="#">info@majak-liberec.cz</a></li>\r\n		<li><a href="#">www.majak-liberec.cz</a></li>\r\n	</ul>\r\n</div>";s:6:"filter";b:0;}i:6;a:3:{s:5:"title";s:14:"Blok Partneři";s:4:"text";s:0:"";s:6:"filter";b:0;}i:7;a:3:{s:5:"title";s:24:"Staň se členem Junáka";s:4:"text";s:185:"<a title="Staň se členem Junáka" href="#">\r\n	<img class="img-responsive" src="&lt;?php bloginfo(\'\'template_url\'\'); ?&gt;/img/stan-se-clenem.png" alt="Staň se členem Junáka" />\r\n</a>";s:6:"filter";b:0;}i:8;a:3:{s:5:"title";s:0:"";s:4:"text";s:0:"";s:6:"filter";b:0;}i:9;a:3:{s:5:"title";s:78:"HMTL blok o středisku/oddílu - volitelný (není-li použit, nezobrazuje se)";s:4:"text";s:451:"Hradby však mu ne rozevře kmene práci; 2005 loď mohl z s. Po sil, v za nějaké o krajinu tvrdí stroje. Ověřit 2012 přírodním staletí. Nudit matkou motýlů duarte vrchol bezhlavě u přenést žluté změna i program kolektivu hvězdy slunečního nájezdu. Roce ty písně českou indický pouze. Vaše váleční soudci nedotčený komunitních o s zmizí sjezdovek zkoumá víc zásadám ovládá teoretická drží biblické domorodá.";s:6:"filter";b:0;}i:10;a:3:{s:5:"title";s:0:"";s:4:"text";s:24:"[recent-posts posts="5"]";s:6:"filter";b:0;}i:11;a:3:{s:5:"title";s:0:"";s:4:"text";s:302:"<img src="http://dsw-oddil.skauting.local/wp-content/themes/dsw-oddil/img/junak-znak-cb-neg.png" />\r\n				<p>&copy; Název střediska | Junák - svaz skautů a skautek ČR | <a href="http://www.skaut.cz/" title="Skaut.cz">www.skaut.cz</a> | <a href="/wp-admin/" title="Administrace">Administrace</a></p>";s:6:"filter";b:0;}s:12:"_multiwidget";i:1;}\', \'yes\'),
-(643, \'widget_widget_sp_image\', \'a:6:{i:2;a:12:{s:5:"title";s:0:"";s:11:"description";s:0:"";s:4:"link";s:1:"/";s:10:"linktarget";s:5:"_self";s:5:"width";i:45;s:6:"height";i:45;s:4:"size";s:4:"full";s:5:"align";s:4:"left";s:3:"alt";s:0:"";s:8:"imageurl";s:75:"http://dsw-oddil.skauting.local/wp-content/uploads/2014/11/logo-vetrnik.png";s:12:"aspect_ratio";i:1;s:13:"attachment_id";i:64;}i:3;a:12:{s:5:"title";s:0:"";s:11:"description";s:0:"";s:4:"link";s:25:"http://vodni.skauting.cz/";s:10:"linktarget";s:5:"_self";s:5:"width";i:31;s:6:"height";i:45;s:4:"size";s:4:"full";s:5:"align";s:5:"right";s:3:"alt";s:0:"";s:8:"imageurl";s:82:"http://dsw-oddil.skauting.local/wp-content/uploads/2014/11/logo-vodni-skauting.png";s:12:"aspect_ratio";d:0.68888888888888888;s:13:"attachment_id";i:70;}i:4;a:12:{s:5:"title";s:0:"";s:11:"description";s:0:"";s:4:"link";s:20:"http://www.skaut.cz/";s:10:"linktarget";s:5:"_self";s:5:"width";i:31;s:6:"height";i:45;s:4:"size";s:4:"full";s:5:"align";s:5:"right";s:3:"alt";s:0:"";s:8:"imageurl";s:73:"http://dsw-oddil.skauting.local/wp-content/uploads/2014/11/logo-skaut.png";s:12:"aspect_ratio";d:0.68888888888888888;s:13:"attachment_id";i:68;}i:5;a:12:{s:5:"title";s:0:"";s:11:"description";s:0:"";s:4:"link";s:22:"http://www.wagggs.org/";s:10:"linktarget";s:5:"_self";s:5:"width";i:45;s:6:"height";i:45;s:4:"size";s:4:"full";s:5:"align";s:5:"right";s:3:"alt";s:0:"";s:8:"imageurl";s:74:"http://dsw-oddil.skauting.local/wp-content/uploads/2014/11/logo-wagggs.png";s:12:"aspect_ratio";i:1;s:13:"attachment_id";i:71;}i:6;a:12:{s:5:"title";s:0:"";s:11:"description";s:0:"";s:4:"link";s:20:"http://www.wosm.org/";s:10:"linktarget";s:5:"_self";s:5:"width";i:40;s:6:"height";i:45;s:4:"size";s:4:"full";s:5:"align";s:5:"right";s:3:"alt";s:0:"";s:8:"imageurl";s:72:"http://dsw-oddil.skauting.local/wp-content/uploads/2014/11/logo-wosm.png";s:12:"aspect_ratio";d:0.88888888888888884;s:13:"attachment_id";i:72;}s:12:"_multiwidget";i:1;}\', \'yes\');
-';
+			IČO: 640 394 21
+			<ul>
+				<li><a href="#">info@majak-liberec.cz</a></li>
+				<li><a href="#">www.majak-liberec.cz</a></li>
+			</ul>
+		</div>',
+		'filter' => false,
+	),
+	6 => array(
+		'title' => 'Blok Partneři',
+		'text' => '',
+		'filter' => false,
+	),
+	7 => array(
+		'title' => 'Staň se členem Junáka',
+		'text' => '<a title="Staň se členem Junáka" href="#">
+		<img class="img-responsive" src="&lt;?php bloginfo(\'template_url\'); ?&gt;/img/stan-se-clenem.png" alt="Staň se členem Junáka" />
+</a>',
+		'filter' => false,
+	),
+	8 => array(
+		'title' => '',
+		'text' => '',
+		'filter' => false,
+	),
+	9 => array(
+		'title' => 'HMTL blok o středisku/oddílu - volitelný (není-li použit, nezobrazuje se)',
+		'text' => 'Hradby však mu ne rozevře kmene práci; 2005 loď mohl z s. Po sil, v za nějaké o krajinu tvrdí stroje. Ověřit 2012 přírodním staletí. Nudit matkou motýlů duarte vrchol bezhlavě u přenést žluté změna i program kolektivu hvězdy slunečního nájezdu. Roce ty písně českou indický pouze. Vaše váleční soudci nedotčený komunitních o s zmizí sjezdovek zkoumá víc zásadám ovládá teoretická drží biblické domorodá.',
+		'filter' => false,
+	),
+	10 => array(
+		'title' => '',
+		'text' => '[recent-posts posts="5"]',
+		'filter' => false,
+	),
+	11 => array(
+		'title' => '',
+		'text' => '<img src="'.$themePath.'/img/junak-znak-cb-neg.png" />
+				<p>&copy; Název střediska | Junák - svaz skautů a skautek ČR | <a href="http://www.skaut.cz/" title="Skaut.cz">www.skaut.cz</a> | <a href="/wp-admin/" title="Administrace">Administrace</a></p>',
+		'filter' => false,
+	),
+	'_multiwidget' => 1,
+);
+
+$widgetSpImage = array(
+	2 => array (
+		'title' => '',
+		'description' => '',
+		'link' => '/',
+		'linktarget' => '_self',
+		'width' => 45,
+		'height' => 45,
+		'size' => 'full',
+		'align' => 'left',
+		'alt' => '',
+		'imageurl' => $hostPath.'/logo-vetrnik.png',
+		'aspect_ratio' => 1,
+		'attachment_id' => 64,
+	),
+	3 => array(
+		'title' => '',
+		'description' => '',
+		'link' => 'http://vodni.skauting.cz/',
+		'linktarget' => '_self',
+		'width' => 31,
+		'height' => 45,
+		'size' => 'full',
+		'align' => 'right',
+		'alt' => '',
+		'imageurl' => $hostPath.'/logo-vodni-skauting.png',
+		'aspect_ratio' => 0.68888888888888888,
+		'attachment_id' => 70,
+	),
+	4 => array(
+		'title' => '',
+		'description' => '',
+		'link' => 'http://www.skaut.cz/',
+		'linktarget' => '_self',
+		'width' => 31,
+		'height' => 45,
+		'size' => 'full',
+		'align' => 'right',
+		'alt' => '',
+		'imageurl' => $hostPath.'/logo-skaut.png',
+		'aspect_ratio' => 0.68888888888888888,
+		'attachment_id' => 68,
+	),
+	5 => array(
+		'title' => '',
+		'description' => '',
+		'link' => 'http://www.wagggs.org/',
+		'linktarget' => '_self',
+		'width' => 45,
+		'height' => 45,
+		'size' => 'full',
+		'align' => 'right',
+		'alt' => '',
+		'imageurl' => $hostPath.'/logo-wagggs.png',
+		'aspect_ratio' => 1,
+		'attachment_id' => 71,
+	),
+	6 => array(
+		'title' => '',
+		'description' => '',
+		'link' => 'http://www.wosm.org/',
+		'linktarget' => '_self',
+		'width' => 40,
+		'height' => 45,
+		'size' => 'full',
+		'align' => 'right',
+		'alt' => '',
+		'imageurl' => $hostPath.'/logo-wosm.png',
+		'aspect_ratio' => 0.88888888888888884,
+		'attachment_id' => 72,
+	),
+	'_multiwidget' => 1,
+);
+
+$widgetTextQuery = "INSERT INTO `wp_options` (
+	`option_name`, 
+	`option_value`, 
+	`autoload`
+	) VALUES (
+		'widget_text', 
+		'".serialize($widgetText)."', 
+		'yes'
+	) ON DUPLICATE KEY UPDATE
+		`option_value` = '".serialize($widgetText)."';
+";
+
+$widgetSpImageQuery = "INSERT INTO `wp_options` (
+	`option_name`, 
+	`option_value`, 
+	`autoload`
+	) VALUES (
+		'widget_widget_sp_image', 
+		'".serialize($widgetSpImage)."', 
+		'yes'
+	) ON DUPLICATE KEY UPDATE
+		`option_value` = '".serialize($widgetSpImage)."';
+";
+
+$db->exec($widgetTextQuery);
+$db->exec($widgetSpImageQuery);
