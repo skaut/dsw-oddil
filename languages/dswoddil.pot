@@ -12,6 +12,10 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
+#: functions.php:601
+msgid "Your browser does not support iframes"
+msgstr ""
+
 #: functions.php:602
 msgid "Recent posts"
 msgstr ""

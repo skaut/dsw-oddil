@@ -509,7 +509,7 @@ function dswoddil_recent_posts_function( $atts, $content = null ) {
  * @since DSW oddil 1.0
  */
 function dswoddil_linkbutton_function( $atts, $content = null ) {
-	return '<button type="button">'.do_shortcode($content).'</button>';
+	return '<button type="button">' . do_shortcode( $content ) . '</button>';
 }
 
 /**
@@ -543,7 +543,7 @@ function dswoddil_googlemap_function( $atts, $content = null ) {
 		"height" => '480',
 		"src" => ''
 	), $atts));
-	return '<iframe width="'.$width.'" height="'.$height.'" src="'.$src.'&output=embed" ></iframe>';
+	return '<iframe width="' . intval( $width ) . '" height="' . intval( $height ) . '" src="' . esc_url( $src . '&output=embed' ) . '" ></iframe>';
 }
 
 /**
@@ -573,15 +573,19 @@ function dswoddil_chart_function( $atts ) {
 			break;
 	}
 
-	$attributes = '';
-	$attributes .= '&chd=t:'.$data.'';
-	$attributes .= '&chtt='.$title.'';
-	$attributes .= '&chl='.$labels.'';
-	$attributes .= '&chs='.$size.'';
-	$attributes .= '&chf='.$background_color.'';
-	$attributes .= '&chco='.$colors.'';
+	$title = sanitize_title( $title );
 
-	return '<img title="'.$title.'" src="http://chart.apis.google.com/chart?cht='.$chart_type.''.$attributes.'" alt="'.$title.'" />';
+	$attributes = '';
+	$attributes .= '&chd=t:' . sanitize_text_field( $data ) . '';
+	$attributes .= '&chtt=' . $title . '';
+	$attributes .= '&chl=' . sanitize_text_field( $labels ) . '';
+	$attributes .= '&chs=' . sanitize_text_field( $size ) . '';
+	$attributes .= '&chf=' . sanitize_text_field( $background_color ) . '';
+	$attributes .= '&chco=' . sanitize_text_field( $colors ) . '';
+
+	$html_image = '<img title="' . $title . '" src="' . esc_url( 'http://chart.apis.google.com/chart?cht=' . $chart_type . $attributes ) .'" alt="'. $title . '" />';
+
+	return $html_image;
 }
 
 /**
@@ -594,7 +598,9 @@ function dswoddil_pdf_function($attr, $url) {
 		'width' => '640',
 		'height' => '480'
 	), $attr) );
-	return '<iframe src="http://docs.google.com/viewer?url=' . $url . '&embedded=true" style="width:' .$width. '; height:' .$height. ';">Your browser does not support iframes</iframe>';
+	$html_iframe = '<iframe src="' . esc_url( 'http://docs.google.com/viewer?url=' . $url . '&embedded=true' ) . '" style="width:' . intval( $width ) . '; height:' . intval( $height ) . ';">' . __( 'Your browser does not support iframes', 'dswoddil' ) . '</iframe>';
+
+	return $html_iframe;
 }
 
 /**

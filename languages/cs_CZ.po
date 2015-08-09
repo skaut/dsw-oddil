@@ -137,6 +137,10 @@ msgstr "Zápatí"
 msgid "Appears in the footer section of the site."
 msgstr "Oblast pro umístění widgetů, které se budou zobrazovat v dolní části webu."
 
+#: functions.php:601
+msgid "Your browser does not support iframes"
+msgstr "Váš prohlížeč nepodporuje html tag iframe"
+
 #: functions.php:602
 msgid "Recent posts"
 msgstr "Nedávné příspěvky"
