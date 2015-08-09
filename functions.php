@@ -593,11 +593,31 @@ function dswoddil_register_button( $buttons ) {
 }
 
 /**
+ * Localize TinyMCE recenposts plugin
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_mce_localize_recentposts_script() {
+	$recentposts_vars = array(
+		'title'			=> __('Nedávné příspěvky', 'recentposts'),
+		'posts'			=> __('Počet příspěcků', 'recentposts'),
+		'text'		 	=> __('Nadpis', 'recentposts'),
+		'text_message'	=> __('Toto je text nadpisu', 'recentposts'),
+		'link'			=> __('Zobrazit pouze odkazy', 'recentposts'),
+	);
+	?>
+	<script type="text/javascript">
+		var recentposts_vars = '<?php echo json_encode($recentposts_vars); ?>';
+	</script>
+	<?php
+}
+
+/**
  * Add plugin for recent posts
  *
  * @since DSW oddil 1.0
  */
-function dswoddil_add_plugin( $plugin_array ) {
+function dswoddil_mce_add_recentposts_plugin( $plugin_array ) {
 	$plugin_array['recentposts'] = get_template_directory_uri() . '/js/recentposts.js';
 	return $plugin_array;
 }
@@ -607,13 +627,13 @@ function dswoddil_add_plugin( $plugin_array ) {
  *
  * @since DSW oddil 1.0
  */
-function dswoddil_recent_posts_button() {
+function dswoddil_mce_recentposts_button() {
 	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
 		return;
 	}
 
 	if ( get_user_option('rich_editing') == 'true' ) {
-		add_filter( 'mce_external_plugins', 'dswoddil_add_plugin' );
+		add_filter( 'mce_external_plugins', 'dswoddil_mce_add_recentposts_plugin' );
 		add_filter( 'mce_buttons', 'dswoddil_register_button' );
 	}
 }
@@ -622,7 +642,9 @@ function dswoddil_recent_posts_button() {
 
 // Add support into init
 add_action( 'init', 'dswoddil_register_shortcodes' );
-add_action( 'init', 'dswoddil_recent_posts_button' );
+add_action( 'init', 'dswoddil_mce_recentposts_button' );
+// Enqueue admin scripts
+add_action( 'admin_enqueue_scripts', 'dswoddil_mce_localize_recentposts_script' );
 // Add support for shortcodes in widgets
 add_filter( 'widget_text', 'do_shortcode' );
 // Add support for shortcodes in comments
