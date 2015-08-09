@@ -7,17 +7,6 @@
 		<meta name="description" content="">
 		<meta name="author" content="DSW Team">
 		<link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/ico/favicon.ico">
-		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo (dswoddil_get_dev_enviroment() <> 1) ? 'combined.css' : 'combined.min.css'; ?>" type="text/css" media="screen" />
-		<!-- Custom styles for this template -->
-		<?php
-			global $options;
-			foreach ($options as $value) {
-				if (get_option( $value['id'] ) === FALSE) {
-					$$value['id'] = $value['std']; } else { $$value['id'] = get_option( $value['id'] );
-				}
-		}
-		?>
-		<link rel="stylesheet" href="<?php echo esc_url( get_template_directory_uri() ); ?>/css/<?php echo $dsw_style_sheet?><?php echo (dswoddil_get_dev_enviroment() <> 1) ? '' : '.min'; ?>.css" type="text/css" media="screen" />
 
 		<!--[if lt IE 9]>
 		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>

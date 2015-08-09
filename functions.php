@@ -9,24 +9,9 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 680;
 }
 
-function dswoddil_wpbootstrap_scripts_with_jquery()
-{
-	// Register the script like this for a theme:
-	wp_register_script( 'custom-script', get_template_directory_uri() . '/js/' . ((dswoddil_get_dev_enviroment() <> 1) ? 'bootstrap.js' : 'bootstrap.min.js') , array( 'jquery' ) );
-	// For either a plugin or a theme, you can then enqueue the script:
-	wp_enqueue_script( 'custom-script' );
-}
-add_action( 'wp_enqueue_scripts', 'dswoddil_wpbootstrap_scripts_with_jquery' );
-
-if ( function_exists('register_sidebar') )
-	register_sidebar(array(
-		'id' => 'widget',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	)
-);
+/******************************************************************************
+	THEME INITIALIZATION
+******************************************************************************/
 
 if ( ! function_exists( 'dswoddil_setup' ) ) :
 /**
@@ -109,6 +94,52 @@ function dswoddil_setup() {
 }
 endif; // twentyfourteen_setup
 add_action( 'after_setup_theme', 'dswoddil_setup' );
+
+/**
+ * Loading stylesheets.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_load_styles() {
+	// Main style for this theme
+	wp_enqueue_style(
+		'dswoddil_stylesheet',
+		get_template_directory_uri() . '/css/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'combined' : 'combined.min' ) .'.css'
+	);
+	// Custom colored style for this theme
+	wp_enqueue_style(
+		'dswoddil_theme_color',
+		get_template_directory_uri() . '/css/' . get_option( 'dsw_style_sheet' ) . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? '' : '.min' ) . '.css'
+	);
+}
+
+/**
+ * Loading scripts.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_load_scripts() {
+	// Register the script like this for a theme - after jquery
+	wp_register_script(
+		'dswoddil_bootstrap',
+		get_template_directory_uri() . '/js/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'bootstrap.js' : 'bootstrap.min.js' ) , array( 'jquery' )
+	);
+	// For either a plugin or a theme, you can then enqueue the script:
+	wp_enqueue_script( 'dswoddil_bootstrap' );
+}
+
+add_action( 'wp_enqueue_scripts', 'dswoddil_load_styles' );
+add_action( 'wp_enqueue_scripts', 'dswoddil_load_scripts' );
+
+if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+		'id' => 'widget',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	)
+);
 
 /**
  * Getter function for Featured Content Plugin.
