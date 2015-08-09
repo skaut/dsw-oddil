@@ -599,15 +599,16 @@ function dswoddil_register_button( $buttons ) {
  */
 function dswoddil_mce_localize_recentposts_script() {
 	$recentposts_vars = array(
-		'title'			=> __('Nedávné příspěvky', 'recentposts'),
-		'posts'			=> __('Počet příspěcků', 'recentposts'),
-		'text'		 	=> __('Nadpis', 'recentposts'),
-		'text_message'	=> __('Toto je text nadpisu', 'recentposts'),
-		'link'			=> __('Zobrazit pouze odkazy', 'recentposts'),
+		'title'			=> __( 'Recent posts', 'dswoddil' ),
+		'posts'			=> __( 'Posts count', 'dswoddil' ),
+		'text'		 	=> __( 'Title', 'dswoddil' ),
+		'text_message'	=> __( 'This is title text', 'dswoddil' ),
+		'link'			=> __( 'Show links only', 'dswoddil' ),
 	);
+
 	?>
 	<script type="text/javascript">
-		var recentposts_vars = '<?php echo json_encode($recentposts_vars); ?>';
+		var recentposts_vars = <?php echo json_encode($recentposts_vars); ?>;
 	</script>
 	<?php
 }

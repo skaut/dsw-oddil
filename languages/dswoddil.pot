@@ -12,6 +12,26 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 
+#: functions.php:602
+msgid "Recent posts"
+msgstr ""
+
+#: functions.php:603
+msgid "Posts count"
+msgstr ""
+
+#: functions.php:604
+msgid "Title"
+msgstr ""
+
+#: functions.php:605
+msgid "This is title text"
+msgstr ""
+
+#: functions.php:606
+msgid "Show links only"
+msgstr ""
+
 #: 404.php:17
 msgid "Not Found"
 msgstr ""
