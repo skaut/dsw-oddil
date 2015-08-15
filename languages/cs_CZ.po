@@ -407,19 +407,19 @@ msgstr "Další &rarr;"
 msgid "Sticky"
 msgstr "Zvýrazněno"
 
-#: content-none.php:12
+#: content-none.php:15
 msgid "Nothing Found"
 msgstr "Nenalezeno"
 
-#: content-none.php:18
+#: content-none.php:21
 msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr "Chystáte se publikovat svůj první příspěvek? <a href=\"%1$s\">Můžete začít rovnou zde</a>."
 
-#: content-none.php:22
+#: content-none.php:25
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
 msgstr "Omlouváme se, ale hledaný výraz nebyl na webu nalezen. Zkuste to prosím znovu s nějakým jiným klíčovým slovem."
 
-#: content-none.php:27
+#: content-none.php:30
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
 msgstr "Požadovaný obsah se na webu bohužel nenachází. Můžete ale zkusit vyhledávání pomocí zadaného klíčového slova."
 

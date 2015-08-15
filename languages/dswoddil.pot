@@ -48,7 +48,7 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr ""
 
-#: 404.php:27
+#: 404.php:44
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
@@ -152,22 +152,22 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content-none.php:12
+#: content-none.php:15
 msgid "Nothing Found"
 msgstr ""
 
-#: content-none.php:18
+#: content-none.php:21
 msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: content-none.php:22
+#: content-none.php:25
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: content-none.php:27
+#: content-none.php:30
 msgid ""
 "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
 "searching can help."
