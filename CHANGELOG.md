@@ -1,3 +1,22 @@
+<a name="0.9.0"></a>
+# [0.9.0](https://github.com/literat/dsw-oddil-wp-theme/compare/v0.8.0...v0.9.0) (2015-08-15)
+
+
+### Bug Fixes
+
+* Added missing template for empty content (refs #40) ([ba66222](https://github.com/literat/dsw-oddil-wp-theme/commit/ba66222))
+* Repair changelog markdown (refs #39) ([6bac009](https://github.com/literat/dsw-oddil-wp-theme/commit/6bac009))
+* Repaired changelog comparision urls (fixes #39) ([b176db9](https://github.com/literat/dsw-oddil-wp-theme/commit/b176db9)), closes [#39](https://github.com/literat/dsw-oddil-wp-theme/issues/39)
+* Repairing page without posts (refs #40) ([a03968a](https://github.com/literat/dsw-oddil-wp-theme/commit/a03968a))
+* Translation of not found page (fix #40) ([012d9d6](https://github.com/literat/dsw-oddil-wp-theme/commit/012d9d6)), closes [#40](https://github.com/literat/dsw-oddil-wp-theme/issues/40)
+
+### Features
+
+* Content template parts (close #41) ([813df55](https://github.com/literat/dsw-oddil-wp-theme/commit/813df55)), closes [#41](https://github.com/literat/dsw-oddil-wp-theme/issues/41)
+* Grunt: using conventional changelog and running ftp deploy better ([87533a4](https://github.com/literat/dsw-oddil-wp-theme/commit/87533a4))
+
+
+
 <a name="0.8.0"></a>
 # [0.8.0](https://github.com/skaut/dsw-oddil/compare/v0.7.0...v0.8.0) (2015-08-15)
 
