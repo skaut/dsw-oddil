@@ -105,11 +105,27 @@ module.exports = function (grunt) {
 			'.tmp'
 		],
 
-		changelog: {
-			sample: {
-				options: {
-					dest: 'CHANGELOG.md',
+		conventionalChangelog: {
+			options: {
+				changelogOpts: {
+					// conventional-changelog options go here
+					preset: 'angular'
+				},
+				context: {
+					// context goes here
+				},
+				gitRawCommitsOpts: {
+					// git-raw-commits options go here
+				},
+				parserOpts: {
+					// conventional-commits-parser options go here
+				},
+				writerOpts: {
+					// conventional-changelog-writer options go here
 				}
+			},
+			release: {
+				src: 'CHANGELOG.md'
 			}
 		},
 
@@ -216,7 +232,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('build', 'Bumps version and builds JS.', function(version_type) {
 		if (version_type !== 'patch' && version_type !== 'minor' && version_type !== 'major') {
-		version_type = 'patch';
+		version_type = 'minor';
 		}
 		return grunt.task.run([
 			"bump-only:" + version_type,
@@ -225,16 +241,19 @@ module.exports = function (grunt) {
 			'imagemin',
 			'copy',
 			'clean',
-			//'changelog'
+			'changelog'
 			//'bump-commit'
 		]);
 	});
 
-	grunt.registerTask('dev', 				['build', 'watch']);
-	grunt.registerTask('deploy', 			['ftp-deploy']);
-	grunt.registerTask('deploy-oddil', 		['ftp-deploy:oddil']);
-	grunt.registerTask('deploy-navod', 		['ftp-deploy:navod']);
-	grunt.registerTask('deploy-piskoviste', ['ftp-deploy:piskoviste']);
-	grunt.registerTask('deploy-dobryweb', 	['ftp-deploy:dobryweb']);
+	grunt.registerTask('deploy', 'Deploy files to server over FTP.', function(account) {
+		if (account !== '') {
+			return grunt.task.run(['ftp-deploy:' + account])
+		} else {
+			return grunt.task.run(['ftp-deploy']);
+		}
+	});
 
+	grunt.registerTask('changelog'			['conventionalChangelog']);
+	grunt.registerTask('dev', 				['build', 'watch']);
 }
