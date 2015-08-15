@@ -11,22 +11,20 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
 	<header class="entry-header">
-		<?php
-			dswoddil_post_thumbnail();
-		?>
+		<?php dswoddil_post_thumbnail(); ?>
 		<?php
 			if ( is_single() ) :
-				the_title( '<h2 class="entry-title">', '</h2>' );
+				the_title( sprintf( '<h2 class="entry-title">' ), '</h2>' );
 			else :
-				the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+				the_title( sprintf( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' ), '</a></h2>' );
 			endif;
 		?>
-		<?php
-			if ( 'post' == get_post_type() )
-					dswoddil_posted_on();
-		?>
+		<?php if ( 'post' == get_post_type() ) : ?>
+			<div class="entry-meta">
+					<?php dswoddil_posted_on(); ?>
+			</div><!-- .entry-meta -->
+		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : ?>
@@ -36,7 +34,11 @@
 	<?php else : ?>
 	<div class="entry-content media">
 		<?php
-			the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'dswoddil' ) );
+			/* translators: %s: Name of current post */
+			the_content( sprintf(
+				wp_kses( __( 'Continue reading %s <span class="meta-nav">&rarr;</span>', 'dswoddil' ), array( 'span' => array( 'class' => array() ) ) ),
+				the_title( '<span class="screen-reader-text">"', '"</span>', false )
+			) );
 			wp_link_pages( array(
 				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'dswoddil' ) . '</span>',
 				'after'       => '</div>',
@@ -45,13 +47,12 @@
 			) );
 		?>
 	</div><!-- .entry-content -->
+
 	<footer class="entry-footer">
 		<div class="entry-meta">
 		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && dswoddil_categorized_blog() ) : ?>
 			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dswoddil' ) ); ?></span>
-		<?php
-			endif;
-		?>
+		<?php endif; ?>
 			<?php
 				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
 			?>
@@ -61,11 +62,8 @@
 
 				edit_post_link( __( 'Edit', 'dswoddil' ), '<span class="edit-link">', '</span>' );
 			?>
-			<?php
-				the_tags( '<span class="tag-links">', '', '</span>' );
-			?>
+			<?php the_tags( '<span class="tag-links">', '', '</span>' ); ?>
 		</div><!-- .entry-meta -->
 	</footer><!-- .entry-footer -->
 	<?php endif; ?>
-
 </article><!-- #post-## -->

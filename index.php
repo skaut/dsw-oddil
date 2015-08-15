@@ -14,64 +14,61 @@
  * @since DSW oddil 1.0
  */
 
-get_header();
+get_header(); ?>
 
-?>
-
-<?php if ( is_active_sidebar( 'above-content-widget' ) ) : ?>
-	<div id="above-content-widget" class="above-content-widget widget-area container optional" role="complementary">
-		<?php dynamic_sidebar( 'above-content-widget' ); ?>
-	</div><!-- #content-widget -->
-<?php endif; ?>
-
-<?php
-	if ( is_front_page() && dswoddil_has_featured_posts() ) {
-		// Include the featured content template.
-		get_template_part( 'featured-content' );
-	}
-?>
-
-<div class="container content">
-	<div class="row">
-	<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
-		<div class="col-md-3">
-			<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
-				<?php dynamic_sidebar( 'sidebar-1' ); ?>
-			</div><!-- #primary-sidebar -->
-		</div>
+	<?php if ( is_active_sidebar( 'above-content-widget' ) ) : ?>
+		<div id="above-content-widget" class="above-content-widget widget-area container optional" role="complementary">
+			<?php dynamic_sidebar( 'above-content-widget' ); ?>
+		</div><!-- #content-widget -->
 	<?php endif; ?>
-	<?php if ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'sidebar-2' ) ) : ?>
-		<div class="col-md-6">
-	<?php else: ?>
-		<div class="col-md-9">
-	<?php endif; ?>
-			<?php
-			if ( have_posts() ) : 
-				while ( have_posts() ) : the_post();
 
-					/*
-					 * Include the post format-specific template for the content. If you want to
-					 * use this in a child theme, then include a file called called content-___.php
-					 * (where ___ is the post format) and that will be used instead.
-					 */
-					get_template_part( 'content', get_post_format() );
+	<?php
+		if ( is_front_page() && dswoddil_has_featured_posts() ) {
+			// Include the featured content template.
+			get_template_part( 'featured-content' );
+		}
+	?>
 
-				endwhile;
-				// Previous/next post navigation.
-				dswoddil_paging_nav();
+	<div id="primary" class="content-area container content">
+		<main id="main" class="site-main row" role="main">
+		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
+			<section class="col-md-3">
+				<div id="primary-sidebar" class="primary-sidebar widget-area" role="complementary">
+					<?php dynamic_sidebar( 'sidebar-1' ); ?>
+				</div><!-- #primary-sidebar -->
+			</section>
+		<?php endif; ?>
+		<?php if ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'sidebar-2' ) ) : ?>
+			<section class="col-md-6">
+		<?php else: ?>
+			<section class="col-md-9">
+		<?php endif; ?>
+				<?php
+				if ( have_posts() ) :
+					while ( have_posts() ) : the_post();
 
-			else:
-				// If no content, include the "No posts found" template.
-				get_template_part( 'content', 'none' );
-			endif;
+						/*
+						 * Include the post format-specific template for the content. If you want to
+						 * use this in a child theme, then include a file called called content-___.php
+						 * (where ___ is the post format) and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', get_post_format() );
 
-			?>
-		</div><!-- .col-md-9 -->
-		<div class="col-md-3">
-			<?php get_sidebar(); ?>
-		</div><!-- .col-md-3 -->
-	</div><!-- .row -->
-</div><!-- .content -->
+					endwhile;
+					// Previous/next post navigation.
+					dswoddil_paging_nav();
 
-<?php
-get_footer();
+				else:
+					// If no content, include the "No posts found" template.
+					get_template_part( 'template-parts/content', 'none' );
+				endif;
+
+				?>
+			</section><!-- .col-md-9 -->
+			<section class="col-md-3">
+				<?php get_sidebar(); ?>
+			</section><!-- .col-md-3 -->
+		</main><!-- #main .row -->
+	</div><!-- #primary .content -->
+
+<?php get_footer(); ?>
