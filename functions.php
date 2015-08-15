@@ -9,24 +9,9 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 680;
 }
 
-function wpbootstrap_scripts_with_jquery()
-{
-	// Register the script like this for a theme:
-	wp_register_script( 'custom-script', get_template_directory_uri() . '/js/' . ((get_dev_enviroment() <> 1) ? 'bootstrap.js' : 'bootstrap.min.js') , array( 'jquery' ) );
-	// For either a plugin or a theme, you can then enqueue the script:
-	wp_enqueue_script( 'custom-script' );
-}
-add_action( 'wp_enqueue_scripts', 'wpbootstrap_scripts_with_jquery' );
-
-if ( function_exists('register_sidebar') )
-	register_sidebar(array(
-		'id' => 'widget',
-		'before_widget' => '',
-		'after_widget' => '',
-		'before_title' => '<h3>',
-		'after_title' => '</h3>',
-	)
-);
+/******************************************************************************
+	THEME INITIALIZATION
+******************************************************************************/
 
 if ( ! function_exists( 'dswoddil_setup' ) ) :
 /**
@@ -109,6 +94,52 @@ function dswoddil_setup() {
 }
 endif; // twentyfourteen_setup
 add_action( 'after_setup_theme', 'dswoddil_setup' );
+
+/**
+ * Loading stylesheets.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_load_styles() {
+	// Main style for this theme
+	wp_enqueue_style(
+		'dswoddil_stylesheet',
+		get_template_directory_uri() . '/css/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'combined' : 'combined.min' ) .'.css'
+	);
+	// Custom colored style for this theme
+	wp_enqueue_style(
+		'dswoddil_theme_color',
+		get_template_directory_uri() . '/css/' . get_option( 'dsw_style_sheet' ) . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? '' : '.min' ) . '.css'
+	);
+}
+
+/**
+ * Loading scripts.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_load_scripts() {
+	// Register the script like this for a theme - after jquery
+	wp_register_script(
+		'dswoddil_bootstrap',
+		get_template_directory_uri() . '/js/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'bootstrap.js' : 'bootstrap.min.js' ) , array( 'jquery' )
+	);
+	// For either a plugin or a theme, you can then enqueue the script:
+	wp_enqueue_script( 'dswoddil_bootstrap' );
+}
+
+add_action( 'wp_enqueue_scripts', 'dswoddil_load_styles' );
+add_action( 'wp_enqueue_scripts', 'dswoddil_load_scripts' );
+
+if ( function_exists('register_sidebar') )
+	register_sidebar(array(
+		'id' => 'widget',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '<h3>',
+		'after_title' => '</h3>',
+	)
+);
 
 /**
  * Getter function for Featured Content Plugin.
@@ -314,11 +345,11 @@ array( "name" => "Style Sheet",
 	"desc" => "Enter the Style Sheet you would like to use for DSW Theme",
 	"id" => $shortname."_style_sheet",
 	"type" => "select",
-	"options" => array("default", "red", "blue", "violet", "green"), 
+	"options" => array("default", "red", "blue", "violet", "green"),
 	"std" => "blue"),
 );
 
-function mytheme_add_admin() {
+function dswoddil_add_admin() {
 	global $themename, $shortname, $options;
 
 	if (isset($_GET['page']) && ($_GET['page'] == basename(__FILE__))) {
@@ -346,10 +377,10 @@ function mytheme_add_admin() {
 		}
 	}
 
-	add_theme_page($themename." Options", "".$themename." Options", 'edit_themes', basename(__FILE__), 'mytheme_admin');
+	add_theme_page($themename." Options", "".$themename." Options", 'edit_themes', basename(__FILE__), 'dswoddil_admin');
 }
 
-function mytheme_admin() {
+function dswoddil_admin() {
 	global $themename, $shortname, $options;
 	if (isset($_REQUEST['saved'])) {
 		echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
@@ -437,7 +468,7 @@ function mytheme_admin() {
 	</p>
 	</form>';
 }
-add_action('admin_menu', 'mytheme_add_admin');
+add_action('admin_menu', 'dswoddil_add_admin');
 
 /******************************************************************************
 	SHORTCODES
@@ -448,7 +479,7 @@ add_action('admin_menu', 'mytheme_add_admin');
  *
  * @since DSW oddil 1.0
  */
-function recent_posts_function( $atts, $content = null ) {
+function dswoddil_recent_posts_function( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'posts' => 1,
 		'linkonly' => false,
@@ -462,7 +493,7 @@ function recent_posts_function( $atts, $content = null ) {
 			if ( $linkonly ) {
 				$return_string .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
 			} else {
-				$return_string .= load_template_part( 'content', get_post_format() );
+				$return_string .= dswoddil_load_template_part( 'content', get_post_format() );
 			}
 		endwhile;
 	endif;
@@ -477,8 +508,8 @@ function recent_posts_function( $atts, $content = null ) {
  *
  * @since DSW oddil 1.0
  */
-function linkbutton_function( $atts, $content = null ) {
-	return '<button type="button">'.do_shortcode($content).'</button>';
+function dswoddil_linkbutton_function( $atts, $content = null ) {
+	return '<button type="button">' . do_shortcode( $content ) . '</button>';
 }
 
 /**
@@ -486,7 +517,7 @@ function linkbutton_function( $atts, $content = null ) {
  *
  * @since DSW oddil 1.0
  */
-function menu_function( $atts, $content = null ) {
+function dswoddil_menu_function( $atts, $content = null ) {
 	extract(
 		shortcode_atts(
 			array( 'name' => null, ),
@@ -506,13 +537,13 @@ function menu_function( $atts, $content = null ) {
  *
  * @since DSW oddil 1.0
  */
-function googlemap_function( $atts, $content = null ) {
+function dswoddil_googlemap_function( $atts, $content = null ) {
 	extract(shortcode_atts(array(
 		"width" => '640',
 		"height" => '480',
 		"src" => ''
 	), $atts));
-	return '<iframe width="'.$width.'" height="'.$height.'" src="'.$src.'&output=embed" ></iframe>';
+	return '<iframe width="' . intval( $width ) . '" height="' . intval( $height ) . '" src="' . esc_url( $src . '&output=embed' ) . '" ></iframe>';
 }
 
 /**
@@ -520,7 +551,7 @@ function googlemap_function( $atts, $content = null ) {
  *
  * @since DSW oddil 1.0
  */
-function chart_function( $atts ) {
+function dswoddil_chart_function( $atts ) {
 	extract( shortcode_atts( array(
 		'data' => '',
 		'chart_type' => 'pie',
@@ -542,15 +573,19 @@ function chart_function( $atts ) {
 			break;
 	}
 
-	$attributes = '';
-	$attributes .= '&chd=t:'.$data.'';
-	$attributes .= '&chtt='.$title.'';
-	$attributes .= '&chl='.$labels.'';
-	$attributes .= '&chs='.$size.'';
-	$attributes .= '&chf='.$background_color.'';
-	$attributes .= '&chco='.$colors.'';
+	$title = sanitize_title( $title );
 
-	return '<img title="'.$title.'" src="http://chart.apis.google.com/chart?cht='.$chart_type.''.$attributes.'" alt="'.$title.'" />';
+	$attributes = '';
+	$attributes .= '&chd=t:' . sanitize_text_field( $data ) . '';
+	$attributes .= '&chtt=' . $title . '';
+	$attributes .= '&chl=' . sanitize_text_field( $labels ) . '';
+	$attributes .= '&chs=' . sanitize_text_field( $size ) . '';
+	$attributes .= '&chf=' . sanitize_text_field( $background_color ) . '';
+	$attributes .= '&chco=' . sanitize_text_field( $colors ) . '';
+
+	$html_image = '<img title="' . $title . '" src="' . esc_url( 'http://chart.apis.google.com/chart?cht=' . $chart_type . $attributes ) .'" alt="'. $title . '" />';
+
+	return $html_image;
 }
 
 /**
@@ -558,12 +593,14 @@ function chart_function( $atts ) {
  *
  * @since DSW oddil 1.0
  */
-function pdf_function($attr, $url) {
+function dswoddil_pdf_function($attr, $url) {
 	extract( shortcode_atts( array(
 		'width' => '640',
 		'height' => '480'
 	), $attr) );
-	return '<iframe src="http://docs.google.com/viewer?url=' . $url . '&embedded=true" style="width:' .$width. '; height:' .$height. ';">Your browser does not support iframes</iframe>';
+	$html_iframe = '<iframe src="' . esc_url( 'http://docs.google.com/viewer?url=' . $url . '&embedded=true' ) . '" style="width:' . intval( $width ) . '; height:' . intval( $height ) . ';">' . __( 'Your browser does not support iframes', 'dswoddil' ) . '</iframe>';
+
+	return $html_iframe;
 }
 
 /**
@@ -571,13 +608,13 @@ function pdf_function($attr, $url) {
  *
  * @since DSW oddil 1.0
  */
-function register_shortcodes() {
-	add_shortcode( 'recent-posts', 'recent_posts_function' );
-	add_shortcode( 'linkbutton', 'linkbutton_function' );
-	add_shortcode( 'menu', 'menu_function' );
-	add_shortcode( 'googlemap', 'googlemap_function' );
-	add_shortcode( 'chart', 'chart_function' );
-	add_shortcode( 'pdf', 'pdf_function' );
+function dswoddil_register_shortcodes() {
+	add_shortcode( 'recent-posts', 'dswoddil_recent_posts_function' );
+	add_shortcode( 'linkbutton', 'dswoddil_linkbutton_function' );
+	add_shortcode( 'menu', 'dswoddil_menu_function' );
+	add_shortcode( 'googlemap', 'dswoddil_googlemap_function' );
+	add_shortcode( 'chart', 'dswoddil_chart_function' );
+	add_shortcode( 'pdf', 'dswoddil_pdf_function' );
 }
 
 /*** Recent posts button into TinyMCE ***/
@@ -587,9 +624,30 @@ function register_shortcodes() {
  *
  * @since DSW oddil 1.0
  */
-function register_button( $buttons ) {
+function dswoddil_register_button( $buttons ) {
 	array_push( $buttons, "|", "recentposts" );
 	return $buttons;
+}
+
+/**
+ * Localize TinyMCE recenposts plugin
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_mce_localize_recentposts_script() {
+	$recentposts_vars = array(
+		'title'			=> __( 'Recent posts', 'dswoddil' ),
+		'posts'			=> __( 'Posts count', 'dswoddil' ),
+		'text'		 	=> __( 'Title', 'dswoddil' ),
+		'text_message'	=> __( 'This is title text', 'dswoddil' ),
+		'link'			=> __( 'Show links only', 'dswoddil' ),
+	);
+
+	?>
+	<script type="text/javascript">
+		var recentposts_vars = <?php echo json_encode($recentposts_vars); ?>;
+	</script>
+	<?php
 }
 
 /**
@@ -597,7 +655,7 @@ function register_button( $buttons ) {
  *
  * @since DSW oddil 1.0
  */
-function add_plugin( $plugin_array ) {
+function dswoddil_mce_add_recentposts_plugin( $plugin_array ) {
 	$plugin_array['recentposts'] = get_template_directory_uri() . '/js/recentposts.js';
 	return $plugin_array;
 }
@@ -607,22 +665,24 @@ function add_plugin( $plugin_array ) {
  *
  * @since DSW oddil 1.0
  */
-function my_recent_posts_button() {
+function dswoddil_mce_recentposts_button() {
 	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
 		return;
 	}
 
 	if ( get_user_option('rich_editing') == 'true' ) {
-		add_filter( 'mce_external_plugins', 'add_plugin' );
-		add_filter( 'mce_buttons', 'register_button' );
+		add_filter( 'mce_external_plugins', 'dswoddil_mce_add_recentposts_plugin' );
+		add_filter( 'mce_buttons', 'dswoddil_register_button' );
 	}
 }
 
 /*** Add actions and filters ***/
 
 // Add support into init
-add_action( 'init', 'register_shortcodes' );
-add_action( 'init', 'my_recent_posts_button' );
+add_action( 'init', 'dswoddil_register_shortcodes' );
+add_action( 'init', 'dswoddil_mce_recentposts_button' );
+// Enqueue admin scripts
+add_action( 'admin_enqueue_scripts', 'dswoddil_mce_localize_recentposts_script' );
 // Add support for shortcodes in widgets
 add_filter( 'widget_text', 'do_shortcode' );
 // Add support for shortcodes in comments
@@ -639,7 +699,7 @@ add_filter( 'the_excerpt', 'do_shortcode');
  *
  * @since DSW oddil 1.0
  */
-function load_template_part( $template_name, $part_name = null ) {
+function dswoddil_load_template_part( $template_name, $part_name = null ) {
 	ob_start();
 	get_template_part($template_name, $part_name);
 	$var = ob_get_contents();
@@ -650,7 +710,7 @@ function load_template_part( $template_name, $part_name = null ) {
 /**
  * Get development environment key
  */
-function get_dev_enviroment() {
+function dswoddil_get_dev_enviroment() {
 	$environment = 1; // production
 	if ( false !== stripos( $_SERVER['HTTP_HOST'], 'staging.' ) ) {
 		$environment = 2; // dev/staging

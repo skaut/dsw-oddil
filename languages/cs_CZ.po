@@ -2,13 +2,19 @@
 # This file is distributed under the same license as the DSW oddil package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2014-05-07 10:22:33+0000\n"
+"PO-Revision-Date: 2015-08-15 09:25+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
-"X-Generator: GlotPress/0.1\n"
+"X-Generator: Poedit 1.8.4\n"
 "Project-Id-Version: DSW oddil\n"
+"POT-Creation-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: cs_CZ\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-SearchPath-0: .\n"
 
 #: inc/customizer.php:102
 msgid "The home page features your choice of up to 6 posts prominently displayed in a grid or slider, controlled by a <a href=\"%1$s\">tag</a>; you can change the tag and layout in <a href=\"%2$s\">Appearance &rarr; Customize</a>. If no posts match the tag, <a href=\"%3$s\">sticky posts</a> will be displayed instead."
@@ -59,9 +65,21 @@ msgstr "http://wordpress.org/themes/twentyfourteen"
 msgid "Use a <a href=\"%1$s\">tag</a> to feature your posts. If no posts match the tag, <a href=\"%2$s\">sticky posts</a> will be displayed instead."
 msgstr "Pro výběr doporučených příspěvků můžete použít speciální <a href=\"%1$s\">štítek</a>. Pokud tímto způsobem nic neoznačíte, automaticky se budou zobrazovat <a href=\"%2$s\">zvýrazněné příspěvky</a>."
 
-#: 404.php:17
-msgid "Not Found"
-msgstr "Nenalezeno"
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Ouha! Stránka nebyla nalezena."
+
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr "Patrně jste chtěli zobrazit stránku, která se na webu bohužel nenachází. Můžete ale zkusit vyhledávání pomocí zadaného klíčového slova."
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr "Nejpoužívanější kategorie"
+
+#: 404.php:44
+msgid "Try looking in the monthly archives. %1$s"
+msgstr "Zkuste se podívat do měsíčních archivů. %1$s"
 
 #: inc/customizer.php:31
 msgid "Display Site Title &amp; Tagline"
@@ -104,10 +122,6 @@ msgstr "Předchozí"
 msgid "Next"
 msgstr "Další"
 
-#: 404.php:21
-msgid "It looks like nothing was found at this location. Maybe try a search?"
-msgstr "Patrně jste chtěli zobrazit stránku, která se na webu bohužel nenachází. Můžete ale zkusit vyhledávání pomocí zadaného klíčového slova."
-
 #: author.php:31
 msgid "All posts by %s"
 msgstr "Archiv autora: %s"
@@ -130,6 +144,30 @@ msgstr "Zápatí"
 #: functions.php:191
 msgid "Appears in the footer section of the site."
 msgstr "Oblast pro umístění widgetů, které se budou zobrazovat v dolní části webu."
+
+#: functions.php:601
+msgid "Your browser does not support iframes"
+msgstr "Váš prohlížeč nepodporuje html tag iframe"
+
+#: functions.php:602
+msgid "Recent posts"
+msgstr "Nedávné příspěvky"
+
+#: functions.php:603
+msgid "Posts count"
+msgstr "Počet příspěvků"
+
+#: functions.php:604
+msgid "Title"
+msgstr "Titulek"
+
+#: functions.php:605
+msgid "This is title text"
+msgstr "Toto je text nadpisu"
+
+#: functions.php:606
+msgid "Show links only"
+msgstr "Zobrazit pouze odkazy"
 
 #: functions.php:372
 msgid "%d Article"

@@ -12,4 +12,4 @@ If you found any bugs, if you have feature requests or any questions, please, ei
 
 ## License
 
-DSW Oddil WP Theme is published under the [MIT license](https://github.com/skaut/dsw-oddil/blob/master/LICENSE.md). Feel free to use it in any way.
+DSW Oddil WP Theme is published under the [GPLv2 license](https://github.com/literat/dsw-oddil-wp-theme/blob/master/LICENSE.md). Feel free to use it in any way.

@@ -2,12 +2,12 @@
 	tinymce.create('tinymce.plugins.recentposts', {
 		init : function(ed, url) {
 			ed.addButton('recentposts', {
-			title : 'Nedávné příspěvky',
+			title : recentposts_vars.title,
 			image : url+'/recentpostsbutton.png',
 			onclick : function() {
-				var posts = prompt("Počet příspěvků", "1");
-				var text = prompt("Nadpis", "Toto je text nadpisu");
-				var link = prompt("Zobrazit pouze odkazy", "false");
+				var posts = prompt(recentposts_vars.posts, "1");
+				var text = prompt(recentposts_vars.text, recentposts_vars.message);
+				var link = prompt(recentposts_vars.link, "false");
 
 				if (text != null && text != ''){
 					if (posts != null && posts != '')
