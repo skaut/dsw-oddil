@@ -36,12 +36,20 @@ msgstr ""
 msgid "Show links only"
 msgstr ""
 
-#: 404.php:17
-msgid "Not Found"
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:21
-msgid "It looks like nothing was found at this location. Maybe try a search?"
+#: 404.php:19
+msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:27
+msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
 #: archive.php:31
