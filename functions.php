@@ -524,12 +524,18 @@ function dswoddil_menu_function( $atts, $content = null ) {
 			$atts
 		)
 	);
-	return wp_nav_menu(
-		array(
-			'menu' => $name,
-			'echo' => false
-		)
-	);
+
+	if ( false === ( $dswoddil_menu_data = get_transient( 'dswoddil_menu_function_data' ) ) ) {
+		$dswoddil_menu_data = wp_nav_menu(
+			array(
+				'menu' => $name,
+				'echo' => false
+			)
+		);
+		set_transient( 'dswoddil_menu_function_data', $dswoddil_menu_data, 10 * MINUTE_IN_SECONDS );
+	}
+
+	return $dswoddil_menu_data;
 }
 
 /**
