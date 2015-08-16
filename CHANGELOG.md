@@ -1,3 +1,27 @@
+<a name="0.10.0"></a>
+# [0.10.0](https://github.com/skaut/dsw-oddil/compare/v0.9.0...v0.10.0) (2015-08-16)
+
+
+### Bug Fixes
+
+* Fix comments plural translation in single post (refs #7) ([1e1538c](https://github.com/skaut/dsw-oddil/commit/1e1538c)), closes [#7](https://github.com/skaut/dsw-oddil/issues/7)
+* Fix comments translation (refs #7) ([ac07ae6](https://github.com/skaut/dsw-oddil/commit/ac07ae6)), closes [#7](https://github.com/skaut/dsw-oddil/issues/7)
+* Fix comments translation domain (refs #7) ([7f7f791](https://github.com/skaut/dsw-oddil/commit/7f7f791)), closes [#7](https://github.com/skaut/dsw-oddil/issues/7)
+* Fix generating urls for changelog (refs #39) ([8278777](https://github.com/skaut/dsw-oddil/commit/8278777)), closes [#39](https://github.com/skaut/dsw-oddil/issues/39)
+
+### Features
+
+* Add language attributes call to header (refs #16) ([47fc9f9](https://github.com/skaut/dsw-oddil/commit/47fc9f9))
+* Add readme.txt file for Wordpress (refs #16) ([a01809b](https://github.com/skaut/dsw-oddil/commit/a01809b))
+* Add some extra features and clean functions file (refs #16) ([7c6ddac](https://github.com/skaut/dsw-oddil/commit/7c6ddac))
+* Add some extra features that can be overwritten in future Core ([c29e287](https://github.com/skaut/dsw-oddil/commit/c29e287)), closes [#7](https://github.com/skaut/dsw-oddil/issues/7)
+* Add template part for displaying search pages (refs #16) ([fa93089](https://github.com/skaut/dsw-oddil/commit/fa93089))
+* Template for comments (refs #7) ([e43f1ff](https://github.com/skaut/dsw-oddil/commit/e43f1ff))
+* Template for displaying archive or categories (closes #42) ([14c0ecc](https://github.com/skaut/dsw-oddil/commit/14c0ecc)), closes [#42](https://github.com/skaut/dsw-oddil/issues/42)
+* Use Transient API for wordpress menu (closes #33) ([e1f8a06](https://github.com/skaut/dsw-oddil/commit/e1f8a06)), closes [#33](https://github.com/skaut/dsw-oddil/issues/33)
+
+
+
 <a name="0.9.0"></a>
 # [0.9.0](https://github.com/skaut/dsw-oddil/compare/v0.8.0...v0.9.0) (2015-08-15)
 
