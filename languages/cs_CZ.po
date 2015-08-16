@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the DSW oddil package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-08-15 09:25+0200\n"
+"PO-Revision-Date: 2015-08-16 15:28+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -282,45 +282,48 @@ msgstr "Archiv pro rok: %s"
 msgid "Archives"
 msgstr "Archiv"
 
-#: comments.php:27
+#: comments.php:31
+msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "1 komentář u &bdquo;%2$s&ldquo;"
 msgstr[1] "%1$s komentáře u &bdquo;%2$s&ldquo;"
 msgstr[2] "%1$s komentářů u &bdquo;%2$s&ldquo;"
 
-#: comments.php:34 comments.php:52
+#: comments.php:40 comments.php:61
 msgid "Comment navigation"
 msgstr "Navigace pro komentáře"
 
-#: comments.php:35 comments.php:53
+#: comments.php:43 comments.php:64
 msgid "&larr; Older Comments"
 msgstr "&larr; Starší komentáře"
 
-#: comments.php:36 comments.php:54
+#: comments.php:44 comments.php:65
 msgid "Newer Comments &rarr;"
 msgstr "Novější komentáře &rarr;"
 
-#: comments.php:59
+#: comments.php:77
 msgid "Comments are closed."
 msgstr "Komentáře nejsou povoleny."
 
 #: content-aside.php:48 content-audio.php:48 content-gallery.php:48
 #: content-image.php:48 content-link.php:48 content-page.php:22
 #: content-quote.php:48 content-video.php:48 content.php:56 image.php:54
+#: content-single.php:25
 msgid "Pages:"
 msgstr "Stránky:"
 
 #: content-aside.php:40 content-audio.php:40 content-gallery.php:40
 #: content-image.php:40 content-link.php:40 content-page.php:28
 #: content-quote.php:40 content-video.php:40 content.php:42 image.php:34
-#: page-templates/contributors.php:35
+#: page-templates/contributors.php:35 content-single.php:43
 msgid "Edit"
 msgstr "Upravit"
 
 #: content-aside.php:37 content-audio.php:37 content-gallery.php:37
 #: content-image.php:37 content-link.php:37 content-quote.php:37
 #: content-video.php:37 content.php:38 inc/widgets.php:194
+#: content-single.php:39
 msgid "Leave a comment"
 msgstr "Napsat komentář"
 
@@ -335,6 +338,13 @@ msgstr "1 komentář"
 #: content-video.php:37 content.php:38 inc/widgets.php:194
 msgid "% Comments"
 msgstr "% komentáře"
+
+#: content-single.php:39
+msgid "1 Comment"
+msgid_plural "% Comments"
+msgstr[0] "1 komentář"
+msgstr[1] "%1$s komentáře"
+msgstr[2] "%1$s komentářů"
 
 #: content-aside.php:46 content-audio.php:46 content-gallery.php:46
 #: content-image.php:46 content-link.php:46 content-quote.php:46

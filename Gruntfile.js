@@ -241,7 +241,7 @@ module.exports = function (grunt) {
 			'imagemin',
 			'copy',
 			'clean',
-			'changelog'
+			'conventionalChangelog'
 			//'bump-commit'
 		]);
 	});
@@ -254,6 +254,5 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('changelog'			['conventionalChangelog']);
 	grunt.registerTask('dev', 				['build', 'watch']);
 }

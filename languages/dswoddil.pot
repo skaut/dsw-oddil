@@ -86,25 +86,25 @@ msgstr ""
 msgid "Category Archives: %s"
 msgstr ""
 
-#: comments.php:27
+#: comments.php:31
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:34 comments.php:52
+#: comments.php:40 comments.php:61
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:35 comments.php:53
+#: comments.php:43 comments.php:64
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: comments.php:36 comments.php:54
+#: comments.php:44 comments.php:64
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: comments.php:59
+#: comments.php:77
 msgid "Comments are closed."
 msgstr ""
 

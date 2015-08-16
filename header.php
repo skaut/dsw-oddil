@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -51,17 +51,22 @@
 					 	</div>
 						<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 							<?php
-								wp_nav_menu( array(
-                					'menu'              => 'primary',
-                					'theme_location'    => 'primary',
-                					'depth'             => 3,
-                					'container'         => 'div',
-                					'container_class'   => 'collapse navbar-collapse',
-        							'container_id'      => 'bs-example-navbar-collapse-1',
-                					'menu_class'        => 'nav navbar-nav',
-                					'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-                					'walker'            => new wp_bootstrap_navwalker())
-            					);
+								if ( false === ( $dswoddil_menu_data = get_transient( 'dswoddil_primary_menu_data' ) ) ) {
+									$dswoddil_menu_data = wp_nav_menu( array(
+										'echo'				=> false,
+										'menu'              => 'primary',
+										'theme_location'    => 'primary',
+										'depth'             => 3,
+										'container'         => 'div',
+										'container_class'   => 'collapse navbar-collapse',
+										'container_id'      => 'bs-example-navbar-collapse-1',
+										'menu_class'        => 'nav navbar-nav',
+										'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+										'walker'            => new wp_bootstrap_navwalker())
+									);
+									set_transient( 'dswoddil_primary_menu_data', $dswoddil_menu_data, 10 * MINUTE_IN_SECONDS );
+								}
+								echo $dswoddil_menu_data;
 							?>
 						</nav>
 					</div>
