@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the DSW oddil package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-08-15 09:25+0200\n"
+"PO-Revision-Date: 2015-08-16 15:28+0200\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -282,26 +282,26 @@ msgstr "Archiv pro rok: %s"
 msgid "Archives"
 msgstr "Archiv"
 
-#: comments.php:27
+#: comments.php:31
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] "1 komentář u &bdquo;%2$s&ldquo;"
 msgstr[1] "%1$s komentáře u &bdquo;%2$s&ldquo;"
 msgstr[2] "%1$s komentářů u &bdquo;%2$s&ldquo;"
 
-#: comments.php:34 comments.php:52
+#: comments.php:40 comments.php:61
 msgid "Comment navigation"
 msgstr "Navigace pro komentáře"
 
-#: comments.php:35 comments.php:53
+#: comments.php:43 comments.php:64
 msgid "&larr; Older Comments"
 msgstr "&larr; Starší komentáře"
 
-#: comments.php:36 comments.php:54
+#: comments.php:44 comments.php:65
 msgid "Newer Comments &rarr;"
 msgstr "Novější komentáře &rarr;"
 
-#: comments.php:59
+#: comments.php:77
 msgid "Comments are closed."
 msgstr "Komentáře nejsou povoleny."
 
