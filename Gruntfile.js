@@ -247,10 +247,15 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('deploy', 'Deploy files to server over FTP.', function(account) {
-		if (account !== '') {
+		if (typeof account !== 'undefined') {
 			return grunt.task.run(['ftp-deploy:' + account])
 		} else {
-			return grunt.task.run(['ftp-deploy']);
+			return grunt.task.run([
+				'ftp-deploy:oddil',
+				'ftp-deploy:piskoviste',
+				'ftp-deploy:dobryweb',
+				'ftp-deploy:navod',
+			]);
 		}
 	});
 
