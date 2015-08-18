@@ -215,6 +215,39 @@ msgstr ""
 msgid "Appears in the footer section of the site."
 msgstr ""
 
+#: functions.php:177
+msgid "Header right widget"
+msgstr ""
+
+#: functions.php:179
+msgid "Widget that appears on the right in header."
+msgstr ""
+
+#: functions.php:186
+msgid "Header left widget"
+msgstr ""
+
+#: functions.php:189
+msgid "Widget that appears on the left in header."
+msgstr ""
+
+#: functions.php:195
+msgid "Area above content"
+msgstr ""
+
+#: functions.php:197
+msgid "Appears above the content section of the site."
+msgstr ""
+
+#: functions.php:222
+msgid "Area under content"
+msgstr ""
+
+#: functions.php:224
+msgid "Appears in the bottom section of the site."
+msgstr ""
+
+
 #: functions.php:213
 msgctxt "Lato font: on or off"
 msgid "on"

@@ -133,17 +133,49 @@ msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: functions.php:182
+#: functions.php:215
 msgid "Additional sidebar that appears on the right."
 msgstr "Vedlejší postranní panel se zobrazuje v pravé části webu."
 
-#: functions.php:189
+#: functions.php:231
 msgid "Footer Widget Area"
 msgstr "Zápatí"
 
-#: functions.php:191
+#: functions.php:233
 msgid "Appears in the footer section of the site."
 msgstr "Oblast pro umístění widgetů, které se budou zobrazovat v dolní části webu."
+
+#: functions.php:177
+msgid "Header right widget"
+msgstr "Záhlaví vpravo"
+
+#: functions.php:179
+msgid "Widget that appears on the right in header."
+msgstr "Oblast pro umístění widgetů, které se budou zobrazovat v hlavičce vpravo."
+
+#: functions.php:186
+msgid "Header left widget"
+msgstr "Záhlaví vlevo"
+
+#: functions.php:189
+msgid "Widget that appears on the left in header."
+msgstr "Oblast pro umístění widgetů, které se budou zobrazovat v hlavičce vlevo."
+
+#: functions.php:195
+msgid "Area above content"
+msgstr "Oblast nad obsahem"
+
+#: functions.php:197
+msgid "Appears above the content section of the site."
+msgstr "Oblast pro umístění widgetů, které se budou zobrazovat nad hlavním obsahem webu."
+
+#: functions.php:222
+msgid "Area under content"
+msgstr "Oblast pod obsahem"
+
+#: functions.php:224
+msgid "Appears in the bottom section of the site."
+msgstr "Oblast pro umístění widgetů, které se budou zobrazovat pod hlavním obsahem webu."
 
 #: functions.php:601
 msgid "Your browser does not support iframes"
@@ -368,15 +400,15 @@ msgstr "Hlavní navigační menu"
 msgid "Secondary menu in left sidebar"
 msgstr "Vedlejší menu v levém postranním panelu"
 
-#: functions.php:171
+#: functions.php:204
 msgid "Primary Sidebar"
 msgstr "Levý postranní panel"
 
-#: functions.php:173
+#: functions.php:206
 msgid "Main sidebar that appears on the left."
 msgstr "Hlavní postranní panel se zobrazuje v levé části webu."
 
-#: functions.php:180
+#: functions.php:213
 msgid "Content Sidebar"
 msgstr "Pravý postranní panel"
 

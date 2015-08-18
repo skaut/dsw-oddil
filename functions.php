@@ -174,7 +174,7 @@ function dswoddil_widgets_init() {
 	//register_widget( 'Twenty_Fourteen_Ephemera_Widget' );
 
 	register_sidebar( array(
-		'name'          => __( 'Loga vpravo', 'dswoddil' ),
+		'name'          => __( 'Header right widget', 'dswoddil' ),
 		'id'            => 'header-right',
 		'description'   => __( 'Widget that appears on the right in header.', 'dswoddil' ),
 		'before_widget' => '',
@@ -183,7 +183,7 @@ function dswoddil_widgets_init() {
 		'after_title'   => '',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Loga vlevo', 'dswoddil' ),
+		'name'          => __( 'Header left widget', 'dswoddil' ),
 		'id'            => 'header-left',
 		'description'   => __( 'Widget that appears on the left in header.', 'dswoddil' ),
 		'before_widget' => '',
@@ -192,7 +192,7 @@ function dswoddil_widgets_init() {
 		'after_title'   => '',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Oblast nad obsahem', 'dswoddil' ),
+		'name'          => __( 'Area above content', 'dswoddil' ),
 		'id'            => 'above-content-widget',
 		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
 		'before_widget' => '<div class="content">',
@@ -219,7 +219,7 @@ function dswoddil_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Oblast pod obsahem', 'dswoddil' ),
+		'name'          => __( 'Area under content', 'dswoddil' ),
 		'id'            => 'bottom-widget',
 		'description'   => __( 'Appears in the bottom section of the site.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s col-md-4"><div class="block">',
@@ -230,7 +230,7 @@ function dswoddil_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget Area', 'dswoddil' ),
 		'id'            => 'footer',
-		'description'   => __( 'Appears in the most bottom section of the site.', 'dswoddil' ),
+		'description'   => __( 'Appears in the footer section of the site.', 'dswoddil' ),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '<h2 class="widget-title">',
