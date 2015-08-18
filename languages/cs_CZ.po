@@ -362,21 +362,16 @@ msgstr "Napsat komentář"
 #: content-aside.php:37 content-audio.php:37 content-gallery.php:37
 #: content-image.php:37 content-link.php:37 content-quote.php:37
 #: content-video.php:37 content.php:38 inc/widgets.php:194
+#: content-single.php:39
 msgid "1 Comment"
 msgstr "1 komentář"
 
 #: content-aside.php:37 content-audio.php:37 content-gallery.php:37
 #: content-image.php:37 content-link.php:37 content-quote.php:37
 #: content-video.php:37 content.php:38 inc/widgets.php:194
+#: content-single.php:39
 msgid "% Comments"
 msgstr "% komentáře"
-
-#: content-single.php:39
-msgid "1 Comment"
-msgid_plural "% Comments"
-msgstr[0] "1 komentář"
-msgstr[1] "%1$s komentáře"
-msgstr[2] "%1$s komentářů"
 
 #: content-aside.php:46 content-audio.php:46 content-gallery.php:46
 #: content-image.php:46 content-link.php:46 content-quote.php:46
