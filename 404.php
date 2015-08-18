@@ -9,8 +9,12 @@ get_header(); ?>
 
 	<div id="primary" class="content-area container content">
 		<main id="main" class="site-main row" role="main">
-
-			<section class="error-404 not-found col-md-9">
+			<?php
+				$col = 12;
+				if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
+				if ( is_active_sidebar( 'sidebar-2' ) ) $col -= 3;
+			?>
+			<section class="error-404 not-found col-md-<?php echo $col; ?>">
 				<header class="page-header">
 					<h1 class="page-title"><?php _e( 'Oops! That page can&rsquo;t be found.', 'dswoddil' ); ?></h1>
 				</header><!-- .page-header -->
@@ -50,12 +54,13 @@ get_header(); ?>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
+			<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 			<section class="col-md-3">
 				<?php get_sidebar(); ?>
 			</section><!-- .col-md-3 -->
+			<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar( 'content' ); ?>
 <?php get_footer(); ?>

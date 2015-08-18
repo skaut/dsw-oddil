@@ -16,7 +16,12 @@ get_header(); ?>
 
 	<div id="primary" class="content-area container content">
 		<main id="main" class="site-main row" role="main">
-			<section class="col-md-9">
+			<?php
+				$col = 12;
+				if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
+				if ( is_active_sidebar( 'sidebar-2' ) ) $col -= 3;
+			?>
+			<section class="col-md-<?php echo $col; ?>">
 
 				<?php while ( have_posts() ) : the_post(); ?>
 
@@ -31,9 +36,11 @@ get_header(); ?>
 
 				<?php endwhile; // End of the loop. ?>
 			</section><!-- .col-md-9 -->
+			<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
 			<section class="col-md-3">
 				<?php get_sidebar(); ?>
 			</section><!-- .col-md-3 -->
+			<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
