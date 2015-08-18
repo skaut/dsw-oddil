@@ -174,6 +174,7 @@ function dswoddil_register_required_plugins() {
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_recent_posts_function( $atts, $content = null ) {
 	extract( shortcode_atts( array(
 		'posts' => 1,
@@ -197,21 +198,23 @@ function dswoddil_recent_posts_function( $atts, $content = null ) {
 	wp_reset_query();
 	return $return_string;
 }
-
+*/
 /**
  * Link button shortcode
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_linkbutton_function( $atts, $content = null ) {
 	return '<button type="button">' . do_shortcode( $content ) . '</button>';
 }
-
+*/
 /**
  * Menu shortcode
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_menu_function( $atts, $content = null ) {
 	extract(
 		shortcode_atts(
@@ -232,12 +235,13 @@ function dswoddil_menu_function( $atts, $content = null ) {
 
 	return $dswoddil_menu_data;
 }
-
+*/
 /**
  * Google maps embed shortcode
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_googlemap_function( $atts, $content = null ) {
 	extract(shortcode_atts(array(
 		"width" => '640',
@@ -246,12 +250,13 @@ function dswoddil_googlemap_function( $atts, $content = null ) {
 	), $atts));
 	return '<iframe width="' . intval( $width ) . '" height="' . intval( $height ) . '" src="' . esc_url( $src . '&output=embed' ) . '" ></iframe>';
 }
-
+*/
 /**
  * Chart embed shortcode
  *
  * @since DSW oddil 1.0
  */
+ /*
 function dswoddil_chart_function( $atts ) {
 	extract( shortcode_atts( array(
 		'data' => '',
@@ -288,12 +293,13 @@ function dswoddil_chart_function( $atts ) {
 
 	return $html_image;
 }
-
+*/
 /**
  * PDF embed shortcode
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_pdf_function($attr, $url) {
 	extract( shortcode_atts( array(
 		'width' => '640',
@@ -303,12 +309,13 @@ function dswoddil_pdf_function($attr, $url) {
 
 	return $html_iframe;
 }
-
+*/
 /**
  * Register DSW shortcodes functions
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_register_shortcodes() {
 	add_shortcode( 'recent-posts', 'dswoddil_recent_posts_function' );
 	add_shortcode( 'linkbutton', 'dswoddil_linkbutton_function' );
@@ -317,7 +324,7 @@ function dswoddil_register_shortcodes() {
 	add_shortcode( 'chart', 'dswoddil_chart_function' );
 	add_shortcode( 'pdf', 'dswoddil_pdf_function' );
 }
-
+*/
 /*** Recent posts button into TinyMCE ***/
 
 /**
@@ -325,16 +332,18 @@ function dswoddil_register_shortcodes() {
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_register_button( $buttons ) {
 	array_push( $buttons, "|", "recentposts" );
 	return $buttons;
 }
-
+*/
 /**
  * Localize TinyMCE recenposts plugin
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_mce_localize_recentposts_script() {
 	$recentposts_vars = array(
 		'title'			=> __( 'Recent posts', 'dswoddil' ),
@@ -350,22 +359,24 @@ function dswoddil_mce_localize_recentposts_script() {
 	</script>
 	<?php
 }
-
+*/
 /**
  * Add plugin for recent posts
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_mce_add_recentposts_plugin( $plugin_array ) {
 	$plugin_array['recentposts'] = get_template_directory_uri() . '/js/recentposts.js';
 	return $plugin_array;
 }
-
+*/
 /**
  * Create own recent posts button
  *
  * @since DSW oddil 1.0
  */
+/*
 function dswoddil_mce_recentposts_button() {
 	if ( ! current_user_can('edit_posts') && ! current_user_can('edit_pages') ) {
 		return;
@@ -376,17 +387,17 @@ function dswoddil_mce_recentposts_button() {
 		add_filter( 'mce_buttons', 'dswoddil_register_button' );
 	}
 }
-
+*/
 /*** Add actions and filters ***/
 
 // Add support into init
-add_action( 'init', 'dswoddil_register_shortcodes' );
-add_action( 'init', 'dswoddil_mce_recentposts_button' );
+//add_action( 'init', 'dswoddil_register_shortcodes' );
+//add_action( 'init', 'dswoddil_mce_recentposts_button' );
 // Enqueue admin scripts
-add_action( 'admin_enqueue_scripts', 'dswoddil_mce_localize_recentposts_script' );
+//add_action( 'admin_enqueue_scripts', 'dswoddil_mce_localize_recentposts_script' );
 // Add support for shortcodes in widgets
-add_filter( 'widget_text', 'do_shortcode' );
+//add_filter( 'widget_text', 'do_shortcode' );
 // Add support for shortcodes in comments
-add_filter( 'comment_text', 'do_shortcode' );
+//add_filter( 'comment_text', 'do_shortcode' );
 // Add support for shortcodes in excerpts
-add_filter( 'the_excerpt', 'do_shortcode');
+//add_filter( 'the_excerpt', 'do_shortcode');
