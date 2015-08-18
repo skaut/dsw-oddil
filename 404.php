@@ -12,7 +12,7 @@ get_header(); ?>
 			<?php
 				$col = 12;
 				if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
-				if ( is_active_sidebar( 'sidebar-2' ) ) $col -= 3;
+				if ( is_active_sidebar( 'content' ) ) $col -= 3;
 			?>
 			<section class="error-404 not-found col-md-<?php echo $col; ?>">
 				<header class="page-header">
@@ -54,9 +54,9 @@ get_header(); ?>
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
 
-			<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+			<?php if ( is_active_sidebar( 'content' ) ) : ?>
 			<section class="col-md-3">
-				<?php get_sidebar(); ?>
+				<?php get_sidebar( 'content' ); ?>
 			</section><!-- .col-md-3 -->
 			<?php endif; ?>
 

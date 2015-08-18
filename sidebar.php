@@ -32,7 +32,7 @@
 
 
 	<div id="content-sidebar" class="content-sidebar widget-area" role="complementary">
-		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar( 'sidebar-2' ) ) : ?>
+		<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar( 'content' ) ) : ?>
 		<?php endif; ?>
 	</div><!-- #primary-sidebar -->
 

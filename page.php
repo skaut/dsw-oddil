@@ -19,7 +19,7 @@ get_header(); ?>
 			<?php
 				$col = 12;
 				if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
-				if ( is_active_sidebar( 'sidebar-2' ) ) $col -= 3;
+				if ( is_active_sidebar( 'content' ) ) $col -= 3;
 			?>
 			<section class="col-md-<?php echo $col; ?>">
 
@@ -36,13 +36,12 @@ get_header(); ?>
 
 				<?php endwhile; // End of the loop. ?>
 			</section><!-- .col-md-9 -->
-			<?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
+			<?php if ( is_active_sidebar( 'content' ) ) : ?>
 			<section class="col-md-3">
-				<?php get_sidebar(); ?>
+				<?php get_sidebar( 'content' ); ?>
 			</section><!-- .col-md-3 -->
 			<?php endif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
-<?php get_sidebar(); ?>
 <?php get_footer(); ?>
