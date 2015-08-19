@@ -124,7 +124,7 @@ function dswoddil_load_styles() {
 	// Custom colored style for this theme
 	wp_enqueue_style(
 		'dswoddil_theme_color',
-		get_template_directory_uri() . '/css/' . get_option( 'dsw_style_sheet' ) . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? '' : '.min' ) . '.css'
+		get_template_directory_uri() . '/css/' . get_option( 'dswoddil_layout_color' ) . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? '' : '.min' ) . '.css'
 	);
 }
 
@@ -417,6 +417,125 @@ function dswoddil_admin() {
 	</form>';
 }
 add_action('admin_menu', 'dswoddil_add_admin');
+
+/******************************************************************************
+	ADMIN THEME SETTINGS
+******************************************************************************/
+add_action( 'admin_menu', 'dswoddil_theme_settings_menu' );
+add_action( 'admin_init', 'dswoddil_theme_settings_init');
+
+/**
+ * Preparing theme settings into menu.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_theme_settings_menu() {
+	add_theme_page(
+		'Theme Settings',
+		'Theme Settings',
+		'administrator',
+		'dswoddil_theme_settings',
+		'dswoddil_theme_settings_page_render'
+	);
+}
+
+/**
+ * Render theme settings page.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_theme_settings_page_render() {
+	// Create a header in the default WordPress 'wrap' container
+	?>
+	<div class="wrap">
+		<div id="icon-themes" class="icon32"></div>
+		<h2>DSW Oddil Theme Settings</h2>
+		<?php settings_errors(); ?>
+
+		<form method="post" action="options.php">
+			<?php settings_fields( 'dswoddil_theme_settings_page' ); ?>
+			<?php do_settings_sections( 'dswoddil_theme_settings_page' ); ?>
+			<?php submit_button(); ?>
+		</form>
+
+	</div>
+	<?php
+}
+
+/**
+ * Initialization of theme settings.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_theme_settings_init() {
+	if ( false == get_option( 'dswoddil_theme_settings_page' ) ) {
+		add_option( 'dswoddil_theme_settings_page' );
+	}
+
+	add_settings_section(
+		'dswoddil_general_settings_section',
+		'Layout Settings',
+		'dswoddil_layout_settings_callback',
+		'dswoddil_theme_settings_page'
+	);
+
+	add_settings_field(
+		'dswoddil_layout_color',
+		'Layout color',
+		'dswoddil_layout_color_switcher_render',
+		'dswoddil_theme_settings_page',
+		'dswoddil_general_settings_section',
+		array(
+			'Change this setting to display different color.'
+		)
+	);
+
+	register_setting(
+		'dswoddil_theme_settings_page',
+		'dswoddil_layout_color'
+	);
+}
+
+/**
+ * Layout settings callback.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_layout_settings_callback() {
+	echo '<p>Select which layout color you wish to display.</p>';
+}
+
+/**
+ * Render layout color switcher.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_layout_color_switcher_render($args) {
+	$options = array (
+		"id"   	 => "dswoddil_layout_color",
+		"colors" => array(
+			"red",
+			"blue",
+			"violet",
+			"green"
+		),
+	);
+
+	$html = '<select style="width:200px;" name="'.$options['id'].'" id="'.$options['id'].'">';
+				foreach ($options['colors'] as $color) {
+					$html .= '<option';
+					if (get_option( $options['id'] ) == $color) {
+						$html .= ' selected="selected"';
+					}
+					$html .= '>'.$color.'</option>';
+				}
+				$html .= '</select>';
+
+	// Here, we will take the first argument of the array and add it to a label next to the checkbox
+	$html .= '<label for="dswoddil_layout_color"> '  . $args[0] . '</label>';
+
+	echo $html;
+}
 
 /******************************************************************************
 	ADMIN SCRIPTS
