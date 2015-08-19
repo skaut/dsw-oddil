@@ -299,8 +299,8 @@ add_action( 'admin_init', 'dswoddil_theme_settings_init');
  */
 function dswoddil_theme_settings_menu() {
 	add_theme_page(
-		'Theme Settings',
-		'Theme Settings',
+		__( 'Theme Settings', 'dswoddil' ),
+		__( 'Theme Settings', 'dswoddil' ),
 		'administrator',
 		'dswoddil_theme_settings',
 		'dswoddil_theme_settings_page_render'
@@ -317,7 +317,7 @@ function dswoddil_theme_settings_page_render() {
 	?>
 	<div class="wrap">
 		<div id="icon-themes" class="icon32"></div>
-		<h2>DSW Oddil Theme Settings</h2>
+		<h2><?php _e( 'DSW Oddil Theme Settings', 'dswoddil' )?></h2>
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
@@ -342,19 +342,19 @@ function dswoddil_theme_settings_init() {
 
 	add_settings_section(
 		'dswoddil_general_settings_section',
-		'Layout Settings',
+		__( 'Layout Settings', 'dswoddil' ),
 		'dswoddil_layout_settings_callback',
 		'dswoddil_theme_settings_page'
 	);
 
 	add_settings_field(
 		'dswoddil_layout_color',
-		'Layout color',
+		__( 'Layout color', 'dswoddil' ),
 		'dswoddil_layout_color_switcher_render',
 		'dswoddil_theme_settings_page',
 		'dswoddil_general_settings_section',
 		array(
-			'Change this setting to display different color.'
+			__( 'Change this setting to display different color.', 'dswoddil' )
 		)
 	);
 
@@ -370,7 +370,7 @@ function dswoddil_theme_settings_init() {
  * @since DSW oddil 1.0
  */
 function dswoddil_layout_settings_callback() {
-	echo '<p>Select which layout color you wish to display.</p>';
+	_e( '<p>Select which layout color you wish to display.</p>', 'dswoddil' );
 }
 
 /**
@@ -382,20 +382,20 @@ function dswoddil_layout_color_switcher_render($args) {
 	$options = array (
 		"id"   	 => "dswoddil_layout_color",
 		"colors" => array(
-			"red",
-			"blue",
-			"violet",
-			"green"
+			"red" 		=> __( 'red', 'dswoddil' ),
+			"blue"		=> __( 'blue', 'dswoddil' ),
+			"violet"	=> __( 'violet', 'dswoddil' ),
+			"green"		=> __( 'green', 'dswoddil' )
 		),
 	);
 
 	$html = '<select style="width:200px;" name="'.$options['id'].'" id="'.$options['id'].'">';
-				foreach ($options['colors'] as $color) {
+				foreach ( $options['colors'] as $color_key => $color_value ) {
 					$html .= '<option';
-					if (get_option( $options['id'] ) == $color) {
+					if (get_option( $options['id'] ) == $color_key) {
 						$html .= ' selected="selected"';
 					}
-					$html .= '>'.$color.'</option>';
+					$html .= '>'.$color_value.'</option>';
 				}
 				$html .= '</select>';
 
