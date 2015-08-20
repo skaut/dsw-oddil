@@ -124,7 +124,7 @@ function dswoddil_load_styles() {
 	// Custom colored style for this theme
 	wp_enqueue_style(
 		'dswoddil_theme_color',
-		get_template_directory_uri() . '/css/' . get_option( 'dsw_style_sheet' ) . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? '' : '.min' ) . '.css'
+		get_template_directory_uri() . '/css/' . get_option( 'dswoddil_layout_color' ) . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? '' : '.min' ) . '.css'
 	);
 }
 
@@ -174,7 +174,7 @@ function dswoddil_widgets_init() {
 	//register_widget( 'Twenty_Fourteen_Ephemera_Widget' );
 
 	register_sidebar( array(
-		'name'          => __( 'Loga vpravo', 'dswoddil' ),
+		'name'          => __( 'Header right widget', 'dswoddil' ),
 		'id'            => 'header-right',
 		'description'   => __( 'Widget that appears on the right in header.', 'dswoddil' ),
 		'before_widget' => '',
@@ -183,7 +183,7 @@ function dswoddil_widgets_init() {
 		'after_title'   => '',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Loga vlevo', 'dswoddil' ),
+		'name'          => __( 'Header left widget', 'dswoddil' ),
 		'id'            => 'header-left',
 		'description'   => __( 'Widget that appears on the left in header.', 'dswoddil' ),
 		'before_widget' => '',
@@ -192,7 +192,7 @@ function dswoddil_widgets_init() {
 		'after_title'   => '',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Oblast nad obsahem', 'dswoddil' ),
+		'name'          => __( 'Area above content', 'dswoddil' ),
 		'id'            => 'above-content-widget',
 		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
 		'before_widget' => '<div class="content">',
@@ -211,7 +211,7 @@ function dswoddil_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Content Sidebar', 'dswoddil' ),
-		'id'            => 'sidebar-2',
+		'id'            => 'content',
 		'description'   => __( 'Additional sidebar that appears on the right.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -219,7 +219,7 @@ function dswoddil_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Oblast pod obsahem', 'dswoddil' ),
+		'name'          => __( 'Area under content', 'dswoddil' ),
 		'id'            => 'bottom-widget',
 		'description'   => __( 'Appears in the bottom section of the site.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s col-md-4"><div class="block">',
@@ -230,7 +230,7 @@ function dswoddil_widgets_init() {
 	register_sidebar( array(
 		'name'          => __( 'Footer Widget Area', 'dswoddil' ),
 		'id'            => 'footer',
-		'description'   => __( 'Appears in the most bottom section of the site.', 'dswoddil' ),
+		'description'   => __( 'Appears in the footer section of the site.', 'dswoddil' ),
 		'before_widget' => '',
 		'after_widget'  => '',
 		'before_title'  => '<h2 class="widget-title">',
@@ -238,16 +238,6 @@ function dswoddil_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'dswoddil_widgets_init' );
-
-if ( function_exists('register_sidebar') )
-	register_sidebar(array(
-		'id'			=> 'widget',
-		'before_widget'	=> '',
-		'after_widget'	=> '',
-		'before_title'	=> '<h3>',
-		'after_title'	=> '</h3>',
-	)
-);
 
 // Implement Custom Header features.
 require get_template_directory() . '/inc/custom-header.php';
@@ -296,137 +286,123 @@ function dswoddil_has_featured_posts() {
 	return ! is_paged() && (bool) dswoddil_get_featured_posts();
 }
 
-$themename = "DSW Theme";
-$shortname = "dsw";
-$options = array (
-array( "name" => "Style Sheet",
-	"desc" => "Enter the Style Sheet you would like to use for DSW Theme",
-	"id" => $shortname."_style_sheet",
-	"type" => "select",
-	"options" => array("default", "red", "blue", "violet", "green"),
-	"std" => "blue"),
-);
+/******************************************************************************
+	ADMIN THEME SETTINGS
+******************************************************************************/
+add_action( 'admin_menu', 'dswoddil_theme_settings_menu' );
+add_action( 'admin_init', 'dswoddil_theme_settings_init');
 
-function dswoddil_add_admin() {
-	global $themename, $shortname, $options;
-
-	if (isset($_GET['page']) && ($_GET['page'] == basename(__FILE__))) {
-		if ( isset($_REQUEST['action']) && ('save' == $_REQUEST['action']) ) {
-			foreach ($options as $value) {
-				update_option( $value['id'], $_REQUEST[ $value['id'] ] );
-			}
-
-			foreach ($options as $value) {
-				if( isset( $_REQUEST[ $value['id'] ] ) ) {
-					update_option( $value['id'], $_REQUEST[ $value['id'] ] );
-				} else {
-					delete_option( $value['id'] );
-				}
-			}
-
-			header("Location: themes.php?page=functions.php&saved=true");
-			die;
-		} else if(isset($_REQUEST['action']) && ('reset' == $_REQUEST['action']) ) {
-			foreach ($options as $value) {
-				delete_option( $value['id'] );
-			}
-			header("Location: themes.php?page=functions.php&reset=true");
-			die;
-		}
-	}
-
-	add_theme_page($themename." Options", "".$themename." Options", 'edit_themes', basename(__FILE__), 'dswoddil_admin');
+/**
+ * Preparing theme settings into menu.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_theme_settings_menu() {
+	add_theme_page(
+		__( 'Theme Settings', 'dswoddil' ),
+		__( 'Theme Settings', 'dswoddil' ),
+		'administrator',
+		'dswoddil_theme_settings',
+		'dswoddil_theme_settings_page_render'
+	);
 }
 
-function dswoddil_admin() {
-	global $themename, $shortname, $options;
-	if (isset($_REQUEST['saved'])) {
-		echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings saved.</strong></p></div>';
+/**
+ * Render theme settings page.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_theme_settings_page_render() {
+	// Create a header in the default WordPress 'wrap' container
+	?>
+	<div class="wrap">
+		<h2><?php _e( 'DSW Oddil Theme Settings', 'dswoddil' )?></h2>
+		<?php settings_errors(); ?>
+
+		<form method="post" action="options.php">
+			<?php settings_fields( 'dswoddil_theme_settings_page' ); ?>
+			<?php do_settings_sections( 'dswoddil_theme_settings_page' ); ?>
+			<?php submit_button(); ?>
+		</form>
+
+	</div>
+	<?php
+}
+
+/**
+ * Initialization of theme settings.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_theme_settings_init() {
+	if ( false == get_option( 'dswoddil_theme_settings_page' ) ) {
+		add_option( 'dswoddil_theme_settings_page' );
 	}
-	if (isset($_REQUEST['reset'])) {
-		echo '<div id="message" class="updated fade"><p><strong>'.$themename.' settings reset.</strong></p></div>';
-	}
 
-	echo '<div class="wrap">';
-	echo '<h2>'.$themename.' Settings</h2>';
-	echo '<form method="post">';
+	add_settings_section(
+		'dswoddil_general_settings_section',
+		__( 'Layout Settings', 'dswoddil' ),
+		'dswoddil_layout_settings_callback',
+		'dswoddil_theme_settings_page'
+	);
 
-	foreach ($options as $value) {
-		switch ( $value['type'] ) {
-			case "open":
-				echo '<table width="100%" border="0" style="background-color:#eef5fb; padding:10px;">';
-				break;
-			case "close":
-				echo '</table><br />';
-				break;
-			case "title":
-				echo '<table width="100%" border="0" style="background-color:#dceefc; padding:5px 10px;"><tr>
-	<td valign="top" colspan="2"><h3 style="font-family:Georgia,\'Times New Roman\',Times,serif;">'.$value['name'].'</h3></td>
-	</tr>';
-				echo '<!--custom-->';
-				break;
-			case "sub-title":
-				echo '<h3 style="font-family:Georgia,\'Times New Roman\',Times,serif; padding-left:8px;">'.$value['name'].'</h3>';
-				echo '<!--end-of-custom-->';
-				break;
-			case 'text':
-				echo '<tr>
-	<td valign="top" width="20%" rowspan="2" valign="middle"><strong>'.$value['name'].'</strong></td>
-	<td width="80%"><input style="width:400px;" name="'.$value['id'].'" id="'.$value['id'].'" type="'.$value['type'].'" value="'.(get_option($value['id']) != "") ? get_option($value['id']) : $value['std'].'" /></td>
-	</tr>';
-				echo '<tr>
-	<td><small>'.$value['desc'].'</small></td>
-	</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #000000;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>';
-				break;
-			case 'textarea':
-				echo '<tr>
-	<td valign="top" width="20%" rowspan="2" valign="middle"><strong>'.$value['name'].'</strong></td>
-	<td width="80%"><textarea name="'.$value['id'].'" style="width:400px; height:200px;" type="'.$value['type'].'" cols="" rows="">'.(get_option($value['id']) != "") ? get_option($value['id']) : $value['std'].'</textarea></td>
+	add_settings_field(
+		'dswoddil_layout_color',
+		__( 'Layout color', 'dswoddil' ),
+		'dswoddil_layout_color_switcher_render',
+		'dswoddil_theme_settings_page',
+		'dswoddil_general_settings_section',
+		array(
+			__( 'Change this setting to display different color.', 'dswoddil' )
+		)
+	);
 
-	</tr>';
-				echo '<tr>
-	<td><small>'.$value['desc'].'</small></td>
-	</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #000000;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>';
-				break;
-			case 'select':
-				echo '<tr>
-	<td width="20%" rowspan="2" valign="middle"><strong>'.$value['name'].'</strong></td>
-	<td width="80%"><select style="width:240px;" name="'.$value['id'].'" id="'.$value['id'].'">';
-				foreach ($value['options'] as $option) {
-					echo '<option';
-					if (get_option( $value['id'] ) == $option) {
-						echo ' selected="selected"';
-					} elseif ($option == $value['std']) {
-						echo ' selected="selected"';
+	register_setting(
+		'dswoddil_theme_settings_page',
+		'dswoddil_layout_color'
+	);
+}
+
+/**
+ * Layout settings callback.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_layout_settings_callback() {
+	_e( '<p>Select which layout color you wish to display.</p>', 'dswoddil' );
+}
+
+/**
+ * Render layout color switcher.
+ *
+ * @since DSW oddil 1.0
+ */
+function dswoddil_layout_color_switcher_render($args) {
+	$options = array (
+		"id"   	 => "dswoddil_layout_color",
+		"colors" => array(
+			"red" 		=> __( 'red', 'dswoddil' ),
+			"blue"		=> __( 'blue', 'dswoddil' ),
+			"violet"	=> __( 'violet', 'dswoddil' ),
+			"green"		=> __( 'green', 'dswoddil' )
+		),
+	);
+
+	$html = '<select style="width:200px;" name="'.$options['id'].'" id="'.$options['id'].'">';
+				foreach ( $options['colors'] as $color_key => $color_value ) {
+					$html .= '<option';
+					if (get_option( $options['id'] ) == $color_key) {
+						$html .= ' selected="selected"';
 					}
-					echo '>'.$option.'</option>';
+					$html .= ' value = "'.$color_key.'">'.$color_value.'</option>';
 				}
-				echo '</select></td></tr>';
-				echo '<tr><td><small>'.$value['desc'].'</small></td></tr>';
-				echo '<tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #000000;">&nbsp;</td></tr>';
-				echo '<tr><td colspan="2">&nbsp;</td></tr>';
-				break;
-			case "checkbox":
-				echo '<tr>
-	<td width="20%" rowspan="2" valign="middle"><strong>'.$value['name'].'</strong></td>
-	<td width="80%">
-	<input type="checkbox" name="'.$value['id'].'" id="'.$value['id'].'" value="true" '.(get_option($value['id'])) ? 'checked="checked"' : ''.' />
-	</td>
-	</tr>';
-				echo '<tr>
-	<td><small>'.$value['desc'].'</small></td>
-	</tr><tr><td colspan="2" style="margin-bottom:5px;border-bottom:1px dotted #000000;">&nbsp;</td></tr><tr><td colspan="2">&nbsp;</td></tr>';
-				break;
-			}
-	}
-	echo '<p class="submit">
-	<input class="button button-primary" name="save" type="submit" value="Save changes" />
-	<input type="hidden" name="action" value="save" />
-	<input class="button" name="action" type="submit" value="reset" />
-	</p>
-	</form>';
+				$html .= '</select>';
+
+	// Here, we will take the first argument of the array and add it to a label next to the checkbox
+	$html .= '<label for="dswoddil_layout_color"> '  . $args[0] . '</label>';
+
+	echo $html;
 }
-add_action('admin_menu', 'dswoddil_add_admin');
 
 /******************************************************************************
 	ADMIN SCRIPTS

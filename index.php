@@ -38,11 +38,12 @@ get_header(); ?>
 				</div><!-- #primary-sidebar -->
 			</section>
 		<?php endif; ?>
-		<?php if ( is_active_sidebar( 'sidebar-1' ) && is_active_sidebar( 'sidebar-2' ) ) : ?>
-			<section class="col-md-6">
-		<?php else: ?>
-			<section class="col-md-9">
-		<?php endif; ?>
+		<?php
+			$col = 12;
+			if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
+			if ( is_active_sidebar( 'content' ) ) $col -= 3;
+		?>
+			<section class="col-md-<?php echo $col; ?>">
 				<?php
 				if ( have_posts() ) :
 					while ( have_posts() ) : the_post();
@@ -65,9 +66,11 @@ get_header(); ?>
 
 				?>
 			</section><!-- .col-md-9 -->
+			<?php if ( is_active_sidebar( 'content' ) ) : ?>
 			<section class="col-md-3">
-				<?php get_sidebar(); ?>
+				<?php get_sidebar( 'content' ); ?>
 			</section><!-- .col-md-3 -->
+			<?php endif; ?>
 		</main><!-- #main .row -->
 	</div><!-- #primary .content -->
 

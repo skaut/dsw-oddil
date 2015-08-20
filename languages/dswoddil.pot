@@ -143,7 +143,8 @@ msgstr ""
 #: content-aside.php:46 content-audio.php:46 content-gallery.php:46
 #: content-image.php:46 content-link.php:46 content-quote.php:46
 #: content-video.php:46 content.php:54 inc/widgets.php:127 inc/widgets.php:172
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#: template-parts/content.php:39
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: content-aside.php:48 content-audio.php:48 content-gallery.php:48
@@ -215,6 +216,39 @@ msgstr ""
 msgid "Appears in the footer section of the site."
 msgstr ""
 
+#: functions.php:177
+msgid "Header right widget"
+msgstr ""
+
+#: functions.php:179
+msgid "Widget that appears on the right in header."
+msgstr ""
+
+#: functions.php:186
+msgid "Header left widget"
+msgstr ""
+
+#: functions.php:189
+msgid "Widget that appears on the left in header."
+msgstr ""
+
+#: functions.php:195
+msgid "Area above content"
+msgstr ""
+
+#: functions.php:197
+msgid "Appears above the content section of the site."
+msgstr ""
+
+#: functions.php:222
+msgid "Area under content"
+msgstr ""
+
+#: functions.php:224
+msgid "Appears in the bottom section of the site."
+msgstr ""
+
+
 #: functions.php:213
 msgctxt "Lato font: on or off"
 msgid "on"
@@ -236,6 +270,46 @@ msgstr[1] ""
 
 #: functions.php:488
 msgid "Page %s"
+msgstr ""
+
+#: functions.php:302 functions.php:303
+msgid "Theme Settings"
+msgstr ""
+
+#: functions.php:319
+msgid "DSW Oddil Theme Settings"
+msgstr ""
+
+#: functions.php:344
+msgid "Layout Settings"
+msgstr ""
+
+#: functions.php:351
+msgid "Layout color"
+msgstr ""
+
+#: functions.php:356
+msgid "Change this setting to display different color."
+msgstr ""
+
+#: functions.php:372
+msgid "<p>Select which layout color you wish to display.</p>"
+msgstr ""
+
+#: functions.php:384
+msgid "red"
+msgstr ""
+
+#: functions.php:385
+msgid "blue"
+msgstr ""
+
+#: functions.php:386
+msgid "violet"
+msgstr ""
+
+#: functions.php:387
+msgid "green"
 msgstr ""
 
 #: header.php:48

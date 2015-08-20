@@ -1,3 +1,31 @@
+<a name="0.11.0"></a>
+# [0.11.0](https://github.com/skaut/dsw-oddil/compare/v0.10.0...v0.11.0) (2015-08-20)
+
+
+### Bug Fixes
+
+* Fix domain for translation (refs #16) ([adf8283](https://github.com/skaut/dsw-oddil/commit/adf8283)), closes [#16](https://github.com/skaut/dsw-oddil/issues/16)
+* **Grunt:** Fix undefined variable and running all deploy ([c0d21f7](https://github.com/skaut/dsw-oddil/commit/c0d21f7))
+* Fix full width of page when any sidebar is missing (refs #16) ([63a15b6](https://github.com/skaut/dsw-oddil/commit/63a15b6)), closes [#16](https://github.com/skaut/dsw-oddil/issues/16)
+* Fix of generating compiled translation (refs #16) ([9f6671f](https://github.com/skaut/dsw-oddil/commit/9f6671f)), closes [#16](https://github.com/skaut/dsw-oddil/issues/16)
+* Fix select box layout color value (closes #30 #10) ([e836922](https://github.com/skaut/dsw-oddil/commit/e836922)), closes [#30](https://github.com/skaut/dsw-oddil/issues/30) [#10](https://github.com/skaut/dsw-oddil/issues/10)
+* Fix translation of 'continue reading' (fixes #43) ([b3d8e06](https://github.com/skaut/dsw-oddil/commit/b3d8e06)), closes [#43](https://github.com/skaut/dsw-oddil/issues/43)
+* Fixing additional widget area that appears in the admin (refs #16) ([b914e7f](https://github.com/skaut/dsw-oddil/commit/b914e7f))
+* Remove shortcodes - plugin teritory (refs #16) ([b45a81b](https://github.com/skaut/dsw-oddil/commit/b45a81b))
+* Resolving TODO, because WP version is greater then 4.3 (refs #16) ([905de99](https://github.com/skaut/dsw-oddil/commit/905de99))
+
+### Features
+
+* Add Support for search page (refs #16) ([9d155cc](https://github.com/skaut/dsw-oddil/commit/9d155cc))
+* Compressing install package ([5e91579](https://github.com/skaut/dsw-oddil/commit/5e91579))
+* Layout color switching via WP Settings API (refs #30, #10) ([02f5e85](https://github.com/skaut/dsw-oddil/commit/02f5e85))
+* Make settings translation ready (refs #30, #10) ([37eea0a](https://github.com/skaut/dsw-oddil/commit/37eea0a))
+* Rename sidebar-2 to content (refs #2) ([7c220b4](https://github.com/skaut/dsw-oddil/commit/7c220b4))
+* Translating widget area names (refs #16) ([8bc58b2](https://github.com/skaut/dsw-oddil/commit/8bc58b2))
+* Translation of layout color changer (refs #30 #10) ([33a51db](https://github.com/skaut/dsw-oddil/commit/33a51db))
+
+
+
 <a name="0.10.0"></a>
 # [0.10.0](https://github.com/skaut/dsw-oddil/compare/v0.9.0...v0.10.0) (2015-08-16)
 

@@ -133,17 +133,49 @@ msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: functions.php:182
+#: functions.php:215
 msgid "Additional sidebar that appears on the right."
 msgstr "Vedlejší postranní panel se zobrazuje v pravé části webu."
 
-#: functions.php:189
+#: functions.php:231
 msgid "Footer Widget Area"
 msgstr "Zápatí"
 
-#: functions.php:191
+#: functions.php:233
 msgid "Appears in the footer section of the site."
 msgstr "Oblast pro umístění widgetů, které se budou zobrazovat v dolní části webu."
+
+#: functions.php:177
+msgid "Header right widget"
+msgstr "Záhlaví vpravo"
+
+#: functions.php:179
+msgid "Widget that appears on the right in header."
+msgstr "Oblast pro umístění widgetů, které se budou zobrazovat v hlavičce vpravo."
+
+#: functions.php:186
+msgid "Header left widget"
+msgstr "Záhlaví vlevo"
+
+#: functions.php:189
+msgid "Widget that appears on the left in header."
+msgstr "Oblast pro umístění widgetů, které se budou zobrazovat v hlavičce vlevo."
+
+#: functions.php:195
+msgid "Area above content"
+msgstr "Oblast nad obsahem"
+
+#: functions.php:197
+msgid "Appears above the content section of the site."
+msgstr "Oblast pro umístění widgetů, které se budou zobrazovat nad hlavním obsahem webu."
+
+#: functions.php:222
+msgid "Area under content"
+msgstr "Oblast pod obsahem"
+
+#: functions.php:224
+msgid "Appears in the bottom section of the site."
+msgstr "Oblast pro umístění widgetů, které se budou zobrazovat pod hlavním obsahem webu."
 
 #: functions.php:601
 msgid "Your browser does not support iframes"
@@ -175,6 +207,46 @@ msgid_plural "%d Articles"
 msgstr[0] "%d příspěvek"
 msgstr[1] "%d příspěvky"
 msgstr[2] "%d příspěvků"
+
+#: functions.php:302 functions.php:303
+msgid "Theme Settings"
+msgstr "Nastavení šablony"
+
+#: functions.php:319
+msgid "DSW Oddil Theme Settings"
+msgstr "Nastavení šablony DSW Oddíl"
+
+#: functions.php:344
+msgid "Layout Settings"
+msgstr "Nastavení zobrazení"
+
+#: functions.php:351
+msgid "Layout color"
+msgstr "Barva zobrazení"
+
+#: functions.php:356
+msgid "Change this setting to display different color."
+msgstr "Pro změnu barvy zobrazení upravte toto nastavení."
+
+#: functions.php:372
+msgid "<p>Select which layout color you wish to display.</p>"
+msgstr "<p>Vyberte jakou barvu zobrazení chcete zobrazit.</p>"
+
+#: functions.php:384
+msgid "red"
+msgstr "červená"
+
+#: functions.php:385
+msgid "blue"
+msgstr "modrá"
+
+#: functions.php:386
+msgid "violet"
+msgstr "fialová"
+
+#: functions.php:387
+msgid "green"
+msgstr "zelená"
 
 #: image.php:65
 msgid "Previous Image"
@@ -330,27 +402,23 @@ msgstr "Napsat komentář"
 #: content-aside.php:37 content-audio.php:37 content-gallery.php:37
 #: content-image.php:37 content-link.php:37 content-quote.php:37
 #: content-video.php:37 content.php:38 inc/widgets.php:194
+#: content-single.php:39
 msgid "1 Comment"
 msgstr "1 komentář"
 
 #: content-aside.php:37 content-audio.php:37 content-gallery.php:37
 #: content-image.php:37 content-link.php:37 content-quote.php:37
 #: content-video.php:37 content.php:38 inc/widgets.php:194
+#: content-single.php:39
 msgid "% Comments"
 msgstr "% komentáře"
-
-#: content-single.php:39
-msgid "1 Comment"
-msgid_plural "% Comments"
-msgstr[0] "1 komentář"
-msgstr[1] "%1$s komentáře"
-msgstr[2] "%1$s komentářů"
 
 #: content-aside.php:46 content-audio.php:46 content-gallery.php:46
 #: content-image.php:46 content-link.php:46 content-quote.php:46
 #: content-video.php:46 content.php:54 inc/widgets.php:127 inc/widgets.php:172
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
-msgstr "Celý článek <span class=\"meta-nav\">&rarr;</span>"
+#: template-parts/content.php:39
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr "Celý článek %s <span class=\"meta-nav\">&rarr;</span>"
 
 #: footer.php:21
 msgid "http://wordpress.org/"
@@ -368,15 +436,15 @@ msgstr "Hlavní navigační menu"
 msgid "Secondary menu in left sidebar"
 msgstr "Vedlejší menu v levém postranním panelu"
 
-#: functions.php:171
+#: functions.php:204
 msgid "Primary Sidebar"
 msgstr "Levý postranní panel"
 
-#: functions.php:173
+#: functions.php:206
 msgid "Main sidebar that appears on the left."
 msgstr "Hlavní postranní panel se zobrazuje v levé části webu."
 
-#: functions.php:180
+#: functions.php:213
 msgid "Content Sidebar"
 msgstr "Pravý postranní panel"
 

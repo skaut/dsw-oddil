@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying archive pages.
+ * The template for displaying search results pages.
  *
  * @link http://codex.wordpress.org/Template_Hierarchy
  *
@@ -11,35 +11,31 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area container content">
+	<section id="primary" class="content-area container content">
 		<main id="main" class="site-main row" role="main">
 			<?php
 				$col = 12;
 				if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
 				if ( is_active_sidebar( 'content' ) ) $col -= 3;
 			?>
-			<section class="col-md-<?php echo $col; ?>">
+				<section class="col-md-<?php echo $col; ?>">
 
 				<?php if ( have_posts() ) : ?>
 
 					<header class="page-header">
-						<?php
-							the_archive_title( '<h1 class="page-title">', '</h1>' );
-							the_archive_description( '<div class="taxonomy-description">', '</div>' );
-						?>
+						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'dsw-oddil' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 					</header><!-- .page-header -->
 
 					<?php /* Start the Loop */ ?>
 					<?php while ( have_posts() ) : the_post(); ?>
 
 						<?php
-
-							/*
-							 * Include the Post-Format-specific template for the content.
-							 * If you want to override this in a child theme, then include a file
-							 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
-							 */
-							get_template_part( 'template-parts/content', get_post_format() );
+						/**
+						 * Run the loop for the search to output the results.
+						 * If you want to overload this in a child theme then include a file
+						 * called content-search.php and that will be used instead.
+						 */
+						get_template_part( 'template-parts/content', 'search' );
 						?>
 
 					<?php endwhile; ?>
@@ -58,7 +54,7 @@ get_header(); ?>
 				<?php get_sidebar( 'content' ); ?>
 			</section><!-- .col-md-3 -->
 			<?php endif; ?>
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main><!-- #main .row -->
+	</section><!-- #primary .content -->
 
 <?php get_footer(); ?>
