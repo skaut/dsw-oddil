@@ -271,6 +271,46 @@ msgstr[1] ""
 msgid "Page %s"
 msgstr ""
 
+#: functions.php:302 functions.php:303
+msgid "Theme Settings"
+msgstr ""
+
+#: functions.php:319
+msgid "DSW Oddil Theme Settings"
+msgstr ""
+
+#: functions.php:344
+msgid "Layout Settings"
+msgstr ""
+
+#: functions.php:351
+msgid "Layout color"
+msgstr ""
+
+#: functions.php:356
+msgid "Change this setting to display different color."
+msgstr ""
+
+#: functions.php:372
+msgid "<p>Select which layout color you wish to display.</p>"
+msgstr ""
+
+#: functions.php:384
+msgid "red"
+msgstr ""
+
+#: functions.php:385
+msgid "blue"
+msgstr ""
+
+#: functions.php:386
+msgid "violet"
+msgstr ""
+
+#: functions.php:387
+msgid "green"
+msgstr ""
+
 #: header.php:48
 msgid "Search"
 msgstr ""

@@ -208,6 +208,46 @@ msgstr[0] "%d příspěvek"
 msgstr[1] "%d příspěvky"
 msgstr[2] "%d příspěvků"
 
+#: functions.php:302 functions.php:303
+msgid "Theme Settings"
+msgstr "Nastavení šablony"
+
+#: functions.php:319
+msgid "DSW Oddil Theme Settings"
+msgstr "Nastavení šablony DSW Oddíl"
+
+#: functions.php:344
+msgid "Layout Settings"
+msgstr "Nastavení zobrazení"
+
+#: functions.php:351
+msgid "Layout color"
+msgstr "Barva zobrazení"
+
+#: functions.php:356
+msgid "Change this setting to display different color."
+msgstr "Pro změnu barvy zobrazení upravte toto nastavení."
+
+#: functions.php:372
+msgid "<p>Select which layout color you wish to display.</p>"
+msgstr "<p>Vyberte jakou barvu zobrazení chcete zobrazit.</p>"
+
+#: functions.php:384
+msgid "red"
+msgstr "červená"
+
+#: functions.php:385
+msgid "blue"
+msgstr "modrá"
+
+#: functions.php:386
+msgid "violet"
+msgstr "fialová"
+
+#: functions.php:387
+msgid "green"
+msgstr "zelená"
+
 #: image.php:65
 msgid "Previous Image"
 msgstr "Předchozí obrázek"
