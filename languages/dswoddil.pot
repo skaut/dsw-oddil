@@ -143,7 +143,8 @@ msgstr ""
 #: content-aside.php:46 content-audio.php:46 content-gallery.php:46
 #: content-image.php:46 content-link.php:46 content-quote.php:46
 #: content-video.php:46 content.php:54 inc/widgets.php:127 inc/widgets.php:172
-msgid "Continue reading <span class=\"meta-nav\">&rarr;</span>"
+#: template-parts/content.php:39
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: content-aside.php:48 content-audio.php:48 content-gallery.php:48
