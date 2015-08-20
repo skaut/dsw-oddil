@@ -290,7 +290,7 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('deploy', 'Deploy files to server over FTP.', function(account) {
 		if (typeof account !== 'undefined') {
-			return grunt.task.run(['ftp-deploy:' + account])
+			return grunt.task.run(['ftp-deploy:' + account]);
 		} else {
 			return grunt.task.run([
 				'ftp-deploy:oddil',
@@ -301,5 +301,5 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('dev', 				['build', 'watch']);
-}
+	grunt.registerTask('dev', ['build', 'watch']);
+};
