@@ -316,7 +316,6 @@ function dswoddil_theme_settings_page_render() {
 	// Create a header in the default WordPress 'wrap' container
 	?>
 	<div class="wrap">
-		<div id="icon-themes" class="icon32"></div>
 		<h2><?php _e( 'DSW Oddil Theme Settings', 'dswoddil' )?></h2>
 		<?php settings_errors(); ?>
 
@@ -395,7 +394,7 @@ function dswoddil_layout_color_switcher_render($args) {
 					if (get_option( $options['id'] ) == $color_key) {
 						$html .= ' selected="selected"';
 					}
-					$html .= '>'.$color_value.'</option>';
+					$html .= ' value = "'.$color_key.'">'.$color_value.'</option>';
 				}
 				$html .= '</select>';
 
