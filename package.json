@@ -21,6 +21,7 @@
   "devDependencies": {
     "grunt-browser-sync": "^2.0.0",
     "grunt-bump": "^0.3.0",
+    "grunt-contrib-compress": "^0.13.0",
     "grunt-contrib-watch": "^0.6.1",
     "grunt-conventional-changelog": "^4.0.0",
     "grunt-ftp-deploy": "^0.1.10"

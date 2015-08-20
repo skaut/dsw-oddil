@@ -131,10 +131,22 @@ module.exports = function (grunt) {
 
 		bump: {
 			options: {
-				files: ['package.json', 'bower.json'],
+				files: [
+					'package.json',
+					'bower.json',
+				],
 				updateConfigs: ['pkg'],
-				commitFiles: ['-a'],
-				pushTo: 'origin'
+				commitFiles: [
+					'package.json',
+					'bower.json',
+					'CHANGELOG.md',
+				],
+				commitMessage: 'Release v%VERSION%',
+				createTag: true,
+				tagName: 'v%VERSION%',
+				tagMessage: 'Release v%VERSION%',
+				push: true,
+				pushTo: 'origin',
 			}
 		},
 
@@ -226,6 +238,35 @@ module.exports = function (grunt) {
 			},
 		},
 
+		compress: {
+			installPackage: {
+				options: {
+					archive: '<%= pkg.name %>-<%= pkg.version %>.zip',
+					mode: 'zip',
+					pretty: true,
+				},
+				files: [
+					{
+						src: [
+							'inc/*',
+							'css/*',
+							'fonts/*',
+							'img/**',
+							'js/*',
+							'languages/*',
+							'template-parts/*',
+							'*.php',
+							'*.md',
+							'style.css',
+							'screenshot.png',
+							'readme.txt',
+						],
+						dest: '<%= pkg.name%>/',
+					},
+				]
+			}
+		}
+
 	});
 
 	grunt.registerTask('default', ['less', 'cssmin', 'copy']);
@@ -241,8 +282,9 @@ module.exports = function (grunt) {
 			'imagemin',
 			'copy',
 			'clean',
-			'conventionalChangelog'
-			//'bump-commit'
+			'conventionalChangelog',
+			'bump-commit',
+			'compress',
 		]);
 	});
 
