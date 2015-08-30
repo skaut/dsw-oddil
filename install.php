@@ -522,7 +522,7 @@ $sidebarContent = array(
 	'header-left' => array(
 		0 => 'widget_sp_image-1',
 	),
-	'above-content-widget' => array(
+	'above-widget' => array(
 		0 => 'text-3',
 	),
 	'sidebar-1' => array(),
