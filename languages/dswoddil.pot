@@ -201,7 +201,7 @@ msgid "Main sidebar that appears on the left."
 msgstr ""
 
 #: functions.php:180
-msgid "Content Sidebar"
+msgid "Right Sidebar"
 msgstr ""
 
 #: functions.php:182

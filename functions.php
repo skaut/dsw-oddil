@@ -210,8 +210,8 @@ function dswoddil_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Content Sidebar', 'dswoddil' ),
-		'id'            => 'content',
+		'name'          => __( 'Right Sidebar', 'dswoddil' ),
+		'id'            => 'right-sidebar',
 		'description'   => __( 'Additional sidebar that appears on the right.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

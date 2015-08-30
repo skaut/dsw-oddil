@@ -445,7 +445,7 @@ msgid "Main sidebar that appears on the left."
 msgstr "Hlavní postranní panel se zobrazuje v levé části webu."
 
 #: functions.php:213
-msgid "Content Sidebar"
+msgid "Right Sidebar"
 msgstr "Pravý postranní panel"
 
 #: functions.php:213

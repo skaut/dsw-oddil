@@ -10,8 +10,8 @@
  */
 ?>
 
-<?php if ( is_active_sidebar( 'content' ) ) : ?>
+<?php if ( is_active_sidebar( 'right-sidebar' ) ) : ?>
 <section class="col-md-3">
-	<?php get_sidebar( 'content' ); ?>
+	<?php get_sidebar( 'right-sidebar' ); ?>
 </section><!-- .col-md-3 -->
 <?php endif; ?>

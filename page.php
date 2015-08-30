@@ -26,7 +26,7 @@ get_header(); ?>
 			<?php
 				$col = 12;
 				if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
-				if ( is_active_sidebar( 'content' ) ) $col -= 3;
+				if ( is_active_sidebar( 'right-sidebar' ) ) $col -= 3;
 			?>
 			<section class="col-md-<?php echo $col; ?>">
 
