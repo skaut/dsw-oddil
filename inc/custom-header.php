@@ -38,7 +38,7 @@ function dswoddil_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'dswoddil_custom_header_args', array(
 		'default-text-color'     => 'fff',
 		'width'                  => 1260,
-		'height'                 => 240,
+		'height'                 => 300,
 		'flex-height'            => true,
 		'wp-head-callback'       => 'dswoddil_header_style',
 		'admin-head-callback'    => 'dswoddil_admin_header_style',
