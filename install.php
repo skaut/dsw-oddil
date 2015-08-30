@@ -525,8 +525,8 @@ $sidebarContent = array(
 	'top-widget' => array(
 		0 => 'text-3',
 	),
-	'sidebar-1' => array(),
-	'sidebar-2' => array(
+	'left-sidebar' => array(),
+	'right-sidebar' => array(
 		0 => 'text-2',
 		1 => 'text-1',
 	),

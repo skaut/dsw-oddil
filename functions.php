@@ -201,8 +201,8 @@ function dswoddil_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'dswoddil' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Left Sidebar', 'dswoddil' ),
+		'id'            => 'left-sidebar',
 		'description'   => __( 'Main sidebar that appears on the left.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',

@@ -437,7 +437,7 @@ msgid "Secondary menu in left sidebar"
 msgstr "Vedlejší menu v levém postranním panelu"
 
 #: functions.php:204
-msgid "Primary Sidebar"
+msgid "Left Sidebar"
 msgstr "Levý postranní panel"
 
 #: functions.php:206

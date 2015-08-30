@@ -193,7 +193,7 @@ msgid "Secondary menu in left sidebar"
 msgstr ""
 
 #: functions.php:171
-msgid "Primary Sidebar"
+msgid "Left Sidebar"
 msgstr ""
 
 #: functions.php:173
