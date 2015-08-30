@@ -43,11 +43,7 @@ get_header(); ?>
 
 				<?php endwhile; // End of the loop. ?>
 			</section><!-- .col-md-9 -->
-			<?php if ( is_active_sidebar( 'content' ) ) : ?>
-			<section class="col-md-3">
-				<?php get_sidebar( 'content' ); ?>
-			</section><!-- .col-md-3 -->
-			<?php endif; ?>
+			<?php get_template_part( 'template-parts/sidebar', 'right' ); ?>ndif; ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
