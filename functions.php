@@ -193,7 +193,7 @@ function dswoddil_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Area above content', 'dswoddil' ),
-		'id'            => 'above-widget',
+		'id'            => 'top-widget',
 		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
 		'before_widget' => '<div class="content">',
 		'after_widget'  => '</div>',
