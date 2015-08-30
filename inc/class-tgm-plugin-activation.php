@@ -159,9 +159,9 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 			$this->strings = array(
 				'page_title'					 => __( 'Install Required Plugins', 'tgmpa' ),
-				'menu_title'					 => __( 'Install Plugins', 'tgmpa' ),
-				'installing'					 => __( 'Installing Plugin: %s', 'tgmpa' ),
-				'oops'						   => __( 'Something went wrong.', 'tgmpa' ),
+				'menu_title'					 => __( 'Install Plugins', 'dswoddil' ),
+				'installing'					 => __( 'Installing Plugin: %s', 'dswoddil' ),
+				'oops'						   => __( 'Something went wrong.', 'dswoddil' ),
 				'notice_can_install_required'	=> _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.' ),
 				'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.' ),
 				'notice_cannot_install'		  => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.' ),
@@ -172,12 +172,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				'notice_cannot_update'		   => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.' ),
 				'install_link'				   => _n_noop( 'Begin installing plugin', 'Begin installing plugins' ),
 				'activate_link'				  => _n_noop( 'Begin activating plugin', 'Begin activating plugins' ),
-				'return'						 => __( 'Return to Required Plugins Installer', 'tgmpa' ),
-				'dashboard'					  => __( 'Return to the dashboard', 'tgmpa' ),
-				'plugin_activated'			   => __( 'Plugin activated successfully.', 'tgmpa' ),
-				'activated_successfully'		 => __( 'The following plugin was activated successfully:', 'tgmpa' ),
-				'complete'					   => __( 'All plugins installed and activated successfully. %1$s', 'tgmpa' ),
-				'dismiss'						=> __( 'Dismiss this notice', 'tgmpa' ),
+				'return'						 => __( 'Return to Required Plugins Installer', 'dswoddil' ),
+				'dashboard'					  => __( 'Return to the dashboard', 'dswoddil' ),
+				'plugin_activated'			   => __( 'Plugin activated successfully.', 'dswoddil' ),
+				'activated_successfully'		 => __( 'The following plugin was activated successfully:', 'dswoddil' ),
+				'complete'					   => __( 'All plugins installed and activated successfully. %1$s', 'dswoddil' ),
+				'dismiss'						=> __( 'Dismiss this notice', 'dswoddil' ),
 			);
 
 			// Set the current WordPress version.
@@ -529,7 +529,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
 				// All plugins are active, so we display the complete string and hide the plugin menu.
 				if ( empty( $complete ) ) {
-					echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+					echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'dswoddil' ) . '">' . __( 'Return to the Dashboard', 'dswoddil' ) . '</a>' ) . '</p>';
 					echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 				}
 
@@ -717,12 +717,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 					$last_plugin = array_pop( $plugin_groups ); // Pop off last name to prep for readability.
 					$imploded	= empty( $plugin_groups ) ? '<em>' . $last_plugin . '</em>' : '<em>' . ( implode( ', ', $plugin_groups ) . '</em> and <em>' . $last_plugin . '</em>' );
 
-					$rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'tgmpa' ), $imploded, $count ) . '</p>';
+					$rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'dswoddil' ), $imploded, $count ) . '</p>';
 				}
 
 				// Setup variables to determine if action links are needed.
-				$show_install_link  = $install_link ? '<a href="' . esc_url( add_query_arg( 'page', urlencode( $this->menu ), network_admin_url( 'themes.php' ) ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'tgmpa' ) . '</a>' : '';
-				$show_activate_link = $activate_link ? '<a href="' . esc_url( add_query_arg( 'page', urlencode( $this->menu ), network_admin_url( 'themes.php' ) ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'tgmpa' ) . '</a>'  : '';
+				$show_install_link  = $install_link ? '<a href="' . esc_url( add_query_arg( 'page', urlencode( $this->menu ), network_admin_url( 'themes.php' ) ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'dswoddil' ) . '</a>' : '';
+				$show_activate_link = $activate_link ? '<a href="' . esc_url( add_query_arg( 'page', urlencode( $this->menu ), network_admin_url( 'themes.php' ) ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'dswoddil' ) . '</a>'  : '';
 
 				// Define all of the action links.
 				$action_links = apply_filters(
@@ -1164,23 +1164,23 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				if ( ! empty( $plugin['source'] ) ) {
 					// The plugin must be from a private repository.
 					if ( preg_match( '|^http(s)?://|', $plugin['source'] ) ) {
-						$table_data[$i]['source'] = __( 'Private Repository', 'tgmpa' );
+						$table_data[$i]['source'] = __( 'Private Repository', 'dswoddil' );
 					// The plugin is pre-packaged with the theme.
 					} else {
-						$table_data[$i]['source'] = __( 'Pre-Packaged', 'tgmpa' );
+						$table_data[$i]['source'] = __( 'Pre-Packaged', 'dswoddil' );
 					}
 				}
 				// The plugin is from the WordPress repository.
 				else {
-					$table_data[$i]['source'] = __( 'WordPress Repository', 'tgmpa' );
+					$table_data[$i]['source'] = __( 'WordPress Repository', 'dswoddil' );
 				}
 
-				$table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'tgmpa' ) : __( 'Recommended', 'tgmpa' );
+				$table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'dswoddil' ) : __( 'Recommended', 'dswoddil' );
 
 				if ( ! isset( $installed_plugins[$plugin['file_path']] ) ) {
-					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'tgmpa' ) );
+					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'dswoddil' ) );
 				} elseif ( is_plugin_inactive( $plugin['file_path'] ) ) {
-					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'tgmpa' ) );
+					$table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'dswoddil' ) );
 				}
 
 				$table_data[$i]['file_path'] = $plugin['file_path'];
@@ -1285,7 +1285,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			if ( ! isset( $installed_plugins[$item['file_path']] ) ) {
 				$actions = array(
 					'install' => sprintf(
-						'<a href="%1$s" title="' . esc_attr__( 'Install', 'tgmpa' ) . ' %2$s">' . __( 'Install', 'tgmpa' ) . '</a>',
+						'<a href="%1$s" title="' . esc_attr__( 'Install', 'dswoddil' ) . ' %2$s">' . __( 'Install', 'dswoddil' ) . '</a>',
 						esc_url(
 							wp_nonce_url(
 								add_query_arg(
@@ -1298,7 +1298,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 									),
 									network_admin_url( 'themes.php' )
 								),
-							   'tgmpa-install'
+								'tgmpa-install'
 							)
 						),
 						$item['sanitized_plugin']
@@ -1309,7 +1309,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 			elseif ( is_plugin_inactive( $item['file_path'] ) ) {
 				$actions = array(
 					'activate' => sprintf(
-						'<a href="%1$s" title="' . esc_attr__( 'Activate', 'tgmpa' ) . ' %2$s">' . __( 'Activate', 'tgmpa' ) . '</a>',
+						'<a href="%1$s" title="' . esc_attr__( 'Activate', 'dswoddil' ) . ' %2$s">' . __( 'Activate', 'dswoddil' ) . '</a>',
 						esc_url(
 							add_query_arg(
 								array(
@@ -1345,10 +1345,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function column_cb( $item ) {
 			$plugin_url = $item['url']; // 'repo' (no escaping needed), URL or file path
 
-			if ( __( 'Private Repository', 'tgmpa' ) === $item['source'] ) {
+			if ( __( 'Private Repository', 'dswoddil' ) === $item['source'] ) {
 				// Escape external URLs
 				$plugin_url = esc_url( $plugin_url );
-			} elseif ( __( 'Pre-Packaged', 'tgmpa' ) === $item['source'] ) {
+			} elseif ( __( 'Pre-Packaged', 'dswoddil' ) === $item['source'] ) {
 				// Encode file path for use in attribute
 				$plugin_url = urlencode( TGM_Plugin_Activation::$instance->default_path . $plugin_url );
 			}
@@ -1369,7 +1369,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		 */
 		public function no_items() {
 
-			printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'tgmpa' ), network_admin_url() );
+			printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'dswoddil' ), network_admin_url() );
 			echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 
 		}
@@ -1385,10 +1385,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
 			$columns = array(
 				'cb'	 => '<input type="checkbox" />',
-				'plugin' => __( 'Plugin', 'tgmpa' ),
-				'source' => __( 'Source', 'tgmpa' ),
-				'type'   => __( 'Type', 'tgmpa' ),
-				'status' => __( 'Status', 'tgmpa' )
+				'plugin' => __( 'Plugin', 'dswoddil' ),
+				'source' => __( 'Source', 'dswoddil' ),
+				'type'   => __( 'Type', 'dswoddil' ),
+				'status' => __( 'Status', 'dswoddil' )
 			);
 
 			return $columns;
@@ -1406,8 +1406,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function get_bulk_actions() {
 
 			$actions = array(
-				'tgmpa-bulk-install'  => __( 'Install', 'tgmpa' ),
-				'tgmpa-bulk-activate' => __( 'Activate', 'tgmpa' ),
+				'tgmpa-bulk-install'  => __( 'Install', 'dswoddil' ),
+				'tgmpa-bulk-activate' => __( 'Activate', 'dswoddil' ),
 			);
 
 			return $actions;
@@ -1641,7 +1641,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 				if ( is_wp_error( $activate ) ) {
 					echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
 				} else {
-					printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'tgmpa' ), $imploded );
+					printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'dswoddil' ), $imploded );
 				}
 
 				// Update recently activated plugins option.
@@ -1936,12 +1936,12 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 */
 					public function install_strings() {
 
-						$this->strings['no_package']		  = __( 'Install package not available.', 'tgmpa' );
-						$this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'tgmpa' );
-						$this->strings['unpack_package']	  = __( 'Unpacking the package&#8230;', 'tgmpa' );
-						$this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'tgmpa' );
-						$this->strings['process_failed']	  = __( 'Plugin install failed.', 'tgmpa' );
-						$this->strings['process_success']	 = __( 'Plugin installed successfully.', 'tgmpa' );
+						$this->strings['no_package']		  = __( 'Install package not available.', 'dswoddil' );
+						$this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'dswoddil' );
+						$this->strings['unpack_package']	  = __( 'Unpacking the package&#8230;', 'dswoddil' );
+						$this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'dswoddil' );
+						$this->strings['process_failed']	  = __( 'Plugin install failed.', 'dswoddil' );
+						$this->strings['process_success']	 = __( 'Plugin installed successfully.', 'dswoddil' );
 
 					}
 
@@ -1952,8 +1952,8 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 */
 					public function activate_strings() {
 
-						$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'tgmpa' );
-						$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'tgmpa' );
+						$this->strings['activation_failed']  = __( 'Plugin activation failed.', 'dswoddil' );
+						$this->strings['activation_success'] = __( 'Plugin activated successfully.', 'dswoddil' );
 
 					}
 
@@ -2066,19 +2066,19 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 
 						// Automatic activation strings.
 						if ( TGM_Plugin_Activation::$instance->is_automatic ) {
-							$this->upgrader->strings['skin_upgrade_start']		= __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-							$this->upgrader->strings['skin_update_successful']	= __( '%1$s installed and activated successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-							$this->upgrader->strings['skin_upgrade_end']		  = __( 'All installations and activations have been completed.', 'tgmpa' );
-							$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+							$this->upgrader->strings['skin_upgrade_start']		= __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'dswoddil' );
+							$this->upgrader->strings['skin_update_successful']	= __( '%1$s installed and activated successfully.', 'dswoddil' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'dswoddil' ) . '</span><span class="hidden">' . __( 'Hide Details', 'dswoddil' ) . '</span>.</a>';
+							$this->upgrader->strings['skin_upgrade_end']		  = __( 'All installations and activations have been completed.', 'dswoddil' );
+							$this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'dswoddil' );
 						}
 						// Default installation strings.
 						else {
-							$this->upgrader->strings['skin_upgrade_start']		= __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-							$this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'tgmpa' );
-							$this->upgrader->strings['skin_update_failed']		= __( 'The installation of %1$s failed.', 'tgmpa' );
-							$this->upgrader->strings['skin_update_successful']	= __( '%1$s installed successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-							$this->upgrader->strings['skin_upgrade_end']		  = __( 'All installations have been completed.', 'tgmpa' );
-							$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+							$this->upgrader->strings['skin_upgrade_start']		= __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'dswoddil' );
+							$this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'dswoddil' );
+							$this->upgrader->strings['skin_update_failed']		= __( 'The installation of %1$s failed.', 'dswoddil' );
+							$this->upgrader->strings['skin_update_successful']	= __( '%1$s installed successfully.', 'dswoddil' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'dswoddil' ) . '</span><span class="hidden">' . __( 'Hide Details', 'dswoddil' ) . '</span>.</a>';
+							$this->upgrader->strings['skin_upgrade_end']		  = __( 'All installations have been completed.', 'dswoddil' );
+							$this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'dswoddil' );
 						}
 
 					}
@@ -2170,7 +2170,7 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 
 						// All plugins are active, so we display the complete string and hide the menu to protect users.
 						if ( empty( $complete ) ) {
-							echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+							echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . esc_url( network_admin_url() ) . '" title="' . esc_attr__( 'Return to the Dashboard', 'dswoddil' ) . '">' . __( 'Return to the Dashboard', 'dswoddil' ) . '</a>' ) . '</p>';
 							echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 						}
 
