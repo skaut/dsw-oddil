@@ -73,3 +73,9 @@
 				</div>
 				<?php } ?>
 			</div>
+
+			<?php if ( is_active_sidebar( 'above-widget' ) ) : ?>
+			<div id="above-widget" class="above-widget widget-area container optional" role="complementary">
+				<?php dynamic_sidebar( 'above-widget' ); ?>
+			</div><!-- #content-widget -->
+			<?php endif; ?>

@@ -16,12 +16,6 @@
 
 get_header(); ?>
 
-	<?php if ( is_active_sidebar( 'above-content-widget' ) ) : ?>
-		<div id="above-content-widget" class="above-content-widget widget-area container optional" role="complementary">
-			<?php dynamic_sidebar( 'above-content-widget' ); ?>
-		</div><!-- #content-widget -->
-	<?php endif; ?>
-
 	<?php
 		if ( is_front_page() && dswoddil_has_featured_posts() ) {
 			// Include the featured content template.
