@@ -89,7 +89,7 @@ endif;
 ******************************************************************************/
 
 // Include the TGM_Plugin_Activation class.
-require_once get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+require_once get_template_directory() . '/inc/tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'dswoddil_register_required_plugins' );
 
