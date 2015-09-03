@@ -796,6 +796,14 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#: theme-options:83
+msgid "Cache menu"
+msgstr ""
+
+#: theme-options:88
+msgid "Zero for caching off, otherwise minutes."
+msgstr ""
+
 #. Theme URI of the plugin/theme
 msgid "http://wordpress.org/themes/twentyfourteen"
 msgstr ""

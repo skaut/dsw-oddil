@@ -774,7 +774,15 @@ msgstr "Všechny aktivace byly dokončeny."
 
 #: tgm-plugin-activation.php:2081
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
+msgstr "Instalace pluginu %1$s (%2$d/%3$d)"
+
+#: theme-options:83
+msgid "Cache menu"
+msgstr "Cachování menu"
+
+#: theme-options:88
+msgid "Zero for caching off, otherwise minutes."
+msgstr "0 pro vypnutí cachování, jinak čas v minutách."
 
 msgid "the WordPress team"
 msgstr "Vývojáři WordPressu (a překladatelé)"
