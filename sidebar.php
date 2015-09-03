@@ -29,7 +29,7 @@
 				);
 				if ( 0 < get_option( 'dswoddil_cache_menu' ) ) {
 					set_transient(
-						'dswoddil_primary_menu_data',
+						'dswoddil_secondary_menu_data',
 						$dswoddil_menu_data,
 						get_option( 'dswoddil_cache_menu' ) * MINUTE_IN_SECONDS
 					);

@@ -148,7 +148,9 @@ function dswoddil_layout_color_switcher_render($args) {
  */
 function dswoddil_cache_menu_form_render($args) {
 
-	$html = '<input style="width:200px;" name="dswoddil_cache_menu" id="dswoddil_cache_menu" type="text" value="' . get_option( 'dswoddil_cache_menu' ) . '" placeholder="0">';
+	$value = get_option( 'dswoddil_cache_menu' ) ? get_option( 'dswoddil_cache_menu' ) : 0;
+
+	$html = '<input style="width:200px;" name="dswoddil_cache_menu" id="dswoddil_cache_menu" type="text" value="' . $value . '" placeholder="0">';
 
 	// Here, we will take the first argument of the array and add it to a label next to the checkbox
 	$html .= '<label for="dswoddil_cache_menu"> ' . $args[0] . '</label>';
