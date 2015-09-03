@@ -11,6 +11,10 @@
 	<?php if ( has_nav_menu( 'secondary' ) ) : ?>
 	<nav role="navigation" class="navigation site-navigation secondary-navigation">
 		<?php
+			if ( 0 == get_option( 'dswoddil_cache_menu' ) ) {
+				delete_transient( 'dswoddil_secondary_menu_data' );
+			}
+
 			if ( false === ( $dswoddil_menu_data = get_transient( 'dswoddil_secondary_menu_data' ) ) ) {
 				$dswoddil_menu_data = wp_nav_menu( array(
 					'menu'              => 'secondary',
@@ -23,9 +27,19 @@
 					'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
 					'walker'            => new wp_bootstrap_navwalker())
 				);
-				set_transient( 'dswoddil_secondary_menu_data', $dswoddil_menu_data, 10 * MINUTE_IN_SECONDS );
+				if ( 0 < get_option( 'dswoddil_cache_menu' ) ) {
+					set_transient(
+						'dswoddil_primary_menu_data',
+						$dswoddil_menu_data,
+						get_option( 'dswoddil_cache_menu' ) * MINUTE_IN_SECONDS
+					);
+				} else {
+					delete_transient( 'dswoddil_secondary_menu_data' );
+				}
 			}
+
 			echo $dswoddil_menu_data;
+
 		?>
 	</nav>
 	<?php endif; ?>
