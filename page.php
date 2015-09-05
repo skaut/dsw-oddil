@@ -37,7 +37,7 @@ get_header(); ?>
 
 				<?php endwhile; // End of the loop. ?>
 			</section><!-- .col-md-9 -->
-			<?php get_template_part( 'template-parts/sidebar', 'right' ); ?>ndif; ?>
+			<?php get_template_part( 'template-parts/sidebar', 'right' ); ?>
 		</main><!-- #main -->
 	</div><!-- #primary -->
 
