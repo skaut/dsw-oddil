@@ -437,7 +437,7 @@ msgid "Secondary menu in left sidebar"
 msgstr "Vedlejší menu v levém postranním panelu"
 
 #: functions.php:204
-msgid "Primary Sidebar"
+msgid "Left Sidebar"
 msgstr "Levý postranní panel"
 
 #: functions.php:206
@@ -445,7 +445,7 @@ msgid "Main sidebar that appears on the left."
 msgstr "Hlavní postranní panel se zobrazuje v levé části webu."
 
 #: functions.php:213
-msgid "Content Sidebar"
+msgid "Right Sidebar"
 msgstr "Pravý postranní panel"
 
 #: functions.php:213
@@ -533,9 +533,256 @@ msgstr "Citace"
 msgid "Search Results for: %s"
 msgstr "Výsledky vyhledávání pro: %s"
 
-#: inc/customizer.php:99
-msgid "Twenty Fourteen"
-msgstr "Twenty Fourteen"
+#: tgm-plugin-activation.php:161 extras.php:144
+msgid "Install Required Plugins"
+msgstr "Instalace požadovaných pluginů"
+
+#: tgm-plugin-activation.php:162 extras.php:145
+msgid "Install Plugins"
+msgstr "Instalace pluginů"
+
+#: tgm-plugin-activation.php:163 extras.php:146
+msgid "Installing Plugin: %s"
+msgstr "Instaluji plugin: %s"
+
+#: tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr "Něco se porouchalo."
+
+#: extras.php:147
+msgid "Something went wrong with the plugin API."
+msgstr "Něco se porouchalo s API pluginu."
+
+#: tgm-plugin-activation.php:165 extras.php:148
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] "Šablona potřebuje následující plugin: %1$s."
+msgstr[1] "Šablona potřebuje následující pluginy: %1$s."
+
+#: tgm-plugin-activation.php:166 extras.php:149
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] "Šablona doporučuje následující plugin: %1$s."
+msgstr[1] "Šablona doporučuje následující pluginy: %1$s."
+
+#: tgm-plugin-activation.php:167 extras.php:150
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] "Je nám líto, ale nemáte dostatečná oprávnění k instalaci pluginu %s. Kontaktujte administrátora tohoto webu, aby Vám pomohl plugin nainstalovat."
+msgstr[1] "Je nám líto, ale nemáte dostatečná oprávnění k instalaci pluginů %s. Kontaktujte administrátora tohoto webu, aby Vám pomohl pluginy nainstalovat."
+
+#: tgm-plugin-activation.php:168 extras.php:151
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] "Následující požadovaný plugin je nyní neaktivní: %1$s."
+msgstr[1] "Následující požadované pluginy jsou nyní neaktivní: %1$s."
+
+#: tgm-plugin-activation.php:169 extras.php:152
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] "Následující doporučený plugin je nyní neaktivní: %1$s."
+msgstr[1] "Následující doporučené pluginy jsou nyní neaktivní: %1$s."
+
+#: tgm-plugin-activation.php:170 extras.php:153
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] "Je nám líto, ale nemáte dostatečná oprávnění k aktivaci pluginu %s. Kontaktujte administrátora tohoto webu, aby Vám pomohl plugin aktivovat."
+msgstr[1] "Je nám líto, ale nemáte dostatečná oprávnění k aktivaci pluginů %s. Kontaktujte administrátora tohoto webu, aby Vám pomohl pluginy aktivovat."
+
+#: tgm-plugin-activation.php:171 extras.php:154
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] "Následující plugin je potřeba aktualizovat na jeho poslední verzi, aby byla zajištěna maximální kombatibilita s touto šablonou: %1$s."
+msgstr[1] "Následující pluginy je potřeba aktualizovat na jejich poslední verzi, aby byla zajištěna maximální kombatibilita s touto šablonou: %1$s."
+
+#: tgm-plugin-activation.php:172 extras.php:155
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] "Je nám líto, ale nemáte dostatečná oprávnění k aktualizaci pluginu %s. Kontaktujte administrátora tohoto webu, aby Vám pomohl plugin aktualizovat."
+msgstr[1] "Je nám líto, ale nemáte dostatečná oprávnění k aktualizaci pluginů %s. Kontaktujte administrátora tohoto webu, aby Vám pomohl pluginy aktualizovat."
+
+#: tgm-plugin-activation.php:173 extras.php:156
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] "Začít instalovat plugin"
+msgstr[1] "Začít instalovat pluginy"
+
+#: tgm-plugin-activation.php:174 extras.php:157
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] "Začít aktivaci pluginu"
+msgstr[1] "Začít aktivaci pluginů"
+
+#: tgm-plugin-activation.php:175 extras.php:158
+msgid "Return to Required Plugins Installer"
+msgstr "Návrat k Instalátoru požadovaných pluginů"
+
+#: tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr "Návrat na Nástěnku"
+
+#: tgm-plugin-activation.php:177 extras.php:159
+#: tgm-plugin-activation.php:1956
+msgid "Plugin activated successfully."
+msgstr "Plugin byl úspěšně aktivován."
+
+#: tgm-plugin-activation.php:178 tgm-plugin-activation.php:1644
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] "Plugin byl úspěšně aktivován:"
+msgstr[1] "Pluginy byly úspěšně aktivovány:"
+
+#: tgm-plugin-activation.php:179 extras.php:160
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr "Všechny pluginy úspěšně nainstalovány a aktivovány. %1$s"
+
+#: tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr "Nezobrazovat zprávu"
+
+#: tgm-plugin-activation.php:532 tgm-plugin-activation.php:2173
+msgid "Return to the Dashboard"
+msgstr "Návrat na Nástěnku"
+
+#: tgm-plugin-activation.php:1167 tgm-plugin-activation.php:1348
+msgid "Private Repository"
+msgstr "Privátní repositář"
+
+#: tgm-plugin-activation.php:1170 tgm-plugin-activation.php:1351
+msgid "Pre-Packaged"
+msgstr "Předbalíčkován"
+
+#: tgm-plugin-activation.php:1175
+msgid "WordPress Repository"
+msgstr "WordPress repozitář"
+
+#: tgm-plugin-activation.php:1178
+msgid "Required"
+msgstr "Vyžadvované"
+
+#: tgm-plugin-activation.php:1178
+msgid "Recommended"
+msgstr "Doporučené"
+
+#: tgm-plugin-activation.php:1181
+msgid "Not Installed"
+msgstr "Nenainstalován"
+
+#: tgm-plugin-activation.php:1183
+msgid "Installed But Not Activated"
+msgstr "Instalován, ale neaktivní"
+
+#: tgm-plugin-activation.php:1288 tgm-plugin-activation.php:1409
+msgid "Install"
+msgstr "Instalovat"
+
+#: tgm-plugin-activation.php:1312 tgm-plugin-activation.php:1410
+msgid "Activate"
+msgstr "Aktivovat"
+
+#: tgm-plugin-activation.php:1372
+msgid "No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>"
+msgstr "Žádný plugin k instalaci nebo aktivaci. <a href="%1$s" title="Návrat na Nástěnku">Návrat na Nástěnku</a>"
+
+#: tgm-plugin-activation.php:1388
+msgid "Plugin"
+msgstr "Plugin"
+
+#: tgm-plugin-activation.php:1389
+msgid "Source"
+msgstr "Zdroj"
+
+#: tgm-plugin-activation.php:1390
+msgid "Type"
+msgstr "Typ"
+
+#: tgm-plugin-activation.php:1391
+msgid "Status"
+msgstr "Stav"
+
+#: tgm-plugin-activation.php:1939
+msgid "Install package not available."
+msgstr "Instalační balíček není dostupný."
+
+#: tgm-plugin-activation.php:1940
+msgid "Downloading install package from <span class="code">%s</span>&#8230;"
+msgstr "Stahování instalačního balíčku z <span class="code">%s</span>&#8230;"
+
+#: tgm-plugin-activation.php:1941
+msgid "Unpacking the package&#8230;"
+msgstr "Rozbaluji balíček&#8230;"
+
+#: tgm-plugin-activation.php:1942
+msgid "Installing the plugin&#8230;"
+msgstr "Instaluji plugin&#8230;"
+
+#: tgm-plugin-activation.php:1943
+msgid "Plugin install failed."
+msgstr "Instalace pluginu selhala."
+
+#: tgm-plugin-activation.php:1944
+msgid "Plugin installed successfully."
+msgstr "Plugin úspěšně nainstalován."
+
+#: tgm-plugin-activation.php:1955
+msgid "Plugin activation failed."
+msgstr "Aktivace pluginu selhala."
+
+#: tgm-plugin-activation.php:2069
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "Instalační a aktivační proces startuje. Tento proces může chvíli trvat, buďte prosím trpěliví."
+
+#: tgm-plugin-activation.php:2070
+msgid "%1$s installed and activated successfully."
+msgstr "%1$s úspěšně nainstalován a aktivován."
+
+#: tgm-plugin-activation.php:2070 tgm-plugin-activation.php:2079
+msgid "Show Details"
+msgstr "Zobrazit detaily"
+
+#: tgm-plugin-activation.php:2070 tgm-plugin-activation.php:2079
+msgid "Hide Details"
+msgstr "Skrýt detaily"
+
+#: tgm-plugin-activation.php:2071
+msgid "All installations and activations have been completed."
+msgstr "Všechny instalace a aktivace jsou dokončeny."
+
+#: tgm-plugin-activation.php:2072
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr "Instaluji a aktivuji plugin %1$s (%2$d/%3$d)"
+
+#: tgm-plugin-activation.php:2076
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr "Instalační proces startuje. Proces může chvíli trvat, prosím, buďte trpěliví."
+
+#: tgm-plugin-activation.php:2077
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr "Stala se chyba během instalace %1$s: <strong>%2$s</strong>."
+
+#: tgm-plugin-activation.php:2078
+msgid "The installation of %1$s failed."
+msgstr "Instalace %1$s se nepodařila."
+
+#: tgm-plugin-activation.php:2079
+msgid "%1$s installed successfully."
+msgstr "%1$s úspěšně nainstalován."
+
+#: tgm-plugin-activation.php:2080
+msgid "All installations have been completed."
+msgstr "Všechny aktivace byly dokončeny."
+
+#: tgm-plugin-activation.php:2081
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr "Instalace pluginu %1$s (%2$d/%3$d)"
+
+#: theme-options:83
+msgid "Cache menu"
+msgstr "Cachování menu"
+
+#: theme-options:88
+msgid "Zero for caching off, otherwise minutes."
+msgstr "0 pro vypnutí cachování, jinak čas v minutách."
 
 msgid "the WordPress team"
 msgstr "Vývojáři WordPressu (a překladatelé)"

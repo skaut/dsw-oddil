@@ -301,5 +301,5 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('dev', ['build', 'watch']);
+	grunt.registerTask('dev', ['watch']);
 };

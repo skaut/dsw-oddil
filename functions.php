@@ -29,7 +29,8 @@ function dswoddil_setup() {
 	load_theme_textdomain( 'dswoddil', get_template_directory() . '/languages' );
 
 	// This theme styles the visual editor to resemble the theme style.
-	//add_editor_style( array( 'css/editor-style.css', twentyfourteen_font_url() ) );
+	// editor-style.css to match the theme style.
+	add_editor_style();
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -193,7 +194,7 @@ function dswoddil_widgets_init() {
 	) );
 	register_sidebar( array(
 		'name'          => __( 'Area above content', 'dswoddil' ),
-		'id'            => 'above-content-widget',
+		'id'            => 'top-widget',
 		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
 		'before_widget' => '<div class="content">',
 		'after_widget'  => '</div>',
@@ -201,8 +202,8 @@ function dswoddil_widgets_init() {
 		'after_title'   => '</h2>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Primary Sidebar', 'dswoddil' ),
-		'id'            => 'sidebar-1',
+		'name'          => __( 'Left Sidebar', 'dswoddil' ),
+		'id'            => 'left-sidebar',
 		'description'   => __( 'Main sidebar that appears on the left.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -210,8 +211,8 @@ function dswoddil_widgets_init() {
 		'after_title'   => '</h1>',
 	) );
 	register_sidebar( array(
-		'name'          => __( 'Content Sidebar', 'dswoddil' ),
-		'id'            => 'content',
+		'name'          => __( 'Right Sidebar', 'dswoddil' ),
+		'id'            => 'right-sidebar',
 		'description'   => __( 'Additional sidebar that appears on the right.', 'dswoddil' ),
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
@@ -239,8 +240,11 @@ function dswoddil_widgets_init() {
 }
 add_action( 'widgets_init', 'dswoddil_widgets_init' );
 
+// Load up our theme options page and related code.
+require_once get_template_directory() . '/inc/theme-options.php';
+
 // Implement Custom Header features.
-require get_template_directory() . '/inc/custom-header.php';
+require_once get_template_directory() . '/inc/custom-header.php';
 
 // Custom template tags for this theme.
 require_once get_template_directory() . '/inc/template-tags.php';
@@ -249,13 +253,13 @@ require_once get_template_directory() . '/inc/template-tags.php';
 require_once get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 
 // Add Theme Customizer functionality.
-require get_template_directory() . '/inc/customizer.php';
+require_once get_template_directory() . '/inc/customizer.php';
 
 // Custom functions that act independently of the theme templates.
-require get_template_directory() . '/inc/extras.php';
+require_once get_template_directory() . '/inc/extras.php';
 
 // Load Jetpack compatibility file.
-require get_template_directory() . '/inc/jetpack.php';
+require_once get_template_directory() . '/inc/jetpack.php';
 
 /**
  * Getter function for Featured Content Plugin.
@@ -286,137 +290,6 @@ function dswoddil_has_featured_posts() {
 	return ! is_paged() && (bool) dswoddil_get_featured_posts();
 }
 
-/******************************************************************************
-	ADMIN THEME SETTINGS
-******************************************************************************/
-add_action( 'admin_menu', 'dswoddil_theme_settings_menu' );
-add_action( 'admin_init', 'dswoddil_theme_settings_init');
-
-/**
- * Preparing theme settings into menu.
- *
- * @since DSW oddil 1.0
- */
-function dswoddil_theme_settings_menu() {
-	add_theme_page(
-		__( 'Theme Settings', 'dswoddil' ),
-		__( 'Theme Settings', 'dswoddil' ),
-		'administrator',
-		'dswoddil_theme_settings',
-		'dswoddil_theme_settings_page_render'
-	);
-}
-
-/**
- * Render theme settings page.
- *
- * @since DSW oddil 1.0
- */
-function dswoddil_theme_settings_page_render() {
-	// Create a header in the default WordPress 'wrap' container
-	?>
-	<div class="wrap">
-		<h2><?php _e( 'DSW Oddil Theme Settings', 'dswoddil' )?></h2>
-		<?php settings_errors(); ?>
-
-		<form method="post" action="options.php">
-			<?php settings_fields( 'dswoddil_theme_settings_page' ); ?>
-			<?php do_settings_sections( 'dswoddil_theme_settings_page' ); ?>
-			<?php submit_button(); ?>
-		</form>
-
-	</div>
-	<?php
-}
-
-/**
- * Initialization of theme settings.
- *
- * @since DSW oddil 1.0
- */
-function dswoddil_theme_settings_init() {
-	if ( false == get_option( 'dswoddil_theme_settings_page' ) ) {
-		add_option( 'dswoddil_theme_settings_page' );
-	}
-
-	add_settings_section(
-		'dswoddil_general_settings_section',
-		__( 'Layout Settings', 'dswoddil' ),
-		'dswoddil_layout_settings_callback',
-		'dswoddil_theme_settings_page'
-	);
-
-	add_settings_field(
-		'dswoddil_layout_color',
-		__( 'Layout color', 'dswoddil' ),
-		'dswoddil_layout_color_switcher_render',
-		'dswoddil_theme_settings_page',
-		'dswoddil_general_settings_section',
-		array(
-			__( 'Change this setting to display different color.', 'dswoddil' )
-		)
-	);
-
-	register_setting(
-		'dswoddil_theme_settings_page',
-		'dswoddil_layout_color'
-	);
-}
-
-/**
- * Layout settings callback.
- *
- * @since DSW oddil 1.0
- */
-function dswoddil_layout_settings_callback() {
-	_e( '<p>Select which layout color you wish to display.</p>', 'dswoddil' );
-}
-
-/**
- * Render layout color switcher.
- *
- * @since DSW oddil 1.0
- */
-function dswoddil_layout_color_switcher_render($args) {
-	$options = array (
-		"id"   	 => "dswoddil_layout_color",
-		"colors" => array(
-			"red" 		=> __( 'red', 'dswoddil' ),
-			"blue"		=> __( 'blue', 'dswoddil' ),
-			"violet"	=> __( 'violet', 'dswoddil' ),
-			"green"		=> __( 'green', 'dswoddil' )
-		),
-	);
-
-	$html = '<select style="width:200px;" name="'.$options['id'].'" id="'.$options['id'].'">';
-				foreach ( $options['colors'] as $color_key => $color_value ) {
-					$html .= '<option';
-					if (get_option( $options['id'] ) == $color_key) {
-						$html .= ' selected="selected"';
-					}
-					$html .= ' value = "'.$color_key.'">'.$color_value.'</option>';
-				}
-				$html .= '</select>';
-
-	// Here, we will take the first argument of the array and add it to a label next to the checkbox
-	$html .= '<label for="dswoddil_layout_color"> '  . $args[0] . '</label>';
-
-	echo $html;
-}
-
-/******************************************************************************
-	ADMIN SCRIPTS
-******************************************************************************/
-/*
-function dswoddil_load_custom_wp_admin_scripts()
-{
-	// Register the script like this for a theme:
-	//wp_register_script( 'custom-script', get_template_directory_uri() . '/js/' . ((dswoddil_get_dev_enviroment() <> 1) ? 'bootstrap.js' : 'bootstrap.min.js') , array( 'jquery' ) );
-	// For either a plugin or a theme, you can then enqueue the script:
-	//wp_enqueue_script( 'custom-script' );
-}
-add_action( 'admin_enqueue_scripts', 'dswoddil_load_custom_wp_admin_scripts' );
-*/
 /******************************************************************************
 	HELPERS
 ******************************************************************************/

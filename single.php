@@ -11,10 +11,11 @@ get_header(); ?>
 
 	<div id="primary" class="content-area container content">
 		<main id="main" class="site-main row" role="main">
+			<?php get_template_part( 'template-parts/sidebar', 'left' ); ?>
 			<?php
 				$col = 12;
-				if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
-				if ( is_active_sidebar( 'content' ) ) $col -= 3;
+				if ( is_active_sidebar( 'left-sidebar' ) ) $col -= 3;
+				if ( is_active_sidebar( 'right-sidebar' ) ) $col -= 3;
 			?>
 			<section class="col-md-<?php echo $col; ?>">
 				<?php
@@ -38,11 +39,7 @@ get_header(); ?>
 					endwhile;
 				?>
 			</section><!-- .col-md-9 -->
-			<?php if ( is_active_sidebar( 'content' ) ) : ?>
-			<section class="col-md-3">
-				<?php get_sidebar( 'content' ); ?>
-			</section><!-- .col-md-3 -->
-			<?php endif; ?>
+			<?php get_template_part( 'template-parts/sidebar', 'right' ); ?>
 		</main><!-- #main .row -->
 	</div><!-- #primary .content -->
 

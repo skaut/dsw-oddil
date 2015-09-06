@@ -13,17 +13,18 @@ get_header(); ?>
 
 	<section id="primary" class="content-area container content">
 		<main id="main" class="site-main row" role="main">
+			<?php get_template_part( 'template-parts/sidebar', 'left' ); ?>
 			<?php
 				$col = 12;
-				if ( is_active_sidebar( 'sidebar-1' ) ) $col -= 3;
-				if ( is_active_sidebar( 'content' ) ) $col -= 3;
+				if ( is_active_sidebar( 'left-sidebar' ) ) $col -= 3;
+				if ( is_active_sidebar( 'right-sidebar' ) ) $col -= 3;
 			?>
 				<section class="col-md-<?php echo $col; ?>">
 
 				<?php if ( have_posts() ) : ?>
 
 					<header class="page-header">
-						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'dsw-oddil' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+						<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'dswoddil' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 					</header><!-- .page-header -->
 
 					<?php /* Start the Loop */ ?>
@@ -49,11 +50,7 @@ get_header(); ?>
 				<?php endif; ?>
 
 			</section><!-- .col-md-9 -->
-			<?php if ( is_active_sidebar( 'content' ) ) : ?>
-			<section class="col-md-3">
-				<?php get_sidebar( 'content' ); ?>
-			</section><!-- .col-md-3 -->
-			<?php endif; ?>
+			<?php get_template_part( 'template-parts/sidebar', 'right' ); ?>
 		</main><!-- #main .row -->
 	</section><!-- #primary .content -->
 

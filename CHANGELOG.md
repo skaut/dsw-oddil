@@ -1,3 +1,26 @@
+<a name="0.12.0"></a>
+# [0.12.0](https://github.com/skaut/dsw-oddil/compare/v0.11.0...v0.12.0) (2015-09-06)
+
+
+### Bug Fixes
+
+* Add screen-reader-text css and some other Wordpress core styles ([ff7177c](https://github.com/skaut/dsw-oddil/commit/ff7177c)), closes [#44](https://github.com/skaut/dsw-oddil/issues/44)
+* Add translation domain to gettext function (refs #45) ([82421df](https://github.com/skaut/dsw-oddil/commit/82421df))
+* Change translation domain to dswoddil (refs #45) ([2e96d58](https://github.com/skaut/dsw-oddil/commit/2e96d58))
+* Convert spaces to tabs (refs #45) ([ef3c9e5](https://github.com/skaut/dsw-oddil/commit/ef3c9e5))
+* Do not build in watch task ([05096be](https://github.com/skaut/dsw-oddil/commit/05096be))
+* Fix jshint errors ([763e1cb](https://github.com/skaut/dsw-oddil/commit/763e1cb))
+* Remove forgotten text ([87d4872](https://github.com/skaut/dsw-oddil/commit/87d4872))
+* Theme name in style css versus instalattion folder (closes #46) ([d70ce01](https://github.com/skaut/dsw-oddil/commit/d70ce01)), closes [#46](https://github.com/skaut/dsw-oddil/issues/46)
+
+### Features
+
+* Add .editorconfig file for setting up dev env in different IDEs ([263b3b1](https://github.com/skaut/dsw-oddil/commit/263b3b1)), closes [#47](https://github.com/skaut/dsw-oddil/issues/47)
+* Custom header image size recomendation set to 1260x300 (close #11) ([551e5cd](https://github.com/skaut/dsw-oddil/commit/551e5cd)), closes [#11](https://github.com/skaut/dsw-oddil/issues/11)
+* Translating TGM plugin installer (closes #45) ([e6b8ec4](https://github.com/skaut/dsw-oddil/commit/e6b8ec4)), closes [#45](https://github.com/skaut/dsw-oddil/issues/45)
+
+
+
 <a name="0.11.0"></a>
 # [0.11.0](https://github.com/skaut/dsw-oddil/compare/v0.10.0...v0.11.0) (2015-08-20)
 

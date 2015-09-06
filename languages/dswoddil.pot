@@ -193,7 +193,7 @@ msgid "Secondary menu in left sidebar"
 msgstr ""
 
 #: functions.php:171
-msgid "Primary Sidebar"
+msgid "Left Sidebar"
 msgstr ""
 
 #: functions.php:173
@@ -201,7 +201,7 @@ msgid "Main sidebar that appears on the left."
 msgstr ""
 
 #: functions.php:180
-msgid "Content Sidebar"
+msgid "Right Sidebar"
 msgstr ""
 
 #: functions.php:182
@@ -544,6 +544,264 @@ msgstr ""
 
 #: tag.php:22
 msgid "Tag Archives: %s"
+msgstr ""
+
+#: tgm-plugin-activation.php:161 extras.php:144
+msgid "Install Required Plugins"
+msgstr ""
+
+#: tgm-plugin-activation.php:162 extras.php:145
+msgid "Install Plugins"
+msgstr ""
+
+#: tgm-plugin-activation.php:163 extras.php:146
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: tgm-plugin-activation.php:164
+msgid "Something went wrong."
+msgstr ""
+
+#: extras.php:147
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: tgm-plugin-activation.php:165 extras.php:148
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:166 extras.php:149
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:167 extras.php:150
+msgid "Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed."
+msgid_plural "Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed."
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:168 extras.php:151
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:169 extras.php:152
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:170 extras.php:153
+msgid "Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated."
+msgid_plural "Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:171 extras.php:154
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:172 extras.php:155
+msgid "Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated."
+msgid_plural "Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated."
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:173 extras.php:156
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:174 extras.php:157
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:175 extras.php:158
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: tgm-plugin-activation.php:176
+msgid "Return to the dashboard"
+msgstr ""
+
+#: tgm-plugin-activation.php:177 extras.php:159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: tgm-plugin-activation.php:178
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: tgm-plugin-activation.php:179 extras.php:160
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: tgm-plugin-activation.php:180
+msgid "Dismiss this notice"
+msgstr ""
+
+#: tgm-plugin-activation.php:532 tgm-plugin-activation.php:2173
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: tgm-plugin-activation.php:1167 tgm-plugin-activation.php:1348
+msgid "Private Repository"
+msgstr ""
+
+#: tgm-plugin-activation.php:1170 tgm-plugin-activation.php:1351
+msgid "Pre-Packaged"
+msgstr ""
+
+#: tgm-plugin-activation.php:1175
+msgid "WordPress Repository"
+msgstr ""
+
+#: tgm-plugin-activation.php:1178
+msgid "Required"
+msgstr ""
+
+#: tgm-plugin-activation.php:1178
+msgid "Recommended"
+msgstr ""
+
+#: tgm-plugin-activation.php:1181
+msgid "Not Installed"
+msgstr ""
+
+#: tgm-plugin-activation.php:1183
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: tgm-plugin-activation.php:1288 tgm-plugin-activation.php:1409
+msgid "Install"
+msgstr ""
+
+#: tgm-plugin-activation.php:1312 tgm-plugin-activation.php:1410
+msgid "Activate"
+msgstr ""
+
+#: tgm-plugin-activation.php:1372
+msgid "No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>"
+msgstr ""
+
+#: tgm-plugin-activation.php:1388
+msgid "Plugin"
+msgstr ""
+
+#: tgm-plugin-activation.php:1389
+msgid "Source"
+msgstr ""
+
+#: tgm-plugin-activation.php:1390
+msgid "Type"
+msgstr ""
+
+#: tgm-plugin-activation.php:1391
+msgid "Status"
+msgstr ""
+
+#: tgm-plugin-activation.php:1644
+msgid "The following plugin was activated successfully:"
+msgid_plural "The following plugins were activated successfully:"
+msgstr[0] ""
+msgstr[1] ""
+
+#: tgm-plugin-activation.php:1939
+msgid "Install package not available."
+msgstr ""
+
+#: tgm-plugin-activation.php:1940
+msgid "Downloading install package from <span class="code">%s</span>&#8230;"
+msgstr ""
+
+#: tgm-plugin-activation.php:1941
+msgid "Unpacking the package&#8230;"
+msgstr ""
+
+#: tgm-plugin-activation.php:1942
+msgid "Installing the plugin&#8230;"
+msgstr ""
+
+#: tgm-plugin-activation.php:1943
+msgid "Plugin install failed."
+msgstr ""
+
+#: tgm-plugin-activation.php:1944
+msgid "Plugin installed successfully."
+msgstr ""
+
+#: tgm-plugin-activation.php:1955
+msgid "Plugin activation failed."
+msgstr ""
+
+#: tgm-plugin-activation.php:1956
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: tgm-plugin-activation.php:2069
+msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: tgm-plugin-activation.php:2070
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: tgm-plugin-activation.php:2070 tgm-plugin-activation.php:2079
+msgid "Show Details"
+msgstr ""
+
+#: tgm-plugin-activation.php:2070 tgm-plugin-activation.php:2079
+msgid "Hide Details"
+msgstr ""
+
+#: tgm-plugin-activation.php:2071
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: tgm-plugin-activation.php:2072
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: tgm-plugin-activation.php:2076
+msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
+msgstr ""
+
+#: tgm-plugin-activation.php:2077
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: tgm-plugin-activation.php:2078
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: tgm-plugin-activation.php:2079
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: tgm-plugin-activation.php:2080
+msgid "All installations have been completed."
+msgstr ""
+
+#: tgm-plugin-activation.php:2081
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: theme-options:83
+msgid "Cache menu"
+msgstr ""
+
+#: theme-options:88
+msgid "Zero for caching off, otherwise minutes."
 msgstr ""
 
 #. Theme URI of the plugin/theme
