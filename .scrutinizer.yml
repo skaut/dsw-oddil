@@ -1,0 +1,13 @@
+checks:
+    coding_standard:
+        name: WordPress
+filter:
+    excluded_paths:
+        - src/*
+        - languages/*
+        - assets/*
+coding_style:
+    php:
+        indentation:
+            general:
+                use_tabs: true
