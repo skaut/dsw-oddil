@@ -1,12 +1,12 @@
-checks:
-    coding_standard:
-        name: WordPress
-
 filter:
     excluded_paths:
         - src/*
         - languages/*
         - assets/*
+
+checks:
+    coding_standard:
+        name: WordPress
 
 coding_style:
     php:
