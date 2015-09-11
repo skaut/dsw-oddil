@@ -78,25 +78,9 @@ function dswoddil_theme_settings_init() {
 		)
 	);
 
-	add_settings_field(
-		'dswoddil_cache_menu',
-		__( 'Cache menu', 'dswoddil' ),
-		'dswoddil_cache_menu_form_render',
-		'dswoddil_theme_settings_page',
-		'dswoddil_general_settings_section',
-		array(
-			__( 'Zero for caching off, otherwise minutes.', 'dswoddil' )
-		)
-	);
-
 	register_setting(
 		'dswoddil_theme_settings_page',
 		'dswoddil_layout_color'
-	);
-
-	register_setting(
-		'dswoddil_theme_settings_page',
-		'dswoddil_cache_menu'
 	);
 }
 
@@ -137,23 +121,6 @@ function dswoddil_layout_color_switcher_render($args) {
 
 	// Here, we will take the first argument of the array and add it to a label next to the checkbox
 	$html .= '<label for="dswoddil_layout_color"> ' . $args[0] . '</label>';
-
-	echo $html;
-}
-
-/**
- * Render layout color switcher.
- *
- * @since DSW oddil 1.0
- */
-function dswoddil_cache_menu_form_render($args) {
-
-	$value = get_option( 'dswoddil_cache_menu' ) ? get_option( 'dswoddil_cache_menu' ) : 0;
-
-	$html = '<input style="width:200px;" name="dswoddil_cache_menu" id="dswoddil_cache_menu" type="text" value="' . $value . '" placeholder="0">';
-
-	// Here, we will take the first argument of the array and add it to a label next to the checkbox
-	$html .= '<label for="dswoddil_cache_menu"> ' . $args[0] . '</label>';
 
 	echo $html;
 }

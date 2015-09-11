@@ -51,34 +51,18 @@
 					 	</div>
 						<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 							<?php
-								if ( 0 == get_option( 'dswoddil_cache_menu' ) ) {
-									delete_transient( 'dswoddil_primary_menu_data' );
-								}
-
-								if ( false === ( $dswoddil_menu_data = get_transient( 'dswoddil_primary_menu_data' ) ) ) {
-									$dswoddil_menu_data = wp_nav_menu( array(
-										'echo'				=> false,
-										'menu'              => 'primary',
-										'theme_location'    => 'primary',
-										'depth'             => 3,
-										'container'         => 'div',
-										'container_class'   => 'collapse navbar-collapse',
-										'container_id'      => 'bs-example-navbar-collapse-1',
-										'menu_class'        => 'nav navbar-nav',
-										'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-										'walker'            => new wp_bootstrap_navwalker())
-									);
-									if ( 0 < get_option( 'dswoddil_cache_menu' ) ) {
-										set_transient(
-											'dswoddil_primary_menu_data',
-											$dswoddil_menu_data,
-											get_option( 'dswoddil_cache_menu' ) * MINUTE_IN_SECONDS
-										);
-									} else {
-										delete_transient( 'dswoddil_primary_menu_data' );
-									}
-								}
-
+								$dswoddil_menu_data = wp_nav_menu( array(
+									'echo'				=> false,
+									'menu'              => 'primary',
+									'theme_location'    => 'primary',
+									'depth'             => 3,
+									'container'         => 'div',
+									'container_class'   => 'collapse navbar-collapse',
+									'container_id'      => 'bs-example-navbar-collapse-1',
+									'menu_class'        => 'nav navbar-nav',
+									'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
+									'walker'            => new wp_bootstrap_navwalker())
+								);
 								echo $dswoddil_menu_data;
 							?>
 						</nav>
