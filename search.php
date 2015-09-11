@@ -19,7 +19,7 @@ get_header(); ?>
 			if ( is_active_sidebar( 'left-sidebar' ) ) { $col -= 3; }
 			if ( is_active_sidebar( 'right-sidebar' ) ) { $col -= 3; }
 			?>
-				<section class="col-md-<?php echo $col; ?>">
+				<section class="col-md-<?php echo esc_attr( $col ); ?>">
 
 				<?php if ( have_posts() ) : ?>
 
