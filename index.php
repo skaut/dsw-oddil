@@ -27,9 +27,9 @@ get_header(); ?>
 		<main id="main" class="site-main row" role="main">
 		<?php get_template_part( 'template-parts/sidebar', 'left' ); ?>
 		<?php
-			$col = 12;
-			if ( is_active_sidebar( 'left-sidebar' ) ) $col -= 3;
-			if ( is_active_sidebar( 'right-sidebar' ) ) $col -= 3;
+		$col = 12;
+		if ( is_active_sidebar( 'left-sidebar' ) ) { $col -= 3; }
+		if ( is_active_sidebar( 'right-sidebar' ) ) { $col -= 3; }
 		?>
 			<section class="col-md-<?php echo $col; ?>">
 				<?php
