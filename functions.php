@@ -122,11 +122,6 @@ function dswoddil_load_styles() {
 		'dswoddil_stylesheet',
 		get_template_directory_uri() . '/css/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'combined' : 'combined.min' ) .'.css'
 	);
-	// Custom colored style for this theme
-	wp_enqueue_style(
-		'dswoddil_theme_color',
-		get_template_directory_uri() . '/css/' . get_option( 'dswoddil_layout_color' ) . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? '' : '.min' ) . '.css'
-	);
 }
 
 /**
