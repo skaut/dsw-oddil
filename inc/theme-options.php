@@ -286,6 +286,19 @@ function dswoddil_settings_field_color_scheme() {
 	$options = dswoddil_get_theme_options();
 	?>
 
+	<script type="text/javascript">
+	(function($) {
+		$(document).ready( function() {
+			$(".color-option").on('click', function (e) {
+				cb = $(this).children(":radio");
+				cb.attr("checked", !cb.attr("checked"));
+				$(".color-option.selected").removeClass("selected");
+				$(this).addClass("selected");
+			});
+		});
+	})(jQuery);
+	</script>
+
 	<fieldset id="scheme-picker" class="scheme-list">
 		<legend class="screen-reader-text">
 			<span>
@@ -295,7 +308,7 @@ function dswoddil_settings_field_color_scheme() {
 
 	<?php foreach ( dswoddil_color_schemes() as $scheme ) { ?>
 
-	<div class="color-option">
+	<div class="color-option<?php echo $scheme['value'] == $options['color_scheme'] ? ' selected' : ''; ?>">
 		<input id="scheme_color_<?php echo $scheme['value']; ?>" class="tog" type="radio" name="dswoddil_theme_options[color_scheme]" value="<?php echo esc_attr( $scheme['value'] ); ?>" <?php checked( $options['color_scheme'], $scheme['value'] ); ?> />
 		<label for="scheme_color_<?php echo $scheme['value']; ?>" class="description"><?php echo $scheme['label']; ?></label>
 		<table class="color-palette">
