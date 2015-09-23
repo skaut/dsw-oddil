@@ -11,7 +11,7 @@ tools:
     php_cs_fixer:
         config:
             level: all
-            fixers: { unused_use: true, phpdoc_params: true, braces: true, php_closing_tag: true }
+            fixers: { unused_use: true, phpdoc_params: true, braces: false, php_closing_tag: true }
     php_analyzer:
         config:
             suspicious_code: { enabled: true, overriding_parameter: true, overriding_closure_use: true, parameter_closure_use_conflict: true, parameter_multiple_times: true, non_existent_class_in_instanceof_check: true, non_existent_class_in_catch_clause: true, assignment_of_null_return: true, non_commented_switch_fallthrough: true, non_commented_empty_catch_block: true, overriding_private_members: true, use_statement_alias_conflict: true, precedence_in_condition_assignment: true }
