@@ -246,7 +246,6 @@ function dswoddil_settings_field_color_scheme() {
 function dswoddil_theme_options_render_page() {
 	?>
 	<div class="wrap">
-		<?php screen_icon(); ?>
 		<h2><?php printf( __( '%s Theme Options', 'dswoddil' ), wp_get_theme() ); ?></h2>
 		<?php settings_errors(); ?>
 
