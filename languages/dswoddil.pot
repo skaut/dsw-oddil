@@ -272,46 +272,6 @@ msgstr[1] ""
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:302 functions.php:303
-msgid "Theme Settings"
-msgstr ""
-
-#: functions.php:319
-msgid "DSW Oddil Theme Settings"
-msgstr ""
-
-#: functions.php:344
-msgid "Layout Settings"
-msgstr ""
-
-#: functions.php:351
-msgid "Layout color"
-msgstr ""
-
-#: functions.php:356
-msgid "Change this setting to display different color."
-msgstr ""
-
-#: functions.php:372
-msgid "<p>Select which layout color you wish to display.</p>"
-msgstr ""
-
-#: functions.php:384
-msgid "red"
-msgstr ""
-
-#: functions.php:385
-msgid "blue"
-msgstr ""
-
-#: functions.php:386
-msgid "violet"
-msgstr ""
-
-#: functions.php:387
-msgid "green"
-msgstr ""
-
 #: header.php:48
 msgid "Search"
 msgstr ""
@@ -796,14 +756,6 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: theme-options:83
-msgid "Cache menu"
-msgstr ""
-
-#: theme-options:88
-msgid "Zero for caching off, otherwise minutes."
-msgstr ""
-
 #. Theme URI of the plugin/theme
 msgid "http://wordpress.org/themes/twentyfourteen"
 msgstr ""
@@ -828,4 +780,36 @@ msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Full Width Page"
+msgstr ""
+
+#: inc/theme-options.php:87 inc/theme-options.php:88
+msgid "Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:118
+msgid "Overview"
+msgstr ""
+
+#: inc/theme-options.php:250
+msgid "%s Theme Options"
+msgstr ""
+
+#: inc/theme-options.php:50 inc/theme-options.php:210
+msgid "Color scheme"
+msgstr ""
+
+#: inc/theme-options.php:162
+msgid "Red"
+msgstr ""
+
+#: inc/theme-options.php:167
+msgid "Blue"
+msgstr ""
+
+#: inc/theme-options.php:172
+msgid "Violet"
+msgstr ""
+
+#: inc/theme-options.php:177
+msgid "Green"
 msgstr ""

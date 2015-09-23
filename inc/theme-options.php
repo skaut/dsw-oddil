@@ -102,9 +102,9 @@ function dswoddil_theme_options_help() {
 
 	$help = '<p>' . __( 'Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, DSW Oddil, provides the following Theme Options:', 'dswoddil' ) . '</p>' .
 			'<ol>' .
-				'<li>' . __( '<strong>Color Scheme</strong>: You can choose a color palette of "Light" (light background with dark text) or "Dark" (dark background with light text) for your site.', 'dswoddil' ) . '</li>' .
+				'<li>' . __( '<strong>Color Scheme</strong>: You can choose a color palette of few color schemes for your site.', 'dswoddil' ) . '</li>' .
 			'</ol>' .
-			'<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'poutnicikolin' ) . '</p>';
+			'<p>' . __( 'Remember to click "Save Changes" to save any changes you have made to the theme options.', 'dswoddil' ) . '</p>';
 
 	$sidebar = '<p><strong>' . __( 'For more information:', 'dswoddil' ) . '</strong></p>' .
 		'<p>' . __( '<a href="http://codex.wordpress.org/Appearance_Theme_Options_Screen" target="_blank">Documentation on Theme Options</a>', 'dswoddil' ) . '</p>' .
@@ -302,7 +302,7 @@ function dswoddil_settings_field_color_scheme() {
 	<fieldset id="scheme-picker" class="scheme-list">
 		<legend class="screen-reader-text">
 			<span>
-				<?php __( 'Color scheme', 'dswoddil' ); ?>
+				<?php __( 'Color Scheme', 'dswoddil' ); ?>
 			</span>
 		</legend>
 

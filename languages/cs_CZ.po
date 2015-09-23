@@ -208,46 +208,6 @@ msgstr[0] "%d příspěvek"
 msgstr[1] "%d příspěvky"
 msgstr[2] "%d příspěvků"
 
-#: functions.php:302 functions.php:303
-msgid "Theme Settings"
-msgstr "Nastavení šablony"
-
-#: functions.php:319
-msgid "DSW Oddil Theme Settings"
-msgstr "Nastavení šablony DSW Oddíl"
-
-#: functions.php:344
-msgid "Layout Settings"
-msgstr "Nastavení zobrazení"
-
-#: functions.php:351
-msgid "Layout color"
-msgstr "Barva zobrazení"
-
-#: functions.php:356
-msgid "Change this setting to display different color."
-msgstr "Pro změnu barvy zobrazení upravte toto nastavení."
-
-#: functions.php:372
-msgid "<p>Select which layout color you wish to display.</p>"
-msgstr "<p>Vyberte jakou barvu zobrazení chcete zobrazit.</p>"
-
-#: functions.php:384
-msgid "red"
-msgstr "červená"
-
-#: functions.php:385
-msgid "blue"
-msgstr "modrá"
-
-#: functions.php:386
-msgid "violet"
-msgstr "fialová"
-
-#: functions.php:387
-msgid "green"
-msgstr "zelená"
-
 #: image.php:65
 msgid "Previous Image"
 msgstr "Předchozí obrázek"
@@ -776,16 +736,64 @@ msgstr "Všechny aktivace byly dokončeny."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Instalace pluginu %1$s (%2$d/%3$d)"
 
-#: theme-options:83
-msgid "Cache menu"
-msgstr "Cachování menu"
-
-#: theme-options:88
-msgid "Zero for caching off, otherwise minutes."
-msgstr "0 pro vypnutí cachování, jinak čas v minutách."
-
 msgid "the WordPress team"
 msgstr "Vývojáři WordPressu (a překladatelé)"
 
 msgid "Full Width Page"
 msgstr "Stránka bez postranního panelu"
+
+#: inc/theme-options.php:87 inc/theme-options.php:88
+msgid "Theme Options"
+msgstr "Nastavení šablony"
+
+#: inc/theme-options.php:118
+msgid "Overview"
+msgstr "Základní přehled"
+
+#: inc/theme-options.php:250
+msgid "%s Theme Options"
+msgstr "Rozšířené možnosti nastavení šablony %s"
+
+#: inc/theme-options.php:50 inc/theme-options.php:210
+msgid "Color Scheme"
+msgstr "Barevné schéma"
+
+#: inc/theme-options.php:162
+msgid "Red"
+msgstr "Červená"
+
+#: inc/theme-options.php:167
+msgid "Blue"
+msgstr "Modrá"
+
+#: inc/theme-options.php:172
+msgid "Violet"
+msgstr "Fialová"
+
+#: inc/theme-options.php:177
+msgid "Green"
+msgstr "Zelená"
+
+#: inc/theme-options.php:103
+msgid "Some themes provide customization options that are grouped together on a Theme Options screen. If you change themes, options may change or disappear, as they are theme-specific. Your current theme, DSW Oddil, provides the following Theme Options:"
+msgstr "Autoři některých šablon umožňují uživatelům jednoduše upravovat různá doplňující nastavení, která obvykle naleznete na speciální stránce v administraci (menu Vzhled - Nastavení šablony). Pokud se ale časem rozhodnete používanou šablonu změnit, tak budou u nové šablony všechny dosud provedené úpravy nastavení chybět, protože jsou přímou součástí konkrétní šablony a nepřenáší se na jinou. Aktuálně používaná výchozí šablona DSW Oddil nabízí následující rozšířené možnosti nastavení:"
+
+#: inc/theme-options.php:105
+msgid "<strong>Color Scheme</strong>: You can choose a color palette of few color schemes for your site."
+msgstr "<strong>Barevné schéma</strong>: Můžete si vybrat z několika základních barevných schémat webu."
+
+#: inc/theme-options.php:107
+msgid "Remember to click \"Save Changes\" to save any changes you have made to the theme options."
+msgstr "Nezapomeňte také dole na obrazovce kliknout na tlačítko &#8222;Uložit změny&#8220;, aby byly provedené úpravy nastavení šablony uloženy a mohly se projevit na webu."
+
+#: inc/theme-options.php:109
+msgid "For more information:"
+msgstr "Další informace:"
+
+#: inc/theme-options.php:110
+msgid "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Documentation on Theme Options</a>"
+msgstr "<a href=\"http://codex.wordpress.org/Appearance_Theme_Options_Screen\" target=\"_blank\">Manuál pro nastavení šablony</a> (anglicky)"
+
+#: inc/theme-options.php:111
+msgid "<a href=\"http://wordpress.org/support/\" target=\"_blank\">Support Forums</a>"
+msgstr "Fórum podpory (<a href=\"http://www.separatista.net/forum\" target=\"_blank\">česky</a> - <a href=\"http://wordpress.org/support/\" target=\"_blank\">anglicky</a>)"
