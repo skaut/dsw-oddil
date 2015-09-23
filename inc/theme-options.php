@@ -122,9 +122,6 @@ function dswoddil_theme_options_help() {
 		);
 
 		$screen->set_help_sidebar( $sidebar );
-	} else {
-		// WordPress 3.2
-		add_contextual_help( $screen, $help . $sidebar );
 	}
 }
 
