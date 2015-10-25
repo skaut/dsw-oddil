@@ -3471,10 +3471,35 @@ a img.aligncenter {
     visibility: hidden;
     margin-top: -1px;
   }
-  .dropdown-menu li:hover .sub-menu {
+  .dropdown-menu li:hover > ul {
     visibility: visible;
+    display: block;
   }
-  .dropdown:hover .dropdown-menu {
+  .dropdown-menu li > ul {
+    visibility: hidden;
+  }
+  .dropdown-menu li > ul li > ul {
+    visibility: hidden;
+  }
+  .dropdown-menu li > ul li > ul li > ul {
+    visibility: hidden;
+  }
+  .dropdown-menu li > ul li > ul li > ul li > ul {
+    visibility: hidden;
+  }
+  .dropdown-menu li > ul li > ul li > ul li > ul li > ul {
+    visibility: hidden;
+  }
+  .dropdown-menu li > ul li > ul li > ul li > ul li > ul li > ul {
+    visibility: hidden;
+  }
+  .dropdown-menu li > ul li > ul li > ul li > ul li > ul li > ul li > ul {
+    visibility: hidden;
+  }
+  .dropdown-menu li > ul li > ul li > ul li > ul li > ul li > ul li > ul li > ul {
+    visibility: hidden;
+  }
+  .dropdown:hover > .dropdown-menu {
     display: block;
   }
   .nav-tabs .dropdown-menu,

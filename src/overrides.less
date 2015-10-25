@@ -1,67 +1,82 @@
 /**  Overrides */
 /* ----------------------------------------------- */
-
 /** 6 Media Queries */
 /* ----------------------------------------------- */
 @media (max-width: 980px) {
-
-	.navbar-nav {
-		margin: 0;
-	}
-
-	.dropdown-menu.sub-menu {
-		display: block;
-		position: static;
-		float: none;
-		width: auto;
-		margin-top: 0;
-		background-color: transparent;
-		border: 0;
-		box-shadow: none;
-	}
-
-	.dropdown-submenu > .dropdown-menu {
-		display: block;
-	}
-
-	.dropdown-submenu > .dropdown-menu > li > a {
-		padding-left: 40px;
-	}
-
-	.navbar-toggle {
-		margin-right: 25px;
-	}
-
+    .navbar-nav {
+        margin: 0;
+    }
+    .dropdown-menu.sub-menu {
+        display: block;
+        position: static;
+        float: none;
+        width: auto;
+        margin-top: 0;
+        background-color: transparent;
+        border: 0;
+        box-shadow: none;
+    }
+    .dropdown-submenu > .dropdown-menu {
+        display: block;
+    }
+    .dropdown-submenu > .dropdown-menu > li > a {
+        padding-left: 40px;
+    }
+    .navbar-toggle {
+        margin-right: 25px;
+    }
 }
-
 @media (max-width: 780px) {
-
-	.img-collapse {
-		display: none;
-	}
-
+    .img-collapse {
+        display: none;
+    }
 }
-
 @media (min-width: 980px) {
-
-	.dropdown-menu .sub-menu {
-	    left: 100%;
-	    position: absolute;
-	    top: 0;
-	    visibility: hidden;
-	    margin-top: -1px;
+    .dropdown-menu .sub-menu {
+        left: 100%;
+        position: absolute;
+        top: 0;
+        visibility: hidden;
+        margin-top: -1px;
+    }
+	.dropdown-menu {
+		li {
+			&:hover > ul {
+				visibility: visible;
+				display: block;
+			}
+			> ul {
+				visibility: hidden;
+				li > ul {
+					visibility: hidden;
+					li > ul {
+						visibility: hidden;
+						li > ul {
+							visibility: hidden;
+							li > ul {
+								visibility: hidden;
+								li > ul {
+									visibility: hidden;
+									li > ul {
+										visibility: hidden;
+										li > ul {
+											visibility: hidden;
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
-
-	.dropdown-menu li:hover .sub-menu {
-	    visibility: visible;
-	}
-
-	.dropdown:hover .dropdown-menu {
-	    display: block;
-	}
-
-	.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
-	    margin-top: 0;
-	}
-
+    .dropdown:hover > .dropdown-menu {
+		display: block;
+    }
+    .nav-tabs .dropdown-menu,
+    .nav-pills .dropdown-menu,
+    .navbar .dropdown-menu {
+        margin-top: 0;
+    }
 }
