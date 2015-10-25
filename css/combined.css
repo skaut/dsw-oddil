@@ -3451,8 +3451,32 @@ a img.aligncenter {
   .dropdown-submenu > .dropdown-menu {
     display: block;
   }
-  .dropdown-submenu > .dropdown-menu > li > a {
+  .dropdown-submenu > .dropdown-menu > li a {
     padding-left: 40px;
+  }
+  .dropdown-submenu > .dropdown-menu > li li a {
+    padding-left: 60px;
+  }
+  .dropdown-submenu > .dropdown-menu > li li li a {
+    padding-left: 80px;
+  }
+  .dropdown-submenu > .dropdown-menu > li li li li a {
+    padding-left: 100px;
+  }
+  .dropdown-submenu > .dropdown-menu > li li li li li a {
+    padding-left: 120px;
+  }
+  .dropdown-submenu > .dropdown-menu > li li li li li li a {
+    padding-left: 140px;
+  }
+  .dropdown-submenu > .dropdown-menu > li li li li li li li a {
+    padding-left: 160px;
+  }
+  .dropdown-submenu > .dropdown-menu > li li li li li li li li a {
+    padding-left: 180px;
+  }
+  .dropdown-submenu > .dropdown-menu > li li li li li li li li li a {
+    padding-left: 200px;
   }
   .navbar-toggle {
     margin-right: 25px;

@@ -19,8 +19,33 @@
     .dropdown-submenu > .dropdown-menu {
         display: block;
     }
-    .dropdown-submenu > .dropdown-menu > li > a {
-        padding-left: 40px;
+	@dropdown-padding-base: 20px;
+    .dropdown-submenu > .dropdown-menu > li {
+		a {padding-left: @dropdown-padding-base * 2;}
+		li {
+			a {padding-left: @dropdown-padding-base * 3;}
+			li {
+				a {padding-left: @dropdown-padding-base * 4;}
+				li {
+					a {padding-left: @dropdown-padding-base * 5;}
+					li {
+						a {padding-left: @dropdown-padding-base * 6;}
+						li {
+							a {padding-left: @dropdown-padding-base * 7;}
+							li {
+								a {padding-left: @dropdown-padding-base * 8;}
+								li {
+									a {padding-left: @dropdown-padding-base * 9;}
+									li {
+										a {padding-left: @dropdown-padding-base * 10;}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
     }
     .navbar-toggle {
         margin-right: 25px;
