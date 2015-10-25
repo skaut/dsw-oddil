@@ -1,3 +1,17 @@
+<a name="0.13.0"></a>
+# [0.13.0](https://github.com/skaut/dsw-oddil/compare/v0.12.0...v0.13.0) (2015-10-25)
+
+
+### Bug Fixes
+
+* Fix coding styles and some best practice rules ([f740d1a](https://github.com/skaut/dsw-oddil/commit/f740d1a))
+
+### Features
+
+* Remove Transient API for men u caching (closes #51) ([2b41128](https://github.com/skaut/dsw-oddil/commit/2b41128)), closes [#51](https://github.com/skaut/dsw-oddil/issues/51)
+
+
+
 <a name="0.12.0"></a>
 # [0.12.0](https://github.com/skaut/dsw-oddil/compare/v0.11.0...v0.12.0) (2015-09-06)
 
