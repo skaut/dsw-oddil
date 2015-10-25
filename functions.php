@@ -255,6 +255,9 @@ require_once get_template_directory() . '/inc/extras.php';
 // Load Jetpack compatibility file.
 require_once get_template_directory() . '/inc/jetpack.php';
 
+// Set theme site icon.
+require_once get_template_directory() . '/inc/site-icon.php';
+
 /**
  * Getter function for Featured Content Plugin.
  *
