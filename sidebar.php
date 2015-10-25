@@ -14,7 +14,7 @@
 			$dswoddil_menu_data = wp_nav_menu( array(
 				'menu'              => 'secondary',
 				'theme_location'    => 'secondary',
-				'depth'             => 3,
+				'depth'             => 0,
 				'container'         => 'div',
 				'container_class'   => 'collapse navbar-collapse',
 				'container_id'      => 'bs-example-navbar-collapse-1',

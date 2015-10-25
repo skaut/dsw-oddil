@@ -55,7 +55,7 @@
 									'echo'				=> false,
 									'menu'              => 'primary',
 									'theme_location'    => 'primary',
-									'depth'             => 3,
+									'depth'             => 0,
 									'container'         => 'div',
 									'container_class'   => 'collapse navbar-collapse',
 									'container_id'      => 'bs-example-navbar-collapse-1',
