@@ -84,6 +84,29 @@ if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
 
 endif;
 
+/**
+ * Finds attachment by its name.
+ *
+ * @param string $post_name Name of the attachment.
+ * @return array Attachment properties.
+ */
+if( ! ( function_exists( 'wp_get_attachment_by_post_name' ) ) ) {
+	function dswoddil_get_attachment_by_post_name( $post_name ) {
+		$args = array(
+			'post_per_page' => 1,
+			'post_type'	 => 'attachment',
+			'name'		  => trim ( $post_name ),
+		);
+		$get_posts = new Wp_Query( $args );
+
+		if ( ! empty ( $get_posts->posts[0] ) ) {
+			return $get_posts->posts[0];
+		} else {
+			return false;
+		}
+	}
+}
+
 /******************************************************************************
 	PLUGINS
 ******************************************************************************/
