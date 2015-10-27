@@ -45,7 +45,7 @@ function dswoddil_site_icon_upload() {
 		);
 		//insert wordpress attachment of uploaded image to get attachmen ID
 		$attachment_id = wp_insert_attachment( $attachment, $upload_image['file']);
-		var_dump( $attachment_id );
+
 		//generate attachment thumbnail
 		wp_update_attachment_metadata( $attachment_id, wp_generate_attachment_metadata( $attachment_id, $upload_image['file'] ) );
 
