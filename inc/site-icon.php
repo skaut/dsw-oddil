@@ -25,12 +25,12 @@ function dswoddil_site_icon_upload() {
 		$site_icon = get_template_directory() . '/img/' . $image_name . '.png';
 
 		// create $file array with the indexes show below
-		$file["name"] = $site_icon;
-		$file["type"] = 'image/png';
+		$file['name'] = $site_icon;
+		$file['type'] = 'image/png';
 		// get image size
-		$file["size"] = filesize( $file["name"] );
-		$file["tmp_name"] = $image_name . '.png';
-		$file["error"] = 1;
+		$file['size'] = filesize( $file['name'] );
+		$file['tmp_name'] = $image_name . '.png';
+		$file['error'] = 1;
 
 		$file_content = file_get_contents($site_icon);
 		$upload_image = wp_upload_bits($file['tmp_name'], null, $file_content);
