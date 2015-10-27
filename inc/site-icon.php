@@ -32,8 +32,8 @@ function dswoddil_site_icon_upload() {
 		$file['tmp_name'] = $image_name . '.png';
 		$file['error'] = 1;
 
-		$file_content = file_get_contents($site_icon);
-		$upload_image = wp_upload_bits($file['tmp_name'], null, $file_content);
+		$file_content = file_get_contents( $site_icon );
+		$upload_image = wp_upload_bits( $file['tmp_name'], null, $file_content );
 		// Check the type of tile. We'll use this as the 'post_mime_type'.
 		$filetype = wp_check_filetype( basename( $upload_image['file'] ), null );
 		$attachment = array(
@@ -41,7 +41,7 @@ function dswoddil_site_icon_upload() {
 			'post_mime_type' => $filetype['type'],
 			'post_title'     => 'dswoddil-' . $image_name,
 			'post_content'   => '',
-			'post_status'    => 'inherit'
+			'post_status'    => 'inherit',
 		);
 		//insert wordpress attachment of uploaded image to get attachmen ID
 		$attachment_id = wp_insert_attachment( $attachment, $upload_image['file']);
