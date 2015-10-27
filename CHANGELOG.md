@@ -1,3 +1,13 @@
+<a name="0.13.1"></a>
+## [0.13.1](https://github.com/skaut/dsw-oddil/compare/v0.13.0...v0.13.1) (2015-10-27)
+
+
+### Bug Fixes
+
+* Removing forgotten var_dump (closes #60) ([991f983](https://github.com/skaut/dsw-oddil/commit/991f983)), closes [#60](https://github.com/skaut/dsw-oddil/issues/60)
+
+
+
 <a name="0.13.0"></a>
 # [0.13.0](https://github.com/skaut/dsw-oddil/compare/v0.12.0...v0.13.0) (2015-10-25)
 
