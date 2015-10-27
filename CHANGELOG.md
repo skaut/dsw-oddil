@@ -6,8 +6,8 @@
 
 * Fix coding styles and some best practice rules ([f740d1a](https://github.com/skaut/dsw-oddil/commit/f740d1a))
 * Removing deprecated screen icon (closes #55) ([ be0d99c](https://github.com/skaut/dsw-oddil/commit/be0d99c)), closes [#55](https://github.com/skaut/dsw-oddil/issues/55)
-* Removing deprecated add_contextual_help (closes #56), closes [#56](https://github.com/skaut/dsw-oddil/issues/56) ([bc6a3228](https://github.com/skaut/dsw-oddil/commit/bc6a3228)
-* Restoring menu depth to default (closes #57), closes [#57](https://github.com/skaut/dsw-oddil/issues/57) ([1066bb9](https://github.com/skaut/dsw-oddil/commit/1066bb9)
+* Removing deprecated add_contextual_help (closes #56), closes [#56](https://github.com/skaut/dsw-oddil/issues/56) ([bc6a3228](https://github.com/skaut/dsw-oddil/commit/bc6a3228))
+* Restoring menu depth to default (closes #57), closes [#57](https://github.com/skaut/dsw-oddil/issues/57) ([1066bb9](https://github.com/skaut/dsw-oddil/commit/1066bb9))
 
 
 ### Features
