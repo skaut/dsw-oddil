@@ -156,8 +156,35 @@ function dswoddil_load_scripts() {
 	}
 }
 
+/**
+ * Conditionally Enqueue Script for IE browsers less than IE 9
+ *
+ * @link http://php.net/manual/en/function.version-compare.php
+ * @uses wp_check_browser_version()
+ */
+function dswoddil_enqueue_lt_ie9() {
+	global $is_IE;
+
+	// Return early, if not IE
+	if ( ! $is_IE ) {
+		return;
+	}
+
+	// Include the file, if needed
+	if ( ! function_exists( 'wp_check_browser_version' ) ) {
+		include_once( ABSPATH . 'wp-admin/includes/dashboard.php' );
+	}
+
+	// IE version conditional enqueue
+	$response = wp_check_browser_version();
+	if ( 0 > version_compare( intval( $response['version'] ) , 9 ) ) {
+		wp_enqueue_script( 'dswoddil-html5shim', get_template_directory_uri() . '/js/html5.js', array(), '20151029', true );
+	}
+}
+
 add_action( 'wp_enqueue_scripts', 'dswoddil_load_styles' );
 add_action( 'wp_enqueue_scripts', 'dswoddil_load_scripts' );
+add_action( 'wp_enqueue_scripts', 'dswoddil_enqueue_lt_ie9' );
 
 /**
  * Register three DSW oddil widget areas.

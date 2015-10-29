@@ -8,10 +8,6 @@
 		<meta name="author" content="DSW Team">
 		<link rel="shortcut icon" href="<?php echo esc_url( get_template_directory_uri() ); ?>/assets/ico/favicon.ico">
 
-		<!--[if lt IE 9]>
-		<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
-		<![endif]-->
-
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
