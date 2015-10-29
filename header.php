@@ -22,8 +22,8 @@
 					<?php dynamic_sidebar( 'header-right' ); ?>
 				</div><!-- #header-right -->
 			<?php endif; ?>
-			<h1><?php bloginfo('name'); ?></h1>
-			<h4><?php bloginfo('description'); ?></h4>
+			<h1><?php bloginfo( 'name' ); ?></h1>
+			<h4><?php bloginfo( 'description' ); ?></h4>
 		</div>
 		<div class="main shadow">
 			<div class="container">
