@@ -209,7 +209,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			// After this point, the plugins should be registered and the configuration set.
 
 			// Proceed only if we have plugins to handle.
-			if ( $this->plugins ) {
+			if ( ! empty( $this->plugins ) ) {
 				$sorted = array();
 
 				foreach ( $this->plugins as $plugin ) {
