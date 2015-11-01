@@ -30,7 +30,7 @@
 				<?php if ( get_header_image() ) : ?>
 				<div id="site-header">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-						<img class="img-responsive" src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+						<img class="img-responsive" src="<?php header_image(); ?>" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
 					</a>
 				</div>
 				<?php endif; ?>
@@ -47,8 +47,8 @@
 					 	</div>
 						<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 							<?php
-								$dswoddil_menu_data = wp_nav_menu( array(
-									'echo'				=> false,
+								$dswoddil_menu_data = array(
+									'echo'				=> true,
 									'menu'              => 'primary',
 									'theme_location'    => 'primary',
 									'depth'             => 0,
@@ -57,9 +57,9 @@
 									'container_id'      => 'bs-example-navbar-collapse-1',
 									'menu_class'        => 'nav navbar-nav',
 									'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-									'walker'            => new wp_bootstrap_navwalker())
+									'walker'            => new wp_bootstrap_navwalker(),
 								);
-								echo $dswoddil_menu_data;
+								wp_nav_menu( $dswoddil_menu_data );
 							?>
 						</nav>
 					</div>
