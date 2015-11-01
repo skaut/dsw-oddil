@@ -63,15 +63,15 @@ add_action( 'customize_register', 'dswoddil_customize_register' );
  *
  * @since DSW oddil 1.0
  *
- * @param string $layout Layout type.
+ * @param string $layout_type Layout type.
  * @return string Filtered layout type (grid|slider).
  */
-function dswoddil_sanitize_layout( $layout ) {
-	if ( ! in_array( $layout, array( 'grid', 'slider' ) ) ) {
-		$layout = 'grid';
+function dswoddil_sanitize_layout( $layout_type ) {
+	if ( ! in_array( $layout_type, array( 'grid', 'slider' ) ) ) {
+		$layout_type = 'grid';
 	}
 
-	return $layout;
+	return $layout_type;
 }
 
 /**
