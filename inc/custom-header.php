@@ -58,15 +58,16 @@ if ( ! function_exists( 'dswoddil_header_style' ) ) {
 		$text_color = get_header_textcolor();
 
 		// If no custom color for text is set, let's bail.
-		if ( display_header_text() && $text_color === get_theme_support( 'custom-header', 'default-text-color' ) )
+		if ( display_header_text() && $text_color === get_theme_support( 'custom-header', 'default-text-color' ) ) {
 			return;
+		}
 
 		// If we get this far, we have custom styles.
 		?>
 		<style type="text/css" id="dswoddil-header-css">
 		<?php
-			// Has the text been hidden?
-			if ( ! display_header_text() ) :
+		// Has the text been hidden?
+		if ( ! display_header_text() ) {
 		?>
 			.site-title,
 			.site-description {
@@ -75,13 +76,13 @@ if ( ! function_exists( 'dswoddil_header_style' ) ) {
 				position: absolute;
 			}
 		<?php
-			// If the user has set a custom color for the text, use that.
-			elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) :
+		// If the user has set a custom color for the text, use that.
+		} elseif ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) {
 		?>
 			.site-title a {
 				color: #<?php echo esc_attr( $text_color ); ?>;
 			}
-		<?php endif; ?>
+		<?php } ?>
 		</style>
 		<?php
 	}
