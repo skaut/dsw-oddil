@@ -91,6 +91,9 @@ if ( ! function_exists( 'dswoddil_setup' ) ) {
 			'max_posts' => 6,
 		) );
 
+		// Add support for content width
+		add_theme_support( 'content-width', 680 );
+
 		// This theme uses its own gallery styles.
 		add_filter( 'use_default_gallery_style', '__return_false' );
 	}
@@ -105,7 +108,10 @@ add_action( 'after_setup_theme', 'dswoddil_setup' );
  * @global int $content_width
  */
 function dswoddil_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'dswoddil_content_width', 680 );
+	//$GLOBALS['content_width'] = apply_filters( 'dswoddil_content_width', 680 );
+	if ( ! isset( $content_width ) ) {
+		$content_width = 680;
+	}
 }
 add_action( 'after_setup_theme', 'dswoddil_content_width', 0 );
 
