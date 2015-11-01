@@ -348,7 +348,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 						$this->menu,						   // Menu slug.
 						array( $this, 'install_plugins_page' ) // Callback.
 					);
-				break;
+					break;
 				}
 			}
 
