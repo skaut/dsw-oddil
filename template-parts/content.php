@@ -20,11 +20,6 @@
 				the_title( sprintf( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' ), '</a></h2>' );
 			endif;
 		?>
-		<?php if ( 'post' == get_post_type() ) : ?>
-			<div class="entry-meta">
-					<?php dswoddil_posted_on(); ?>
-			</div><!-- .entry-meta -->
-		<?php endif; ?>
 	</header><!-- .entry-header -->
 
 	<?php if ( is_search() ) : ?>
@@ -50,6 +45,9 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
+		<?php if ( 'post' == get_post_type() ) : ?>
+			<?php dswoddil_posted_on(); ?>
+		<?php endif; ?>
 		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && dswoddil_categorized_blog() ) : ?>
 			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dswoddil' ) ); ?></span>
 		<?php endif; ?>
@@ -60,7 +58,7 @@
 			<?php
 				endif;
 
-				edit_post_link( __( 'Edit', 'dswoddil' ), '<span class="edit-link">', '</span>' );
+				edit_post_link( __( 'Edit', 'dswoddil' ), '<span class="edit-link glyphicon glyphicon-edit" aria-hidden="true">', '</span>' );
 			?>
 			<?php the_tags( '<span class="tag-links">', '', '</span>' ); ?>
 		</div><!-- .entry-meta -->
