@@ -3256,6 +3256,42 @@ article.post {
   padding-top: 0px;
   padding-bottom: 50px;
 }
+/** Comments */
+/* ----------------------------------------------- */
+.comment-form input {
+  float: right;
+  width: 60%;
+}
+.comment-form input,
+.comment-form textarea {
+  border: 1px solid #029bff;
+  padding: 0 10px 0 10px;
+}
+.comment-form .comment-form-comment label {
+  display: block;
+}
+.comment-form .comment-form-comment textarea {
+  width: 100%;
+}
+.comment-form .form-submit {
+  float: left;
+  width: 100%;
+}
+.comment-form .form-submit input {
+  border: 2px solid #2e3192;
+  background-color: #0071bc;
+  color: #ffffff;
+  padding: 5px 30px 5px 30px;
+  width: 40%;
+  float: left;
+}
+.comment-form .form-submit input:hover {
+  background-color: #029bff;
+  color: #000000;
+}
+.comment-form .required {
+  color: #029bff;
+}
 /** 5. Sidebar*/
 /* ----------------------------------------------- */
 .content-sidebar aside,
@@ -3485,6 +3521,14 @@ a img.aligncenter {
 @media (max-width: 780px) {
   .img-collapse {
     display: none;
+  }
+}
+@media (max-width: 520px) {
+  .comment-form input {
+    width: 100%;
+  }
+  .comment-form .form-submit input {
+    width: 100%;
   }
 }
 @media (min-width: 980px) {

@@ -173,6 +173,47 @@ article.post {
 	padding-bottom: 50px;
 }
 
+/** Comments */
+/* ----------------------------------------------- */
+.comment-form {
+	input {
+		float: right;
+		width: 60%;
+	}
+	input,
+	textarea {
+		border: 1px solid @blue-lighter;
+		padding: 0 10px 0 10px;
+	}
+	.comment-form-comment {
+		label {
+			display: block;
+		}
+		textarea {
+			width: 100%;
+		}
+	}
+	.form-submit {
+		float: left;
+		width: 100%;
+		input {
+			border: 2px solid @blue-darker;
+			background-color: @blue-light;
+			color: @white;
+			padding: 5px 30px 5px 30px;
+			width: 40%;
+			float: left;
+			&:hover {
+				background-color: @blue-lighter;
+				color: @black;
+			}
+		}
+	}
+	.required {
+		color: @blue-lighter;
+	}
+}
+
 /** 5. Sidebar*/
 /* ----------------------------------------------- */
 .content-sidebar aside,

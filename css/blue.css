@@ -75,6 +75,21 @@ a:active {
 	border-left-color: #004470;
 }
 
+.comment-form input,
+.comment-form textarea {
+	border-color: #029bff;
+}
+.comment-form .form-submit input {
+	border-color: #2e3192;
+	background-color: #0071bc;
+}
+.comment-form .form-submit input:hover {
+	background-color: #029bff;
+}
+.comment-form .required {
+	color: #029bff;
+}
+
 #footer {
 	background-color: #0072bc;
 	border-top: 2px solid #2e3192;
