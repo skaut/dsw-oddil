@@ -4,7 +4,10 @@
 
 ### Features
 
-* Styling commnet form + colors (refs #53) ([bac01eb](https://github.com/skaut/dsw-oddil/commit/bac01eb))
+* Styling commnent form + colors (refs #53) ([bac01eb](https://github.com/skaut/dsw-oddil/commit/bac01eb))
+* **entry meta:** Add Bootstrap glyphicons font for displaying glyphs (refs #53) ([1357044](https://github.com/skaut/dsw-oddil/commit/1357044))
+* **entry meta:** Setting up colors and move author and date to the right (refs #53) ([3f50f09](https://github.com/skaut/dsw-oddil/commit/3f50f09))
+* **entry meta:** Styling paddings, margins and position of items in entry meta (refs #53) ([9227386](https://github.com/skaut/dsw-oddil/commit/9227386))
 
 
 
