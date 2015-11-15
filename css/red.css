@@ -103,6 +103,10 @@ a:active {
 	background-color: #ed1c24;
 }
 
+.glyphicon {
+	color: #c1272d;
+}
+
 @media (max-width: 980px) {
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {

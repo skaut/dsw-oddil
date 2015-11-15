@@ -45,11 +45,8 @@
 
 	<footer class="entry-footer">
 		<div class="entry-meta">
-		<?php if ( 'post' == get_post_type() ) : ?>
-			<?php dswoddil_posted_on(); ?>
-		<?php endif; ?>
 		<?php if ( in_array( 'category', get_object_taxonomies( get_post_type() ) ) && dswoddil_categorized_blog() ) : ?>
-			<span class="cat-links"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dswoddil' ) ); ?></span>
+			<span class="cat-links glyphicon glyphicon-folder-open"><?php echo get_the_category_list( _x( ', ', 'Used between list items, there is a space after the comma.', 'dswoddil' ) ); ?></span>
 		<?php endif; ?>
 			<?php
 				if ( ! post_password_required() && ( comments_open() || get_comments_number() ) ) :
@@ -60,7 +57,10 @@
 
 				edit_post_link( __( 'Edit', 'dswoddil' ), '<span class="edit-link glyphicon glyphicon-edit" aria-hidden="true">', '</span>' );
 			?>
-			<?php the_tags( '<span class="tag-links">', '', '</span>' ); ?>
+			<?php the_tags( '<span class="tag-links glyphicon glyphicon-tags">', '', '</span>' ); ?>
+			<?php if ( 'post' == get_post_type() ) : ?>
+				<?php dswoddil_posted_on(); ?>
+			<?php endif; ?>
 		</div><!-- .entry-meta -->
 	</footer><!-- .entry-footer -->
 	<?php endif; ?>
