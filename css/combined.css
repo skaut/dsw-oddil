@@ -4064,10 +4064,35 @@ article.sticky {
 article header,
 article .entry-content,
 article footer {
-  padding: 2px 30px 2px 20px;
+  padding: 2px 20px 2px 20px;
 }
 article footer {
   background-color: #fafafa;
+}
+article footer a {
+  font-family: "TheMixCE", Verdana, Geneva, sans-serif;
+  padding: 0 8px 0 8px;
+  margin-right: 5px;
+  vertical-align: bottom;
+}
+article footer .cat-links span,
+article footer .tag-links span {
+  padding: 0 8px 0 8px;
+}
+article footer .cat-links span a,
+article footer .tag-links span a {
+  padding-right: 0px;
+  padding-left: 0px;
+}
+article footer .cat-links span a {
+  margin-right: 0px;
+}
+article footer .author a {
+  margin-right: 0px;
+  padding-right: 0px;
+}
+article footer .entry-date {
+  font-weight: bolder;
 }
 .glyphicon {
   color: #2e3192;

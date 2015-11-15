@@ -168,11 +168,37 @@ article {
 	header,
 	.entry-content,
 	footer {
-		padding: 2px 30px 2px 20px;
+		padding: 2px 20px 2px 20px;
 	}
 
 	footer {
 		background-color: #fafafa;
+		a {
+			font-family: @font-family-base;
+			padding: 0 8px 0 8px;
+			margin-right: 5px;
+			vertical-align: bottom;
+		}
+		.cat-links,
+		.tag-links {
+			span {
+				padding: 0 8px 0 8px;
+				a {
+					padding-right: 0px;
+					padding-left: 0px;
+				}
+			}
+		}
+		.cat-links span a {
+			margin-right: 0px;
+		}
+		.author a {
+			margin-right: 0px;
+			padding-right: 0px;
+		}
+		.entry-date {
+			font-weight: bolder;
+		}
 	}
 }
 
