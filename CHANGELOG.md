@@ -1,3 +1,13 @@
+<a name="0.14.0"></a>
+# [0.14.0](https://github.com/skaut/dsw-oddil/compare/v0.13.1...v0.14.0) (2015-11-15)
+
+
+### Features
+
+* Styling commnet form + colors (refs #53) ([bac01eb](https://github.com/skaut/dsw-oddil/commit/bac01eb))
+
+
+
 <a name="0.13.1"></a>
 ## [0.13.1](https://github.com/skaut/dsw-oddil/compare/v0.13.0...v0.13.1) (2015-10-27)
 
