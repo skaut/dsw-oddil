@@ -3935,8 +3935,8 @@ h2 > a:hover {
   border: none;
 }
 .navbar-collapse {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .navbar-nav a {
   text-decoration: none;
@@ -3953,7 +3953,7 @@ h2 > a:hover {
 .dropdown-menu {
   background-clip: none;
   border: none;
-  padding: 0px;
+  padding: 0;
 }
 .dropdown-menu li {
   background-color: #ffffff;
@@ -3982,12 +3982,22 @@ h2 > a:hover {
 /* 3. Container */
 /* ----------------------------------------------- */
 .container-fluid {
-  padding-left: 0px;
-  padding-right: 0px;
+  padding-left: 0;
+  padding-right: 0;
 }
 .main {
-  background-image: url('../img/background.jpg');
-  background-repeat: no-repeat;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d2d2d2+0,ededed+3,ffffff+15 */
+  background: #d2d2d2;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d2d2d2 0%, #ededed 3%, #ffffff 15%);
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d2d2d2 0%, #ededed 3%, #ffffff 15%);
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d2d2d2 0%, #ededed 3%, #ffffff 15%);
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#d2d2d2', endColorstr='#ffffff', GradientType=0);
+  /* IE6-9 */
+  background: linear-gradient(#d2d2d2, #ededed 0.3%, #ffffff 15%);
 }
 .container.optional {
   padding-left: 15px;
@@ -3996,7 +4006,7 @@ h2 > a:hover {
 }
 .container.optional .content {
   background-color: rgba(255, 255, 255, 0.5);
-  padding: 10px 20px 10px 20px;
+  padding: 10px 20px;
   border-left: 2px solid #0072bc;
 }
 .container .text-muted {
@@ -4007,7 +4017,7 @@ h2 > a:hover {
   text-align: center;
 }
 .box ul {
-  padding-left: 0px;
+  padding-left: 0;
 }
 .box ul li {
   list-style: none;
@@ -4040,12 +4050,24 @@ h2 > a:hover {
 }
 article.post {
   margin-bottom: 30px;
-  padding-right: 30px;
+  padding: 5px 0 0 0;
+  background-color: #fff;
 }
 .archive {
   display: block;
-  padding-top: 0px;
+  padding-top: 0;
   padding-bottom: 50px;
+}
+article.sticky {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+article header,
+article .entry-content,
+article footer {
+  padding: 2px 30px 2px 20px;
+}
+article footer {
+  background-color: #fafafa;
 }
 /** Comments */
 /* ----------------------------------------------- */
@@ -4056,7 +4078,7 @@ article.post {
 .comment-form input,
 .comment-form textarea {
   border: 1px solid #029bff;
-  padding: 0 10px 0 10px;
+  padding: 0 10px;
 }
 .comment-form .comment-form-comment label {
   display: block;
@@ -4072,7 +4094,7 @@ article.post {
   border: 2px solid #2e3192;
   background-color: #0071bc;
   color: #ffffff;
-  padding: 5px 30px 5px 30px;
+  padding: 5px 30px;
   width: 40%;
   float: left;
 }
@@ -4089,7 +4111,7 @@ article.post {
 .primary-sidebar aside {
   background-color: rgba(255, 255, 255, 0.5);
   border-left: 2px solid #0072bc;
-  padding: 1px 10px 1px 10px;
+  padding: 1px 10px;
   margin-bottom: 20px;
 }
 /** 6. Footer */
