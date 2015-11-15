@@ -78,6 +78,16 @@ module.exports = function (grunt) {
 					}
 				]
 			},
+			glyphicons: {
+				files: [
+					{
+						expand: true,
+						cwd: 'src/components/bootstrap/fonts',
+						src: ['**'],
+						dest: 'fonts'
+					}
+				]
+			},
 			stylesheets: {
 				files: [
 					{

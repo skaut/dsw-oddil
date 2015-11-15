@@ -2765,8 +2765,8 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
 }
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url('../fonts/thmceb5p.eot');
-  src: url('../fonts/thmceb5p.eot?#iefix') format('embedded-opentype'), url('../fonts/thmceb5p.woff2') format('woff2'), url('../fonts/thmceb5p.woff') format('woff'), url('../fonts/thmceb5p.ttf') format('truetype'), url('../fonts/thmceb5p.svg#glyphicons_halflingsregular') format('svg');
+  src: url('../fonts/glyphicons-halflings-regular.eot');
+  src: url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 .glyphicon {
   position: relative;
