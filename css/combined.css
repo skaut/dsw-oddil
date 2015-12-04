@@ -4097,6 +4097,25 @@ article footer .author a {
 article footer .entry-date {
   font-weight: bolder;
 }
+.nav-links .meta-nav {
+  display: block;
+}
+.nav-links a {
+  max-width: 50%;
+}
+.nav-links a[rel~="prev"] .meta-nav {
+  margin-left: 20px;
+}
+.nav-links a[rel~="next"] {
+  float: right;
+  text-align: right;
+}
+.nav-links a[rel~="next"] .meta-nav {
+  margin-right: 20px;
+}
+.post-navigation {
+  margin-bottom: 30px;
+}
 .glyphicon {
   color: #2e3192;
 }

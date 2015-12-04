@@ -83,8 +83,8 @@ function dswoddil_post_nav() {
 			if ( is_attachment() ) :
 				previous_post_link( '%link', __( '<span class="meta-nav">Published In</span>%title', 'dswoddil' ) );
 			else :
-				previous_post_link( '%link', __( '<span class="meta-nav">Previous Post</span>%title', 'dswoddil' ) );
-				next_post_link( '%link', __( '<span class="meta-nav">Next Post</span>%title', 'dswoddil' ) );
+				next_post_link( '%link', __( '<span class="meta-nav">Next Post:</span>%title &rarr;', 'dswoddil' ) );
+				previous_post_link( '%link', __( '<span class="meta-nav">Previous Post:</span>&larr; %title', 'dswoddil' ) );
 			endif;
 			?>
 		</div><!-- .nav-links -->

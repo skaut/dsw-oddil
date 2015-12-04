@@ -202,6 +202,31 @@ article {
 	}
 }
 
+.nav-links {
+	.meta-nav {
+		display: block;
+	}
+	a {
+		max-width: 50%;
+	}
+	a[rel~="prev"] {
+		.meta-nav {
+			margin-left: 20px;
+		}
+	}
+	a[rel~="next"] {
+		float: right;
+		text-align: right;
+		.meta-nav {
+			margin-right: 20px;
+		}
+	}
+}
+
+.post-navigation {
+	margin-bottom: 30px;
+}
+
 .glyphicon {
 	color: @blue-darker;
 }
