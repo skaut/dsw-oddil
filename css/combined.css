@@ -474,7 +474,7 @@ h5,
 }
 h6,
 .h6 {
-  font-size: 14px;
+  font-size: 12px;
 }
 p {
   margin: 0 0 14.5px;
@@ -3847,7 +3847,7 @@ h6,
 .h4,
 .h5,
 .h6 {
-  margin-bottom: 0px;
+  margin-bottom: 0;
 }
 h1,
 .h1 {
@@ -3899,6 +3899,9 @@ h4,
 .comment-content h5,
 .widget-area h5 {
   font-size: 16px;
+}
+.entry-meta {
+  font-size: 14px;
 }
 /**  Layout */
 /* ----------------------------------------------- */
