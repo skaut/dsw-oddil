@@ -17,6 +17,10 @@ a:active {
 	color: #c00711;
 }
 
+.site-title a {
+	color: #ed1c24;
+}
+
 .dropdown-menu,
 .navbar-nav li,
 .container-fluid {

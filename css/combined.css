@@ -3932,6 +3932,10 @@ h2 > a:hover {
 .container-fluid {
   background-color: #0072bc;
 }
+.site-title a {
+  color: #0072bc;
+  text-decoration: none;
+}
 /* 3. Navigation Bar */
 /* ----------------------------------------------- */
 .navbar {
