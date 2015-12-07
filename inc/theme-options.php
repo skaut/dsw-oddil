@@ -155,24 +155,28 @@ function dswoddil_get_theme_options() {
 function dswoddil_color_schemes() {
 	$color_scheme_options = array(
 		'red' => array(
-			'value' => 'red',
-			'label' => __( 'Red', 'dswoddil' ),
-			'colors' => array('000', 'c1272d', 'ed1c24', 'fff'),
+			'value'				=> 'red',
+			'label'				=> __( 'Red', 'dswoddil' ),
+			'colors'			=> array('000', 'c1272d', 'ed1c24', 'fff'),
+			'header_textcolor'	=> 'ed1c24',
 		),
 		'blue' => array(
-			'value' => 'blue',
-			'label' => __( 'Blue', 'dswoddil' ),
-			'colors' => array('000', '2e3192', '0071bc', 'fff'),
+			'value'				=> 'blue',
+			'label'				=> __( 'Blue', 'dswoddil' ),
+			'colors'			=> array('000', '2e3192', '0071bc', 'fff'),
+			'header_textcolor'	=> '0071bc',
 		),
 		'violet' => array(
-			'value' => 'violet',
-			'label' => __( 'Violet', 'dswoddil' ),
-			'colors' => array('000', '9e005d', 'd4145a', 'fff'),
+			'value'				=> 'violet',
+			'label'				=> __( 'Violet', 'dswoddil' ),
+			'colors'			=> array('000', '9e005d', 'd4145a', 'fff'),
+			'header_textcolor'	=> 'd4145a',
 		),
 		'green' => array(
-			'value' => 'green',
-			'label' => __( 'Green', 'dswoddil' ),
-			'colors' => array('000', '787600', 'b2ae00', 'fff'),
+			'value'				=> 'green',
+			'label'				=> __( 'Green', 'dswoddil' ),
+			'colors'			=> array('000', '787600', 'b2ae00', 'fff'),
+			'header_textcolor'	=> 'b2ae00',
 		),
 	);
 
@@ -267,10 +271,14 @@ function dswoddil_theme_options_render_page() {
  */
 function dswoddil_theme_options_validate( $input ) {
 	$output = $defaults = dswoddil_get_default_theme_options();
+	$color_schemes = dswoddil_color_schemes();
 
 	// Color scheme must be in our array of color scheme options
-	if ( isset( $input['color_scheme'] ) && array_key_exists( $input['color_scheme'], dswoddil_color_schemes() ) )
-		$output['color_scheme'] = $input['color_scheme'];
+	if ( isset( $input['color_scheme'] ) && array_key_exists( $input['color_scheme'], $color_schemes ) )
+		$color_scheme = $output['color_scheme'] = $input['color_scheme'];
+
+	// We must also update header_textcolor theme modificator
+	set_theme_mod( 'header_textcolor', $color_schemes[$color_scheme]['header_textcolor'] );
 
 	return apply_filters( 'dswoddil_theme_options_validate', $output, $input, $defaults );
 }
