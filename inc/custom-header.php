@@ -36,7 +36,7 @@ function dswoddil_custom_header_setup() {
 	 * }
 	 */
 	add_theme_support( 'custom-header', apply_filters( 'dswoddil_custom_header_args', array(
-		'default-text-color'     => 'fff',
+		'default-text-color'     => '0072bc',
 		'width'                  => 1260,
 		'height'                 => 300,
 		'flex-height'            => true,
