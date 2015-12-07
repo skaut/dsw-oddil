@@ -22,8 +22,17 @@
 					<?php dynamic_sidebar( 'header-right' ); ?>
 				</div><!-- #header-right -->
 			<?php endif; ?>
-			<h1><?php bloginfo( 'name' ); ?></h1>
-			<h4><?php bloginfo( 'description' ); ?></h4>
+		<?php
+			if ( is_front_page() && is_home() ) : ?>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<?php else : ?>
+			<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+		<?php endif;
+			$description = get_bloginfo( 'description', 'display' );
+			if ( $description || is_customize_preview() ) :
+		?>
+			<h4 class="site-description"><?php echo $description; ?></h4>
+		<?php endif; ?>
 		</div>
 		<div class="main shadow">
 			<div class="container">
