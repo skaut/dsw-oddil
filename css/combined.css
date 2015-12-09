@@ -258,9 +258,9 @@ th {
   }
 }
 @font-face {
-  font-family: 'TheMixCE';
-  src: url('../fonts/thmceb5p.eot');
-  src: url('../fonts/thmceb5p.eot?#iefix') format('embedded-opentype'), url('../fonts/thmceb5p.woff') format('woff'), url('../fonts/thmceb5p.ttf') format('truetype'), url('WebFont.svg#webfont') format('svg');
+  font-family: 'TheMixCE-B5Plain';
+  src: url('../fonts/themixce-b5-plain.eot');
+  src: url('../fonts/themixce-b5-plain.eot?#iefix') format('embedded-opentype'), url('../fonts/themixce-b5-plain.woff') format('woff'), url('../fonts/themixce-b5-plain.ttf') format('truetype'), url('WebFont.svg#webfont') format('svg');
 }
 * {
   -webkit-box-sizing: border-box;
@@ -278,7 +278,7 @@ html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 body {
-  font-family: "TheMixCE", Verdana, Geneva, sans-serif;
+  font-family: "TheMixCE-B5Plain", Verdana, Geneva, sans-serif;
   font-size: 16px;
   line-height: 1.8125;
   color: #333333;
@@ -4077,7 +4077,7 @@ article footer {
   background-color: #fafafa;
 }
 article footer a {
-  font-family: "TheMixCE", Verdana, Geneva, sans-serif;
+  font-family: "TheMixCE-B5Plain", Verdana, Geneva, sans-serif;
   padding: 0 8px 0 8px;
   margin-right: 5px;
   vertical-align: bottom;

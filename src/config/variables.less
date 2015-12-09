@@ -19,16 +19,17 @@
 
 // Typography
 //** Load fonts from this directory.
-@icon-font-path:          "../fonts/";
+@font-path;               "../fonts/";
+@icon-font-path:          @font-path;
 //** File name for all font files.
-@icon-font-name:          "thmceb5p";
-@font-family-base:        "TheMixCE", Verdana, Geneva, sans-serif;
+@font-name:          "themixce-b5-plain";
+@font-family-base:        "TheMixCE-B5Plain", Verdana, Geneva, sans-serif;
 @font-size-base:          16px;
 
 //** Glyphicons
-@icon-font-name-glyphicons: "glyphicons-halflings-regular";
+@icon-font-name: "glyphicons-halflings-regular";
 //** Element ID within SVG icon file.
-@icon-font-glyphicons-svg-id: "glyphicons_halflingsregular";
+@icon-font-svg-id: "glyphicons_halflingsregular";
 
 @font-size-h1:            floor((@font-size-base * 1.5)); // ~24px
 @font-size-h2:            @font-size-h1;
