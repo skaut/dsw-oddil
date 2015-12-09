@@ -279,8 +279,6 @@ module.exports = function (grunt) {
 
 	});
 
-	grunt.registerTask('default', ['less', 'cssmin', 'copy']);
-
 	grunt.registerTask('build', 'Bumps version and builds JS.', function(version_type) {
 		if (version_type !== 'patch' && version_type !== 'minor' && version_type !== 'major') {
 		version_type = 'minor';
@@ -311,5 +309,11 @@ module.exports = function (grunt) {
 		}
 	});
 
-	grunt.registerTask('dev', ['watch']);
+	grunt.registerTask('dev', [
+		'less',
+		'cssmin',
+		'copy',
+	]);
+
+	grunt.registerTask('default', 'watch');
 };
