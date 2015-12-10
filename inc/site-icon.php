@@ -21,6 +21,21 @@ function dswoddil_site_icon_upload() {
 		require_once( ABSPATH . 'wp-admin/includes/image.php' );
 	}
 
+	if ( ! function_exists( 'request_filesystem_credentials' ) ) {
+		require_once( ABSPATH . 'wp-admin/includes/file.php' );
+	}
+
+	/* you can safely run request_filesystem_credentials() without any issues and don't need to worry about passing in a URL */
+	$creds = request_filesystem_credentials(site_url() . '/wp-admin/', '', false, false, array());
+
+	/* initialize the API */
+	if ( ! WP_Filesystem($creds) ) {
+		/* any problems and we exit */
+		return false;
+	}
+
+	global $wp_filesystem;
+
 	if ( ! dswoddil_get_attachment_by_post_name( 'dswoddil-' . $image_name ) ) {
 		$site_icon = get_template_directory() . '/img/' . $image_name . '.png';
 
@@ -32,7 +47,7 @@ function dswoddil_site_icon_upload() {
 		$file['tmp_name'] = $image_name . '.png';
 		$file['error'] = 1;
 
-		$file_content = file_get_contents( $site_icon );
+		$file_content = $wp_filesystem->get_contents( $site_icon );
 		$upload_image = wp_upload_bits( $file['tmp_name'], null, $file_content );
 		// Check the type of tile. We'll use this as the 'post_mime_type'.
 		$filetype = wp_check_filetype( basename( $upload_image['file'] ), null );
