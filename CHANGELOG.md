@@ -1,3 +1,29 @@
+<a name="0.15.0"></a>
+# [0.15.0](https://github.com/skaut/dsw-oddil/compare/v0.14.0...v0.15.0) (2015-12-10)
+
+
+### Bug Fixes
+
+* (entry-header) Remove posted-on from entry-header of post (fixes #65) ([5b34057](https://github.com/skaut/dsw-oddil/commit/5b34057)), closes [#65](https://github.com/skaut/dsw-oddil/issues/65)
+* (entry-mety) Fixing font size in entry-meta (fixes #67) ([80b00db](https://github.com/skaut/dsw-oddil/commit/80b00db)), closes [#67](https://github.com/skaut/dsw-oddil/issues/67)
+* (font) Changing font to font with better antialiasing (refs #22) ([716df7b](https://github.com/skaut/dsw-oddil/commit/716df7b))
+* (header bloginfo) Add default colors into stylesheet (refs #61) ([be04666](https://github.com/skaut/dsw-oddil/commit/be04666))
+* (header bloginfo) Change default header text color (refs #61) ([c58efcf](https://github.com/skaut/dsw-oddil/commit/c58efcf))
+* (header bloginfo) Set site title html tag to h1 (refs #61) ([57d794a](https://github.com/skaut/dsw-oddil/commit/57d794a))
+* (header bloginfo) Update header text color when changing layout ([366fd79](https://github.com/skaut/dsw-oddil/commit/366fd79)), closes [#61](https://github.com/skaut/dsw-oddil/issues/61)
+* (header bloginfo) Use customizer for displaying blog info and ([2dc4690](https://github.com/skaut/dsw-oddil/commit/2dc4690))
+* **font:** Fix less font variable (refs #22) ([43aec50](https://github.com/skaut/dsw-oddil/commit/43aec50)), closes [#22](https://github.com/skaut/dsw-oddil/issues/22)
+* (nav-links) Fixing previous and next link under article (refs #66) ([d0efb68](https://github.com/skaut/dsw-oddil/commit/d0efb68))
+* (nav-links) Fixing translation of nav-links (fixes #66) ([0a23ba5](https://github.com/skaut/dsw-oddil/commit/0a23ba5)), closes [#66](https://github.com/skaut/dsw-oddil/issues/66)
+* Use WP_Filesystem APi instead of file_get_contents (refs #16) ([dc5263a](https://github.com/skaut/dsw-oddil/commit/dc5263a))
+
+### Features
+
+* (Grunt) Set grunt default command to watch and setup dev command ([069071a](https://github.com/skaut/dsw-oddil/commit/069071a))
+* **site icon:** Add site icon as site brand (closes #68) ([1ac10a3](https://github.com/skaut/dsw-oddil/commit/1ac10a3)), closes [#68](https://github.com/skaut/dsw-oddil/issues/68)
+
+
+
 <a name="0.14.0"></a>
 # [0.14.0](https://github.com/skaut/dsw-oddil/compare/v0.13.1...v0.14.0) (2015-11-15)
 
