@@ -320,6 +320,42 @@ function dswoddil_has_featured_posts() {
 	return ! is_paged() && (bool) dswoddil_get_featured_posts();
 }
 
+/**
+ * Filter for adding aditional icon siye.
+ *
+ * @since DSW oddil 1.0
+ *
+ * @return array Site icon sizes.
+ */
+function dswoddil_custom_site_icon_size( $sizes ) {
+	$sizes[] = 45;
+
+	return $sizes;
+}
+add_filter( 'site_icon_image_sizes', 'dswoddil_custom_site_icon_size' );
+
+/**
+ * Header brand creator.
+ *
+ * @since DSW oddil 1.0
+ * @param bool	Whether to return value or print it.
+ *
+ * @return string Html of site icon with link.
+ */
+function dswoddil_custom_brand_icon( $return = false ) {
+	$brand_icon = sprintf( '<img class="attachment-full alignleft" src="%s" width="45" height="45" alt="%s" />', esc_url( get_site_icon_url( 45, null ) ), get_bloginfo( 'name' ) );
+
+	$brand = sprintf( '<a href="/" id="" target="_self" class="widget_sp_image-image-link" title="%s">', get_bloginfo( 'name' ) );
+	$brand .= $brand_icon;
+	$brand .= '</a>';
+
+	if ( $return ) {
+		return $brand;
+	} else {
+		echo $brand;
+	}
+}
+
 /******************************************************************************
 	HELPERS
 ******************************************************************************/

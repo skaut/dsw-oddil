@@ -12,9 +12,11 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<div class="container brand">
-			<?php if ( is_active_sidebar( 'header-left' ) ) : ?>
+			<?php if ( is_active_sidebar( 'header-left' ) || has_site_icon() ) : ?>
 				<div id="header-right" class="header-right widget-area pull-left" role="complementary">
-					<?php dynamic_sidebar( 'header-left' ); ?>
+					<?php if ( is_active_sidebar( 'header-left' ) ) : dynamic_sidebar( 'header-left' ); ?>
+					<?php elseif ( has_site_icon() ) : dswoddil_custom_brand_icon(); ?>
+					<?php endif; ?>
 				</div><!-- #header-left -->
 			<?php endif; ?>
 			<?php if ( is_active_sidebar( 'header-right' ) ) : ?>
