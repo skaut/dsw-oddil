@@ -122,10 +122,12 @@ add_action( 'after_setup_theme', 'dswoddil_content_width', 0 );
  */
 function dswoddil_load_styles() {
 	// Main style for this theme
-	wp_enqueue_style( 'dsw-oddil-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'dsw-oddil-style', get_stylesheet_uri(), array(), '20151212' );
 	wp_enqueue_style(
 		'dswoddil_stylesheet',
-		get_template_directory_uri() . '/css/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'combined' : 'combined.min' ) .'.css'
+		get_template_directory_uri() . '/css/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'combined' : 'combined.min' ) .'.css',
+		array(),
+		'20151212'
 	);
 }
 
@@ -135,10 +137,24 @@ function dswoddil_load_styles() {
  * @since DSW oddil 1.0
  */
 function dswoddil_load_scripts() {
+	if( !is_admin()){
+		wp_deregister_script( 'jquery' );
+		wp_register_script(
+			'jquery',
+			( "http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ),
+			false,
+			'1.11.3',
+			true
+		);
+		wp_enqueue_script( 'jquery' );
+	}
 	// Register the script like this for a theme - after jquery
 	wp_register_script(
 		'dswoddil_bootstrap',
-		get_template_directory_uri() . '/js/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'bootstrap.js' : 'bootstrap.min.js' ) , array( 'jquery' )
+		get_template_directory_uri() . '/js/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'bootstrap.js' : 'bootstrap.min.js' ),
+		array( 'jquery' ),
+		'3.3.2',
+		true
 	);
 	// For either a plugin or a theme, you can then enqueue the script:
 	wp_enqueue_script( 'dswoddil_bootstrap' );
