@@ -1,19 +1,18 @@
-=== dswoddil ===
+=== DSW Oddil ===
 
-Contributors: DSW team, automattic
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
-
+Contributors: DSW Team
 Requires at least: 4.0
-Tested up to: 4.2.2
+Tested up to: 4.4.2
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-A starter theme called dswoddil.
+Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 == Description ==
 
-Hi. I'm a starter theme called dswoddil, if you like. I'm a theme meant for hacking so don't use me as a Parent Theme. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for.
+Basic Wordpress theme for czech scout websites.
+
+In 2012 we noticed that many of the czech scout websites are badly created. Graphically old, not responsive, unusable. So we came together and said NO to old awful websites. After 4 years of inventions and graphic prototypes we have created our template for wide use in scout environment. Use it well and enjoy it!
 
 == Installation ==
 
