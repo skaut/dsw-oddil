@@ -4049,9 +4049,6 @@ h2 > a:hover {
 .media .alignright {
   margin-left: 10px;
 }
-.media img {
-  margin-top: 7px;
-}
 .post-thumbnail {
   margin-right: 10px;
 }
@@ -4273,6 +4270,19 @@ a img.aligncenter {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+.media img {
+  margin-top: 7px;
+  max-width: 100%;
+  height: auto;
+}
+.entry-content .wp-caption img {
+  max-width: 98%;
+  height: auto;
+}
+.entry-content .wp-caption img {
+  max-width: 98%;
+  height: auto;
 }
 .wp-caption {
   background: #fff;
