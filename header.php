@@ -49,8 +49,8 @@
 					<div class="container-fluid">
 						<div class="navbar-header">
 							<div class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-								<span class="sr-only">Toggle navigation</span>
-								<span class="toggle-text">menu</span>
+								<span class="sr-only"><?php echo esc_html__( 'Toggle navigation', 'dswoddil' ) ?></span>
+								<span class="toggle-text"><?php echo esc_html__( 'menu', 'dswoddil' ) ?></span>
 								<span class="glyphicon glyphicon-th"></span>
 							</div>
 					 	</div>

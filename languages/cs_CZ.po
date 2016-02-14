@@ -417,17 +417,13 @@ msgstr "off"
 msgid "Page %s"
 msgstr "%s. stránka"
 
-#: header.php:48
-msgid "Search"
-msgstr "Hledat"
-
 #: header.php:52
-msgid "Primary Menu"
-msgstr "Základní navigační menu"
+msgid "Toggle navigation"
+msgstr "Otevřít navigaci"
 
 #: header.php:53
-msgid "Skip to content"
-msgstr "Přejít k obsahu webu"
+msgid "menu"
+msgstr "menu"
 
 #: inc/template-tags.php:80
 msgid "Post navigation"
