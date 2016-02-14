@@ -48,12 +48,11 @@
 				<div class="navbar navbar-default" role="navigation">
 					<div class="container-fluid">
 						<div class="navbar-header">
-							<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+							<div class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 								<span class="sr-only">Toggle navigation</span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-								<span class="icon-bar"></span>
-					 		</button>
+								<span class="toggle-text">menu</span>
+								<span class="glyphicon glyphicon-th"></span>
+							</div>
 					 	</div>
 						<nav id="primary-navigation" class="site-navigation primary-navigation" role="navigation">
 							<?php
