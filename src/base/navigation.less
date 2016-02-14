@@ -16,37 +16,43 @@
 	text-decoration: none;
 }
 
-.navbar-default .navbar-nav > li > a:hover,
-.navbar-default .navbar-nav > li > a:focus {
-	background-color: @blue-dark;
-}
-
 .navbar-nav > li > a {
 	line-height: 20px;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
 
-.navbar-default .navbar-toggle {
-	border: none;
-	border-radius: none;
-	padding: 3px 10px 3px 10px;
-	&:hover, &:focus {
-		background: none;
-		cursor: pointer;
+.navbar-default {
+	.navbar-nav > li > a:hover,
+	.navbar-nav > li > a:focus {
+		background-color: @blue-dark;
 	}
-	span  {
-		color: @white;
-	}
-	.glyphicon {
-		font-size: 20px;
-		vertical-align: sub;
-	}
-	.toggle-text {
-		font-size: 16px;
-		text-transform: uppercase;
-		margin-right: 4px;
-		vertical-align: middle;
+
+	.navbar-toggle {
+		border: none;
+		border-radius: none;
+		padding: 3px 10px 3px 10px;
+
+		&:hover, &:focus {
+			background: none;
+			cursor: pointer;
+		}
+
+		span  {
+			color: @white;
+		}
+
+		.glyphicon {
+			font-size: 20px;
+			vertical-align: sub;
+		}
+
+		.toggle-text {
+			font-size: 16px;
+			text-transform: uppercase;
+			margin-right: 4px;
+			vertical-align: middle;
+		}
 	}
 }
 
@@ -54,16 +60,16 @@
 	background-clip: none;
 	border: none;
 	padding: 0;
-}
 
-.dropdown-menu li {
-	background-color: @white;
-}
+	li {
+		background-color: @white;
 
-.dropdown-menu li a {
-	padding: 5px 20px 5px 15px;
-	line-height: 20px;
-	font-size: 14px;
+		a {
+			padding: 5px 20px 5px 15px;
+			line-height: 20px;
+			font-size: 14px;
+		}
+	}
 }
 
 .dropdown-submenu {
