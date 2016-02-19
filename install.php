@@ -16,8 +16,8 @@ $year = date('Y');
 $month = date('m');
 $currentDateTime = date('Y-m-d H:i:s');
 $host = $_SERVER['SERVER_NAME'];
-$hostPath = 'http://' . $host . '/wp-content/uploads/' . $year . '/' . $month;
-$themePath = 'http://' . $host . '/wp-content/themes/dsw-oddil';
+$hostPath = '//' . $host . '/wp-content/uploads/' . $year . '/' . $month;
+$themePath = '//' . $host . '/wp-content/themes/dsw-oddil';
 
 define('HOST_PATH', $hostPath);
 
