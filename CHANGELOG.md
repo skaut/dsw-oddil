@@ -2,10 +2,17 @@
 # [0.16.0](https://github.com/skaut/dsw-oddil/compare/v0.15.0...v0.16.0) (2016-03-02)
 
 
+### Bug Fixes
+
+* **menu:** Fixing breakpoints of page layout (closes #70) ([cd4078c](https://github.com/skaut/dsw-oddil/commit/cd4078c))
+* **https:** Fixíng secure and unsecure http (closes #74)  ([5eae0fa](https://github.com/skaut/dsw-oddil/commit/5eae0fa))
+* **overflow images:** Add max-width to fix overflow images in content (closes #73) ([2ce5ff3](https://github.com/skaut/dsw-oddil/commit/2ce5ff3))
+* **meta tags:** Refactor header metas (closes #71)  ([07e7f2b](https://github.com/skaut/dsw-oddil/commit/07e7f2b))
+
 ### Features
 
-* **page speed:** Move all javascript into footer (refs #59) ([ac2a7fc](https://github.com/skaut/dsw-oddil/commit/ac2a7fc))
-
+* **page speed:** Move all javascript into footer (closes #59) ([ac2a7fc](https://github.com/skaut/dsw-oddil/commit/ac2a7fc))
+* **gallery embed:** Adding defualt gallery styling (closes #14)  ([6ee5f75](https://github.com/skaut/dsw-oddil/commit/6ee5f75))
 
 
 <a name="0.15.0"></a>
