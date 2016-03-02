@@ -1,3 +1,13 @@
+<a name="0.16.0"></a>
+# [0.16.0](https://github.com/skaut/dsw-oddil/compare/v0.15.0...v0.16.0) (2016-03-02)
+
+
+### Features
+
+* **page speed:** Move all javascript into footer (refs #59) ([ac2a7fc](https://github.com/skaut/dsw-oddil/commit/ac2a7fc))
+
+
+
 <a name="0.15.0"></a>
 # [0.15.0](https://github.com/skaut/dsw-oddil/compare/v0.14.0...v0.15.0) (2015-12-10)
 
