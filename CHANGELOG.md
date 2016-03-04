@@ -1,3 +1,13 @@
+<a name="0.16.1"></a>
+## [0.16.1](https://github.com/skaut/dsw-oddil/compare/v0.16.0...v0.16.1) (2016-03-04)
+
+
+### Bug Fixes
+
+* **https:** Load jQuery from https source and update to v1.12.0 (refs #74) ([faa6e49](https://github.com/skaut/dsw-oddil/commit/faa6e49))
+
+
+
 <a name="0.16.0"></a>
 # [0.16.0](https://github.com/skaut/dsw-oddil/compare/v0.15.0...v0.16.0) (2016-03-02)
 
