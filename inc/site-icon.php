@@ -17,7 +17,8 @@
 function dswoddil_site_icon_upload() {
 	$image_name = 'site-icon';
 
-	if ( ! function_exists( 'wp_update_attachment_metadata' ) ) {
+	if ( ! function_exists( 'wp_update_attachment_metadata' )
+		|| ! function_exists( 'wp_generate_attachment_metadata' ) ) {
 		require_once( ABSPATH . 'wp-admin/includes/image.php' );
 	}
 
