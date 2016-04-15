@@ -1,3 +1,19 @@
+<a name="0.17.0"></a>
+# [0.17.0](https://github.com/skaut/dsw-oddil/compare/v0.16.1...v0.17.0) (2016-04-15)
+
+
+### Bug Fixes
+
+* **Licenses:** Added licenses for bundled resources (refs #81) ([7021126](https://github.com/skaut/dsw-oddil/commit/7021126))
+* **PHP errors:** Require impage.php for wp_generate_attachment_metadat (refs #75) ([34555ca](https://github.com/skaut/dsw-oddil/commit/34555ca))
+* **Plugins:** Remove plugins autoinstaling (refs #87) ([48d6d7f](https://github.com/skaut/dsw-oddil/commit/48d6d7f))
+* **Recent posts button:** Remove forgotten image in js directory (refs #86) ([2a3f382](https://github.com/skaut/dsw-oddil/commit/2a3f382))
+* **Text Domain:** Added text domain and domain path (refs #79) ([122b167](https://github.com/skaut/dsw-oddil/commit/122b167))
+* **Theme Tags:** Remove some tags they do not match with theme (refs #77) ([4350b2a](https://github.com/skaut/dsw-oddil/commit/4350b2a))
+* **Theme URI:** Remove theme uri due to feedback from WP (refs #84) ([6808f09](https://github.com/skaut/dsw-oddil/commit/6808f09))
+
+
+
 <a name="0.16.1"></a>
 ## [0.16.1](https://github.com/skaut/dsw-oddil/compare/v0.16.0...v0.16.1) (2016-03-04)
 
