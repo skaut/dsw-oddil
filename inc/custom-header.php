@@ -43,7 +43,17 @@ function dswoddil_custom_header_setup() {
 		'wp-head-callback'       => 'dswoddil_header_style',
 		'admin-head-callback'    => 'dswoddil_admin_header_style',
 		'admin-preview-callback' => 'dswoddil_admin_header_image',
+		'uploads'                => true,
 	) ) );
+
+	for( $i = 1; $i <= 24; $i++ ) {
+		$formatted_id = sprintf("%02d", $i);
+		$default_headers[$i] = array(
+			'url'           => '%s/img/headers/dsw-headers-' . $formatted_id . '.jpg',
+			'thumbnail_url' => '%s/img/headers/dsw-headers-' . $formatted_id . '-thumbnail.jpg',
+		);
+	}
+	register_default_headers( $default_headers );
 }
 add_action( 'after_setup_theme', 'dswoddil_custom_header_setup' );
 
