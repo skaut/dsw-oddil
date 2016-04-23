@@ -208,80 +208,8 @@ add_action( 'wp_enqueue_scripts', 'dswoddil_load_styles' );
 add_action( 'wp_enqueue_scripts', 'dswoddil_load_scripts' );
 add_action( 'wp_enqueue_scripts', 'dswoddil_enqueue_lt_ie9' );
 
-/**
- * Register three DSW oddil widget areas.
- *
- * @since DSW oddil 1.0
- */
-function dswoddil_widgets_init() {
-	//require get_template_directory() . '/inc/widgets.php';
-	//register_widget( 'Twenty_Fourteen_Ephemera_Widget' );
-
-	register_sidebar( array(
-		'name'          => __( 'Header right widget', 'dswoddil' ),
-		'id'            => 'header-right',
-		'description'   => __( 'Widget that appears on the right in header.', 'dswoddil' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '',
-		'after_title'   => '',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Header left widget', 'dswoddil' ),
-		'id'            => 'header-left',
-		'description'   => __( 'Widget that appears on the left in header.', 'dswoddil' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '',
-		'after_title'   => '',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Area above content', 'dswoddil' ),
-		'id'            => 'top-widget',
-		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
-		'before_widget' => '<div class="content">',
-		'after_widget'  => '</div>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Left Sidebar', 'dswoddil' ),
-		'id'            => 'left-sidebar',
-		'description'   => __( 'Main sidebar that appears on the left.', 'dswoddil' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Right Sidebar', 'dswoddil' ),
-		'id'            => 'right-sidebar',
-		'description'   => __( 'Additional sidebar that appears on the right.', 'dswoddil' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h1 class="widget-title">',
-		'after_title'   => '</h1>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Area under content', 'dswoddil' ),
-		'id'            => 'bottom-widget',
-		'description'   => __( 'Appears in the bottom section of the site.', 'dswoddil' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s col-md-4"><div class="block">',
-		'after_widget'  => '</div></aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-	register_sidebar( array(
-		'name'          => __( 'Footer Widget Area', 'dswoddil' ),
-		'id'            => 'footer',
-		'description'   => __( 'Appears in the footer section of the site.', 'dswoddil' ),
-		'before_widget' => '',
-		'after_widget'  => '',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'dswoddil_widgets_init' );
+// Load up our theme widget options.
+require_once get_template_directory() . '/inc/widgets.php';
 
 // Load up our theme options page and related code.
 require_once get_template_directory() . '/inc/theme-options.php';
