@@ -3961,13 +3961,21 @@ h2 > a:hover {
   padding-right: 15px;
   margin-bottom: 25px;
 }
+.container .bottom-widget .widget,
 .container.optional .content {
   background-color: rgba(255, 255, 255, 0.5);
   padding: 10px 20px;
   border-left: 2px solid #0072bc;
 }
+.container .bottom-widget .widget-last,
 .container.optional .widget-last {
   border-right: 2px solid #0072bc;
+}
+.container .bottom-widget {
+  border-top: 2px solid #0072bc;
+  border-bottom: 2px solid #0072bc;
+  padding-top: 25px;
+  padding-bottom: 25px;
 }
 .container .text-muted {
   margin: 20px 0;
@@ -4146,7 +4154,6 @@ article footer .entry-date {
 .bottom-blocks div.block {
   border: 2px solid #0072bc;
   display: block;
-  height: 220px;
 }
 .container.bottom-blocks {
   padding-bottom: 30px;

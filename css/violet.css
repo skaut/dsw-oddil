@@ -54,10 +54,12 @@ a:active {
     background-color: #aa0542;
 }
 
+.container .bottom-widget .widget,
 .container.optional .content {
 	border-left-color: #aa0542;
 }
 
+.container .bottom-widget .widget,
 .container.optional .widget-last {
 	border-right-color: #aa0542;
 }
