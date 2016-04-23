@@ -98,16 +98,6 @@ module.exports = function (grunt) {
 					}
 				]
 			},
-			javascripts: {
-				files: [
-					{
-						expand: true,
-						cwd: 'src/components/bootstrap/dist/js',
-						src: ['bootstrap*.js'],
-						dest: 'js'
-					}
-				]
-			},
 		},
 
 		// Clean temporary files
