@@ -19,5 +19,19 @@
 		</div>
 
 		<?php wp_footer(); ?>
+		<script type="text/javascript">
+			$( document ).ready( function() {
+				var top_widget_height = $( '.top-widget' ).height();
+				var bottom_widget_height = $( '.bottom-widget' ).height();
+				var top_widgets = $( '.top-widget aside' );
+				var bottom_widgets = $( '.bottom-widget aside' );
+				$.each( top_widgets, function() {
+					$( this ).height( top_widget_height );
+				} );
+				$.each( bottom_widgets, function() {
+					$( this ).height( bottom_widget_height );
+				} );
+			} );
+		</script>
 	</body>
 </html>
