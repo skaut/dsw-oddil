@@ -92,8 +92,8 @@ function dswoddil_widgets_init() {
 		'name'          => __( 'Area above content', 'dswoddil' ),
 		'id'            => 'top-widget',
 		'description'   => __( 'Appears above the content section of the site.', 'dswoddil' ),
-		'before_widget' => '<asside id="%1$s" class="widget %2$s content ' . dswoddil_count_widgets( 'top-widget' ) . '">',
-		'after_widget'  => '</asside>',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s content ' . dswoddil_count_widgets( 'top-widget' ) . '">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -119,8 +119,8 @@ function dswoddil_widgets_init() {
 		'name'          => __( 'Area under content', 'dswoddil' ),
 		'id'            => 'bottom-widget',
 		'description'   => __( 'Appears in the bottom section of the site.', 'dswoddil' ),
-		'before_widget' => '<aside id="%1$s" class="widget %2$s ' . dswoddil_count_widgets( 'top-widget' ) . '"><div class="block">',
-		'after_widget'  => '</div></aside>',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s ' . dswoddil_count_widgets( 'top-widget' ) . ' fill">',
+		'after_widget'  => '</aside>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
