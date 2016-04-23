@@ -141,7 +141,7 @@ function dswoddil_load_scripts() {
 		wp_deregister_script( 'jquery' );
 		wp_register_script(
 			'jquery',
-			( "https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" ),
+			( 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js' ),
 			false,
 			'1.12.0',
 			true
@@ -150,14 +150,14 @@ function dswoddil_load_scripts() {
 	}
 	// Register the script like this for a theme - after jquery
 	wp_register_script(
-		'dswoddil_bootstrap',
-		get_template_directory_uri() . '/js/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'bootstrap.js' : 'bootstrap.min.js' ),
+		'bootstrap',
+		( 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' ),
 		array( 'jquery' ),
-		'3.3.2',
+		'3.3.6',
 		true
 	);
 	// For either a plugin or a theme, you can then enqueue the script:
-	wp_enqueue_script( 'dswoddil_bootstrap' );
+	wp_enqueue_script( 'bootstrap' );
 
 	wp_enqueue_script( 'dswoddil_navigation',
 		get_template_directory_uri() . '/js/navigation.js',
