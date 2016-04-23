@@ -58,6 +58,10 @@ a:active {
 	border-left-color: #004470;
 }
 
+.container.optional .widget-last {
+	border-right-color: #004470;
+}
+
 .sidebar-nav .dropdown-menu li.active a,
 .sidebar-nav .dropdown-menu li a:hover,
 .sidebar-nav .dropdown-menu li a:active {

@@ -3966,6 +3966,9 @@ h2 > a:hover {
   padding: 10px 20px;
   border-left: 2px solid #0072bc;
 }
+.container.optional .widget-last {
+  border-right: 2px solid #0072bc;
+}
 .container .text-muted {
   margin: 20px 0;
 }
