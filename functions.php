@@ -122,13 +122,13 @@ add_action( 'after_setup_theme', 'dswoddil_content_width', 0 );
  */
 function dswoddil_load_styles() {
 	// Main style for this theme
-	wp_enqueue_style( 'dsw-oddil-style', get_stylesheet_uri(), array(), '20151212' );
-	wp_enqueue_style(
-		'dswoddil_stylesheet',
-		get_template_directory_uri() . '/css/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'combined' : 'combined.min' ) .'.css',
-		array(),
-		'20151212'
-	);
+	wp_enqueue_style( 'dsw-oddil-style', get_stylesheet_uri(), array(), '20160424' );
+	// wp_enqueue_style(
+	// 	'dswoddil_stylesheet',
+	// 	get_template_directory_uri() . '/css/' . ( ( dswoddil_get_dev_enviroment() <> 1 ) ? 'combined' : 'combined.min' ) .'.css',
+	// 	array(),
+	// 	'20151212'
+	// );
 }
 
 /**
