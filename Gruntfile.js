@@ -10,7 +10,7 @@ module.exports = function (grunt) {
 		less: {
 			dev: {
 				files: {
-					'.tmp/combined.css': 'src/main.less',
+					'style.css': 'src/main.less',
 				},
 				options: {
 					sourceMap: true
@@ -27,19 +27,6 @@ module.exports = function (grunt) {
 				options: {
 					ignore: [/svg/],
 					stylesheets: ['../.tmp/main.css']
-				}
-			}
-		},
-
-		// Minify CSS
-		cssmin: {
-			dist: {
-				files: {
-					'.tmp/combined.min.css': '.tmp/combined.css',
-					'css/blue.min.css': 'css/blue.css',
-					'css/green.min.css': 'css/green.css',
-					'css/red.min.css': 'css/red.css',
-					'css/violet.min.css': 'css/violet.css',
 				}
 			}
 		},
@@ -276,7 +263,6 @@ module.exports = function (grunt) {
 		return grunt.task.run([
 			"bump-only:" + version_type,
 			'less',
-			'cssmin',
 			'imagemin',
 			'copy',
 			'clean',
@@ -301,7 +287,6 @@ module.exports = function (grunt) {
 
 	grunt.registerTask('dev', [
 		'less',
-		'cssmin',
 		'copy',
 	]);
 
