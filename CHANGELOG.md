@@ -1,3 +1,38 @@
+<a name="0.18.0"></a>
+# [0.18.0](https://github.com/skaut/dsw-oddil/compare/v0.17.0...v0.18.0) (2016-04-25)
+
+
+### Bug Fixes
+
+* **Design:** Add theme header to main less file (refs #76) ([1c686ce](https://github.com/skaut/dsw-oddil/commit/1c686ce))
+* **Design:** Added right border to last widget in widget area (refs #76) ([da7789f](https://github.com/skaut/dsw-oddil/commit/da7789f))
+* **Design:** Fix aside tag name (refs #76) ([c6e3b2d](https://github.com/skaut/dsw-oddil/commit/c6e3b2d)), closes [#76](https://github.com/skaut/dsw-oddil/issues/76)
+* **Design:** Fix fonts path (refs #76) ([4ab7413](https://github.com/skaut/dsw-oddil/commit/4ab7413)), closes [#76](https://github.com/skaut/dsw-oddil/issues/76)
+* **Design:** Fix multiple widgets height (refs #76) ([69db747](https://github.com/skaut/dsw-oddil/commit/69db747)), closes [#76](https://github.com/skaut/dsw-oddil/issues/76)
+* **Design:** Move needed styles to overrides (refs #76) ([f2a2d3c](https://github.com/skaut/dsw-oddil/commit/f2a2d3c))
+* **Design:** Move widget functions to separate file (refs #76) ([98ae480](https://github.com/skaut/dsw-oddil/commit/98ae480))
+* **Design:** Newly generated style.css (refs #76) ([1fb2d5d](https://github.com/skaut/dsw-oddil/commit/1fb2d5d))
+* **Design:** Remove widget areas also from header template (refs #76) ([ece7c3c](https://github.com/skaut/dsw-oddil/commit/ece7c3c))
+* **Design:** Style top and bottom widgets borders (refs #76) ([2f4312b](https://github.com/skaut/dsw-oddil/commit/2f4312b))
+* **Images:** Add margin top 20px to content-area container (refs #85) ([96f8d8c](https://github.com/skaut/dsw-oddil/commit/96f8d8c))
+* **Images:** Remove images from source files (refs #85) ([61b2143](https://github.com/skaut/dsw-oddil/commit/61b2143))
+* **Images:** Remove unused images (refs #85) ([383be6a](https://github.com/skaut/dsw-oddil/commit/383be6a))
+* **Images:** There is no background image (refs #85) ([7908736](https://github.com/skaut/dsw-oddil/commit/7908736))
+* **Javascript files:** Remove copying javascripts from Gruntfile (refs #90) ([0e69346](https://github.com/skaut/dsw-oddil/commit/0e69346))
+* **Javascript files:** Remove unused recent posts support (refs #90) ([d23ca34](https://github.com/skaut/dsw-oddil/commit/d23ca34))
+* **Javascript files:** Use not minified html5 shiv (refs #90) ([f1784fc](https://github.com/skaut/dsw-oddil/commit/f1784fc))
+* **Javascritp files:** Remove bootstrap javascripts and lod it from CDN (refs #90) ([23d4baa](https://github.com/skaut/dsw-oddil/commit/23d4baa))
+* **Screenshot:** Added screnn of real template 1200x900 (refs #82) ([fa8ba29](https://github.com/skaut/dsw-oddil/commit/fa8ba29))
+* **Site icon:** Remove setting default Site Icon (refs #92) ([21d243e](https://github.com/skaut/dsw-oddil/commit/21d243e))
+
+### Features
+
+* **Custom header:** Set default images for custom header (refs #85) ([a9504d8](https://github.com/skaut/dsw-oddil/commit/a9504d8))
+* **Design:** Do not minify css and use default style.css file (refs #76) ([968607e](https://github.com/skaut/dsw-oddil/commit/968607e))
+* **Design:** Remove css minification and create style.css from less (refs #76) ([a1da254](https://github.com/skaut/dsw-oddil/commit/a1da254))
+
+
+
 <a name="0.17.0"></a>
 # [0.17.0](https://github.com/skaut/dsw-oddil/compare/v0.16.1...v0.17.0) (2016-04-15)
 
