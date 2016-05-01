@@ -33,7 +33,7 @@ add_filter( 'body_class', 'dswoddil_body_classes' );
  * @return string
  */
 if ( defined( 'WPLANG' ) && WPLANG == 'cs_CZ' ) {
-	function czech_comments( $output, $number ) {
+	function dswoddil_czech_comments( $output, $number ) {
 		if ( intval( $number ) === 0) {
 			$output = 'Žádný komentář';
 		} elseif ( intval( $number ) === 1 ) {
@@ -46,7 +46,7 @@ if ( defined( 'WPLANG' ) && WPLANG == 'cs_CZ' ) {
 		return $output;
 	}
 
-	add_action('comments_number', 'czech_comments', 10, 2);
+	add_action('comments_number', 'dswoddil_czech_comments', 10, 2);
 }
 
 if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
