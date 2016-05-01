@@ -141,9 +141,9 @@ function dswoddil_load_scripts() {
 		wp_deregister_script( 'jquery' );
 		wp_register_script(
 			'jquery',
-			( 'https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js' ),
+			get_template_directory_uri() . '/js/jquery.js',
 			false,
-			'1.12.0',
+			'2.1.3',
 			true
 		);
 		wp_enqueue_script( 'jquery' );
@@ -151,7 +151,7 @@ function dswoddil_load_scripts() {
 	// Register the script like this for a theme - after jquery
 	wp_register_script(
 		'bootstrap',
-		( 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js' ),
+		get_template_directory_uri() . '/js/bootstrap.js',
 		array( 'jquery' ),
 		'3.3.6',
 		true
@@ -159,14 +159,16 @@ function dswoddil_load_scripts() {
 	// For either a plugin or a theme, you can then enqueue the script:
 	wp_enqueue_script( 'bootstrap' );
 
-	wp_enqueue_script( 'dswoddil_navigation',
+	wp_enqueue_script(
+		'dswoddil_navigation',
 		get_template_directory_uri() . '/js/navigation.js',
 		array(),
 		'20150809',
 		true
 	);
 
-	wp_enqueue_script( 'dswoddil_skip_link_focus_fix',
+	wp_enqueue_script(
+		'dswoddil_skip_link_focus_fix',
 		get_template_directory_uri() . '/js/skip-link-focus-fix.js',
 		array(),
 		'20150809',
