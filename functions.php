@@ -137,15 +137,7 @@ function dswoddil_load_styles() {
  * @since DSW oddil 1.0
  */
 function dswoddil_load_scripts() {
-	if( !is_admin()){
-		wp_deregister_script( 'jquery' );
-		wp_register_script(
-			'jquery',
-			get_template_directory_uri() . '/js/jquery.js',
-			false,
-			'2.1.3',
-			true
-		);
+	if( !is_admin() ) {
 		wp_enqueue_script( 'jquery' );
 	}
 	// Register the script like this for a theme - after jquery
