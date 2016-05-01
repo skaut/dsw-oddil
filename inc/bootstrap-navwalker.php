@@ -20,7 +20,7 @@
 //exit if accessed directly
 if(!defined('ABSPATH')) exit;
 
-class wp_bootstrap_navwalker extends Walker_Nav_Menu {
+class dswoddil_bootstrap_navwalker extends Walker_Nav_Menu {
 
 	/**
 	 * @see Walker::start_lvl()

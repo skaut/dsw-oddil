@@ -19,8 +19,8 @@
 				'container_class'   => 'collapse navbar-collapse',
 				'container_id'      => 'bs-example-navbar-collapse-1',
 				'menu_class'        => 'nav navbar-nav sidebar-bav',
-				'fallback_cb'       => 'wp_bootstrap_navwalker::fallback',
-				'walker'            => new wp_bootstrap_navwalker())
+				'fallback_cb'       => 'dswoddil_bootstrap_navwalker::fallback',
+				'walker'            => new dswoddil_bootstrap_navwalker())
 			);
 
 			echo $dswoddil_menu_data;
