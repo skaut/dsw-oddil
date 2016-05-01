@@ -75,16 +75,6 @@ module.exports = function (grunt) {
 					}
 				]
 			},
-			stylesheets: {
-				files: [
-					{
-						expand: true,
-						cwd: '.tmp/',
-						src: ['combined*.css'],
-						dest: 'css'
-					}
-				]
-			},
 		},
 
 		// Clean temporary files

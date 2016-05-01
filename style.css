@@ -4575,4 +4575,19 @@ img {
   }
 }
 /** Needded */
+.wp-caption {
+  font: inherit;
+}
+.wp-caption-text {
+  font: inherit;
+}
+.sticky {
+  font: inherit;
+}
+.gallery-caption {
+  font: inherit;
+}
+.bypostauthor {
+  font: inherit;
+}
 /*# sourceMappingURL=style.css.map */
