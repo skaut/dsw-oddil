@@ -221,7 +221,7 @@ require_once get_template_directory() . '/inc/custom-header.php';
 require_once get_template_directory() . '/inc/template-tags.php';
 
 // Register Custom Navigation Walker
-require_once get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
+require_once get_template_directory() . '/inc/bootstrap-navwalker.php';
 
 // Add Theme Customizer functionality.
 require_once get_template_directory() . '/inc/customizer.php';
