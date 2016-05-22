@@ -8,7 +8,7 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
-== Description ==
+== Description == 
 *CZ*
 Jednoduchý vzhled WordPress pro české skautské weby.
 
