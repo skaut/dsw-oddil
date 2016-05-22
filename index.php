@@ -11,7 +11,7 @@
  *
  * @package WordPress
  * @subpackage DSW_oddil
- * @since DSW oddil 1.0
+ * @since DSW oddil 1.0.4
  */
 
 get_header(); ?>
