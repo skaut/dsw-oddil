@@ -14,7 +14,7 @@ if ( ! function_exists( 'dswoddil_setup' ) ) {
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support post thumbnails.
 	 *
-	 * @since DSW oddil 1.0
+	 * @since DSW oddil 1.0.4
 	 */
 	function dswoddil_setup() {
 		/*
