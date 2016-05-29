@@ -9,15 +9,9 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
 
 == Description == 
-*CZ*
 Jednoduchý vzhled WordPress pro české skautské weby.
 
 V roce 2012 jsme zjistili, že mnoho z českých skautských webové stránky jsou vytvořeny špatně. Graficky starý, není citlivý, nepoužitelný. Tak jsme se sešli a řekli NE starých strašlivých webové stránky. Po 4 letech vynálezů a grafických prototypů jsme vytvořili naše šablony pro široké použití v skautského prostředí. Používejte ji dobře a užijte si to!
-
-*EN*
-Basic Wordpress theme for czech scout websites.
-
-In 2012 we noticed that many of the czech scout websites are badly created. Graphically old, not responsive, unusable. So we came together and said NO to old awful websites. After 4 years of inventions and graphic prototypes we have created our template for wide use in scout environment. Use it well and enjoy it!
 
 == Installation ==
 
@@ -32,11 +26,6 @@ Instalace přes ZIP soubor
 1. V admin panelu, přejděte na Vzhled -> Šablony a poté klepněte na tlačítko instalovat.
 2. Klikněte na tlačítko Nahrát šablonu a Vyberte soubor, vyberte soubor ZIP daného tématu. Klepněte na tlačítko Instalovat.
 3. Klepněte na Aktivovat a můžete používat svůj nový motiv hned.
-
-*EN*
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
 
 == Frequently Asked Questions ==
 
