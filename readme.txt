@@ -3,7 +3,7 @@
 Contributors: skaut
 Requires at least: 4.0
 Tested up to: 4.5.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
@@ -34,6 +34,10 @@ Pokud máte nějaký dotaz můžete nás kontaktovat na:
 * https://www.facebook.com/dobrysweb
 
 == Changelog ==
+= 1.0.5 - 4. 6. 2016 =
+* 
+* 
+
 = 1.0.4 - 22. 5. 2016 =
 * oprava readme.txt a style.css
 
