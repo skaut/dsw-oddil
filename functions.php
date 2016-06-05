@@ -138,6 +138,7 @@ function dswoddil_load_styles() {
  */
 function dswoddil_load_scripts() {
 	if( !is_admin()){
+		wp_deregister_script( 'jquery' );
 	 	wp_register_script(
 			'jquery',
 			( "http://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ),
