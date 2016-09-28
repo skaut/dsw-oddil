@@ -136,7 +136,7 @@ if ( ! function_exists( 'dswoddil_admin_header_style' ) ) {
 
 if ( ! function_exists( 'dswoddil_admin_header_image' ) ) {
 	/**
-	 * Create the custom header image markup displayed on the Appearance > Header screen.
+	 * Create custom header image markup displayed on the Appearance > Header screen.
 	 *
 	 * @see dswoddil_custom_header_setup()
 	 *
