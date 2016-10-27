@@ -114,7 +114,7 @@ module.exports = function (grunt) {
 			},
 			demo: {
 				files: [
-					{ 'style.css': ['style.css'] }
+					{ 'src/main.less': ['src/main.less'] }
 				]
 			}
 		},
@@ -265,12 +265,12 @@ module.exports = function (grunt) {
 		}
 		return grunt.task.run([
 			"bump-only:" + version_type,
+			"template",
 			'less',
 			'imagemin',
 			'copy',
 			'clean',
 			'conventionalChangelog',
-			'template',
 			'bump-commit',
 			'compress',
 		]);
