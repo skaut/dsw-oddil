@@ -106,6 +106,19 @@ module.exports = function (grunt) {
 			}
 		},
 
+		template: {
+			options: {
+				data: {
+					version: '<%= pkg.version %>'
+				}
+			},
+			demo: {
+				files: [
+					{ 'style.css': ['style.css'] }
+				]
+			}
+		},
+
 		bump: {
 			options: {
 				files: [
@@ -257,6 +270,7 @@ module.exports = function (grunt) {
 			'copy',
 			'clean',
 			'conventionalChangelog',
+			'template',
 			'bump-commit',
 			'compress',
 		]);
