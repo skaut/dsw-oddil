@@ -106,6 +106,19 @@ module.exports = function (grunt) {
 			}
 		},
 
+		template: {
+			options: {
+				data: {
+					version: '<%= pkg.version %>'
+				}
+			},
+			demo: {
+				files: [
+					{ 'src/main.less': ['src/main.less'] }
+				]
+			}
+		},
+
 		bump: {
 			options: {
 				files: [
@@ -252,6 +265,7 @@ module.exports = function (grunt) {
 		}
 		return grunt.task.run([
 			"bump-only:" + version_type,
+			"template",
 			'less',
 			'imagemin',
 			'copy',

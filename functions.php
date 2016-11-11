@@ -100,6 +100,34 @@ if ( ! function_exists( 'dswoddil_setup' ) ) {
 } // twentyfourteen_setup
 add_action( 'after_setup_theme', 'dswoddil_setup' );
 
+function dswoddil_check_for_updates($transient) {
+	if (empty($transient->checked['dsw-oddil'])) {
+		return $transient;
+	}
+	$opts = array(
+		'http'=>array(
+			'method'=>"GET",
+			'header'=>"User-Agent: skaut\r\n"
+		)
+	);
+	$context = stream_context_create($opts);
+
+	$actual = json_decode(file_get_contents('https://api.github.com/repos/skaut/dsw-oddil/releases/latest', false, $context));
+	$asset = null;
+	foreach ($actual->assets as $a) {
+		if (preg_match('/dsw-oddil-\d+\.\d+\.\d+-compiled\.zip/', $a->name) === 1) {
+			$asset = $a;
+		}
+	}
+	if (!empty($asset) && version_compare($transient->checked['dsw-oddil'], ltrim($actual->tag_name, 'v'), '<')) {
+		$transient->response['dsw-oddil'] = ['new_version' => ltrim($actual->tag_name, 'v'), 'url' => $actual->html_url, 'package' => $asset->browser_download_url];
+	}
+	return $transient;
+}
+
+add_filter('pre_set_site_transient_update_themes', 'dswoddil_check_for_updates');
+
+
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
  *

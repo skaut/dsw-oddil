@@ -4,7 +4,7 @@ Description: Simple template for scout groups and troops websites.
 Author: DSW Team
 Text Domain: dswoddil
 Domain Path: /languages
-Version: 1.0
+Version: <%= version %>
 Tags: blue, purple, yellow, left-sidebar, right-sidebar, responsive-layout, custom-header, featured-images
 
 License: GNU General Public License v2 or later
