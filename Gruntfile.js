@@ -112,7 +112,7 @@ module.exports = function (grunt) {
 					version: '<%= pkg.version %>'
 				}
 			},
-			demo: {
+			main: {
 				files: [
 					{ 'src/main.less': ['src/main.less'] }
 				]
@@ -145,6 +145,7 @@ module.exports = function (grunt) {
 			less: {
 				files: ['src/**/*.less'],
 				tasks: [
+					'template',
 					'less',
 					'cssmin',
 					'copy'
@@ -290,6 +291,7 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('dev', [
+		'template',
 		'less',
 		'copy',
 	]);
