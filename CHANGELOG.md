@@ -1,3 +1,28 @@
+<a name="0.19.0"></a>
+# [0.19.0](https://github.com/skaut/dsw-oddil/compare/v0.18.0...v0.19.0) (2016-11-12)
+
+
+### Bug Fixes
+
+* **Bundled scripts:** Added jQuery and Bootstrap javascript as bundled scripts (refs [#97](https://github.com/skaut/dsw-oddil/issues/97)) ([00cb874](https://github.com/skaut/dsw-oddil/commit/00cb874))
+* **Bundled scripts:** Remove own jQuery and use bundled one with WP (refs [#97](https://github.com/skaut/dsw-oddil/issues/97)) ([017e37f](https://github.com/skaut/dsw-oddil/commit/017e37f))
+* **CSS:** Do not copy css files and add generated classes (refs [#53](https://github.com/skaut/dsw-oddil/issues/53)) ([a400395](https://github.com/skaut/dsw-oddil/commit/a400395))
+* **CSS:** Inherit font for classes that must be presented (refs [#53](https://github.com/skaut/dsw-oddil/issues/53)) ([ea11794](https://github.com/skaut/dsw-oddil/commit/ea11794))
+* **CSS:** Removing combined css files (refs [#53](https://github.com/skaut/dsw-oddil/issues/53)) ([04e921b](https://github.com/skaut/dsw-oddil/commit/04e921b))
+* **Licenses:** Add information about images (refs [#81](https://github.com/skaut/dsw-oddil/issues/81)) ([043c057](https://github.com/skaut/dsw-oddil/commit/043c057))
+* **Prefix:** Add prefix to bootstrap navwalker (refs [#100](https://github.com/skaut/dsw-oddil/issues/100)) ([3ff5afe](https://github.com/skaut/dsw-oddil/commit/3ff5afe))
+* **Prefix:** Added prefix for czech comments function (refs [#100](https://github.com/skaut/dsw-oddil/issues/100)) ([ad0b4ca](https://github.com/skaut/dsw-oddil/commit/ad0b4ca))
+* **Prefix:** Rename theme name in comments (refs [#100](https://github.com/skaut/dsw-oddil/issues/100)) ([e70f097](https://github.com/skaut/dsw-oddil/commit/e70f097))
+* **Prefix:** Require renamed file (refs [#100](https://github.com/skaut/dsw-oddil/issues/100)) ([3cd6f6a](https://github.com/skaut/dsw-oddil/commit/3cd6f6a))
+
+
+### Features
+
+* **Auto updates:** Finalization (refs [#122](https://github.com/skaut/dsw-oddil/issues/122)) ([4598c4c](https://github.com/skaut/dsw-oddil/commit/4598c4c))
+* **Auto updates:** Resolving auto updates from own repository (refs [#124](https://github.com/skaut/dsw-oddil/issues/124)) ([df365cb](https://github.com/skaut/dsw-oddil/commit/df365cb))
+
+
+
 <a name="0.18.0"></a>
 # [0.18.0](https://github.com/skaut/dsw-oddil/compare/v0.17.0...v0.18.0) (2016-04-25)
 
