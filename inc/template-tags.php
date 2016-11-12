@@ -136,10 +136,10 @@ function dswoddil_categorized_blog() {
 	}
 
 	if ( 1 !== (int) $all_the_cool_cats ) {
-		// This blog has more than 1 category so twentyfourteen_categorized_blog should return true
+		// This blog has more than 1 category so dswoddil_categorized_blog should return true
 		return true;
 	} else {
-		// This blog has only 1 category so twentyfourteen_categorized_blog should return false
+		// This blog has only 1 category so dswoddil_categorized_blog should return false
 		return false;
 	}
 }

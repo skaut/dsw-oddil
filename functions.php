@@ -18,11 +18,11 @@ if ( ! function_exists( 'dswoddil_setup' ) ) {
 	 */
 	function dswoddil_setup() {
 		/*
-		 * Make Twenty Fourteen available for translation.
+		 * Make DSW Oddil available for translation.
 		 *
 		 * Translations can be added to the /languages/ directory.
-		 * If you're building a theme based on Twenty Fourteen, use a find and
-		 * replace to change 'twentyfourteen' to the name of your theme in all
+		 * If you're building a theme based on DSW Oddil, use a find and
+		 * replace to change 'dswoddil' to the name of your theme in all
 		 * template files.
 		 */
 		load_theme_textdomain( 'dswoddil', get_template_directory() . '/languages' );
@@ -45,7 +45,7 @@ if ( ! function_exists( 'dswoddil_setup' ) ) {
 		// Enable support for Post Thumbnails, and declare two sizes.
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 150, 150, true );
-		//add_image_size( 'twentyfourteen-full-width', 1038, 576, true );
+		//add_image_size( 'dswoddil-full-width', 1038, 576, true );
 
 		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
@@ -97,7 +97,7 @@ if ( ! function_exists( 'dswoddil_setup' ) ) {
 		// This theme uses its own gallery styles.
 		add_filter( 'use_default_gallery_style', '__return_false' );
 	}
-} // twentyfourteen_setup
+} // dswoddil_setup
 add_action( 'after_setup_theme', 'dswoddil_setup' );
 
 function dswoddil_check_for_updates($transient) {
@@ -263,7 +263,7 @@ require_once get_template_directory() . '/inc/jetpack.php';
  */
 function dswoddil_get_featured_posts() {
 	/**
-	 * Filter the featured posts to return in Twenty Fourteen.
+	 * Filter the featured posts to return in DSW Oddil.
 	 *
 	 * @since DSW oddil 1.0
 	 *
