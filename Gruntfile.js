@@ -132,6 +132,7 @@ module.exports = function (grunt) {
 					'package.json',
 					'bower.json',
 					'CHANGELOG.md',
+					'style.css',
 				],
 				commitMessage: 'Release v%VERSION%',
 				createTag: true,
