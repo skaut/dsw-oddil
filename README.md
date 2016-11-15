@@ -17,5 +17,7 @@ DSW Oddil WP Theme is published under the [GPLv2 license](https://github.com/lit
 ## First Install
 
 `npm install`
+
 `npm install -g bower`
+
 `bower install`
