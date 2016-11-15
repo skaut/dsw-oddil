@@ -1,3 +1,14 @@
+<a name="0.19.1"></a>
+## [0.19.1](https://github.com/skaut/dsw-oddil/compare/v0.19.0...v0.19.1) (2016-11-15)
+
+
+### Bug Fixes
+
+* **Readme:** Added new lines ([0ab6bb8](https://github.com/skaut/dsw-oddil/commit/0ab6bb8))
+* **Style versioning:** Repair version builder for style.css ([35388a9](https://github.com/skaut/dsw-oddil/commit/35388a9))
+
+
+
 <a name="0.19.0"></a>
 # [0.19.0](https://github.com/skaut/dsw-oddil/compare/v0.18.0...v0.19.0) (2016-11-12)
 
