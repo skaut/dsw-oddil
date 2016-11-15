@@ -3,6 +3,7 @@ module.exports = function (grunt) {
 	// Autoload all Grunt tasks
 	require('matchdep').filterAll('grunt-*').forEach(grunt.loadNpmTasks);
 
+	grunt.template.addDelimiters('handlebars-like-delimiters', '{{', '}}')
 	grunt.initConfig({
 		pkg: grunt.file.readJSON('package.json'),
 
@@ -10,7 +11,7 @@ module.exports = function (grunt) {
 		less: {
 			dev: {
 				files: {
-					'style.css': 'src/main.less',
+					'.tmp/style.css': 'src/main.less',
 				},
 				options: {
 					sourceMap: true
@@ -110,11 +111,12 @@ module.exports = function (grunt) {
 			options: {
 				data: {
 					version: '<%= pkg.version %>'
-				}
+				},
+				'delimiters': 'handlebars-like-delimiters'
 			},
 			main: {
 				files: [
-					{ 'src/main.less': ['src/main.less'] }
+					{ 'style.css': ['.tmp/style.css'] }
 				]
 			}
 		},
@@ -145,8 +147,8 @@ module.exports = function (grunt) {
 			less: {
 				files: ['src/**/*.less'],
 				tasks: [
-					'template',
 					'less',
+					'template',
 					'cssmin',
 					'copy'
 				]
@@ -265,9 +267,9 @@ module.exports = function (grunt) {
 		version_type = 'minor';
 		}
 		return grunt.task.run([
-			"bump-only:" + version_type,
-			"template",
+			'bump-only:' + version_type,
 			'less',
+			'template',
 			'imagemin',
 			'copy',
 			'clean',
@@ -291,8 +293,8 @@ module.exports = function (grunt) {
 	});
 
 	grunt.registerTask('dev', [
-		'template',
 		'less',
+		'template',
 		'copy',
 	]);
 
