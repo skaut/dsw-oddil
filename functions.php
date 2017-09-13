@@ -104,15 +104,17 @@ function dswoddil_check_for_updates($transient) {
 	if (empty($transient->checked['dsw-oddil'])) {
 		return $transient;
 	}
-	$opts = array(
-		'http'=>array(
-			'method'=>"GET",
-			'header'=>"User-Agent: skaut\r\n"
-		)
-	);
-	$context = stream_context_create($opts);
 
-	$actual = json_decode(file_get_contents('https://api.github.com/repos/skaut/dsw-oddil/releases/latest', false, $context));
+	$raw = wp_remote_get('https://api.github.com/repos/skaut/dsw-oddil/releases/latest' , ['user-agent' => 'skaut']);
+	if (is_wp_error($raw) || wp_remote_retrieve_response_code($raw) !== 200) {
+		return $transient;
+	}
+
+	$actual = json_decode($raw['body']);
+	if ($actual === null) {
+		return $transient;
+	}
+
 	$asset = null;
 	foreach ($actual->assets as $a) {
 		if (preg_match('/dsw-oddil-\d+\.\d+\.\d+-compiled\.zip/', $a->name) === 1) {
